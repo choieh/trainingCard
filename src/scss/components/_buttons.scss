@@ -1,0 +1,261 @@
+@use "../abstracts/index" as *;
+
+.btn {
+    display: block;
+    @include font-style($font-size-18, $font-weight-semibold, 24px);
+
+    &-group {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    &.bd-radius {
+        &--square {
+            border-radius: 4px;
+
+            &.size {
+                &--s {
+                    padding: 0.75rem 4rem;
+                }
+
+                &--m {
+                    padding: 1rem 5rem;
+                }
+            }
+
+            &.ico {
+                padding-left: 7rem;
+            }
+        }
+
+        &--circle {
+            border-radius: 50px;
+
+            &.size {
+                &--s {
+                    padding: 0.25rem 1.25rem;
+                    @include font-style($font-size-16, $font-weight-bold, 30px);
+                }
+
+                &--m {
+                    padding: 0.75rem 2.5rem;
+                    @include font-style($font-size-20, $font-weight-bold, 30px);
+                }
+            }
+
+            &.ico {
+                padding-right: 4.625rem;
+            }
+        }
+    }
+
+    &.cover {
+        &__all {
+            @include btn-style($red-01, $white, $red-01);
+
+            &:hover {
+                @include btn-style($white, $red-01, $red-01);
+            }
+        }
+
+        &__bg {
+            @include btn-style($white, $red-01, $red-01);
+
+            &:hover {
+                @include btn-style($red-01, $yellow-01, $yellow-01);
+            }
+
+            &--white {
+                @include btn-style($red-01, $white, $white);
+
+                &:hover {
+                    @include btn-style($white, $red-02, $red-02);
+                }
+            }
+
+            &--red {
+                @include btn-style($white, $red-02, $red-02);
+
+                &:hover {
+                    @include btn-style($white, $red-01, $red-01);
+                }
+            }
+
+            &--navy {
+                @include btn-style($white, $navy-01, $navy-01);
+
+                &:hover {
+                    @include btn-style($white, $navy-02, $navy-02);
+                }
+            }
+
+            &--blue {
+                @include btn-style($black, $blue-01, $blue-01);
+
+                &:hover {
+                    @include btn-style($white, $blue-02, $blue-02);
+                }
+            }
+
+            &--gray {
+                @include btn-style($black, $gray-03, $gray-03);
+
+                &:hover {
+                    @include btn-style($black, $gray-04, $gray-04);
+                }
+            }
+        }
+
+        &__line {
+            @include btn-style($red-01, $white, $red-01);
+
+            &:hover {
+                @include btn-style($red-01, $yellow-01, $red-01);
+            }
+
+            &--navy {
+                @include btn-style($gray-02, $white, $gray-02);
+
+                &:hover {
+                    @include btn-style($navy-01, $white, $navy-01);
+                }
+            }
+        }
+    }
+
+    &.ico {
+        &--phone {
+            @include ico-style(24px);
+
+            &::before {
+                left: 5rem;
+                transform: translateY(-50%);
+                background-image: svgIcon(phone, "E00");
+            }
+
+            &:hover {
+                &::before {
+                    background-image: svgIcon(phone, "fff");
+                }
+            }
+        }
+
+        &--lock {
+            @include ico-style(24px);
+
+            &::before {
+                left: 5rem;
+                transform: translateY(-50%);
+                background-image: svgIcon(lock02, E00);
+            }
+
+            &:hover {
+                &::before {
+                    background-image: svgIcon(lock02, "fff");
+                }
+            }
+        }
+
+        &--cart {
+            @include ico-style(24px);
+
+            &::before {
+                left: auto;
+                right: 2.5rem;
+                transform: translateY(-50%);
+                background-image: svgIcon(cart, "E00");
+            }
+        }
+
+        &--testFile {
+            @include ico-style(24px);
+
+            &::before {
+                left: 1rem;
+                transform: translateY(-50%);
+                background-image: svgIcon(testFile, "000");
+            }
+
+            &:hover {
+                &::before {
+                    background-image: svgIcon(testFile, "FDB515");
+                }
+            }
+        }
+
+        &--task {
+            @include ico-style(24px);
+
+            &::before {
+                left: 1rem;
+                transform: translateY(-50%);
+                background-image: svgIcon(task, "000");
+            }
+
+            &:hover {
+                &::before {
+                    background-image: svgIcon(task, "FDB515");
+                }
+            }
+        }
+
+        &--testFinal {
+            @include ico-style(24px);
+
+            &::before {
+                left: 1rem;
+                transform: translateY(-50%);
+                background-image: svgIcon(testFinal, "000");
+            }
+
+            &:hover {
+                &::before {
+                    background-image: svgIcon(testFinal, "FDB515");
+                }
+            }
+        }
+    }
+
+    &--status {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.75rem 1rem 0.75rem 3rem;
+        background-color: $white;
+
+        [role="title"] {
+            @include font-style($font-size-18, $font-weight-semibold, 24px);
+        }
+
+        [role="status"] {
+            @include font-style($font-size-14, $font-weight-regular);
+            color: $gray-06;
+
+            &:not(:last-child) {
+                @include font-style($font-size-14, $font-weight-bold);
+                color: $gray-05;
+            }
+        }
+
+        &:hover,
+        &.is-active {
+            background-color: $yellow-01;
+
+            [role="title"] {
+                color: $yellow-02;
+            }
+
+            [role="status"] {
+                &:not(:last-child) {
+                    color: $red-03;
+                }
+            }
+        }
+    }
+
+    &--submit {
+        padding: 1.188rem 3.063rem;
+    }
+}

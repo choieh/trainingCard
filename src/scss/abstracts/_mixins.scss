@@ -1,0 +1,28 @@
+@mixin font-style($size, $weight, $line-height: 1) {
+    font-size: #{calc($size / 16)}rem;
+    font-weight: $weight;
+    line-height: $line-height;
+}
+
+@mixin btn-style($color, $bg-color, $border-color) {
+    color: $color;
+    background-color: $bg-color;
+    border: 1px solid $border-color;
+}
+
+@mixin ico-style($size) {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: $size;
+        height: $size;
+        transform: translate(-50%, -50%);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+    }
+}

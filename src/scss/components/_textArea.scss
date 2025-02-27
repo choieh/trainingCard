@@ -1,0 +1,30 @@
+@use "../abstracts/index" as *;
+
+textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+}
+
+.textArea {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+
+    textarea {
+        padding: 0.25rem 0.5rem;
+        border: 1px solid $gray-02;
+        border-radius: 4px;
+
+        @include font-style($font-size-14, $font-weight-regular, $black);
+
+        &::placeholder {
+            color: $gray-02;
+        }
+
+        &:focus {
+            border-color: $gray-01;
+        }
+    }
+}
