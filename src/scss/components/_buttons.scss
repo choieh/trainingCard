@@ -258,4 +258,31 @@
     &--submit {
         padding: 1.188rem 3.063rem;
     }
+
+    &-list {
+        display: flex;
+        align-items: center;
+        border: 1px solid $gray-02;
+        border-radius: 4px;
+
+        &__item {
+            width: 54px;
+            height: 38px;
+
+            & + & {
+                border-left: 1px solid $gray-02;
+            }
+
+            .btn {
+                width: 100%;
+                height: 100%;
+                @include font-style($font-size-14, $font-weight-regular);
+                color: $black;
+
+                &:hover {
+                    background-color: $gray-03;
+                }
+            }
+        }
+    }
 }

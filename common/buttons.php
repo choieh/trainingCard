@@ -44,4 +44,23 @@
     <div class="btn-group">
         <button class="btn btn--submit cover__bg--white">제출하기</button>
     </div>
+    <div class="btn-group">
+        <ul class="btn-list">
+            <li class="btn-list__item">
+                <button class="btn">오늘</button>
+            </li>
+            <li class="btn-list__item">
+                <button class="btn">1주</button>
+            </li>
+            <li class="btn-list__item">
+                <button class="btn">1개월</button>
+            </li>
+            <li class="btn-list__item">
+                <button class="btn">3개월</button>
+            </li>
+            <li class="btn-list__item">
+                <button class="btn">6개월</button>
+            </li>
+        </ul>
+    </div>
 </div>
