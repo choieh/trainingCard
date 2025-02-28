@@ -6,7 +6,7 @@
     font-family: "Noto Sans KR";
     font-style: normal;
     font-weight: 400;
-    src: url("../fonts/noto-sans-kr-v36-korean_latin-regular.woff2")
+    src: url("../assets/fonts/noto-sans-kr-v36-korean_latin-regular.woff2")
         format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* noto-sans-kr-500 - korean_latin */
@@ -15,7 +15,8 @@
     font-family: "Noto Sans KR";
     font-style: normal;
     font-weight: 500;
-    src: url("../fonts/noto-sans-kr-v36-korean_latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url("../assets/fonts/noto-sans-kr-v36-korean_latin-500.woff2")
+        format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* noto-sans-kr-600 - korean_latin */
 @font-face {
@@ -23,7 +24,8 @@
     font-family: "Noto Sans KR";
     font-style: normal;
     font-weight: 600;
-    src: url("../fonts/noto-sans-kr-v36-korean_latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url("../assets/fonts/noto-sans-kr-v36-korean_latin-600.woff2")
+        format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* noto-sans-kr-700 - korean_latin */
 @font-face {
@@ -31,7 +33,8 @@
     font-family: "Noto Sans KR";
     font-style: normal;
     font-weight: 700;
-    src: url("../fonts/noto-sans-kr-v36-korean_latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url("../assets/fonts/noto-sans-kr-v36-korean_latin-700.woff2")
+        format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* noto-sans-kr-800 - korean_latin */
 @font-face {
@@ -39,7 +42,8 @@
     font-family: "Noto Sans KR";
     font-style: normal;
     font-weight: 800;
-    src: url("../fonts/noto-sans-kr-v36-korean_latin-800.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url("../assets/fonts/noto-sans-kr-v36-korean_latin-800.woff2")
+        format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* noto-sans-kr-900 - korean_latin */
 @font-face {
@@ -47,5 +51,6 @@
     font-family: "Noto Sans KR";
     font-style: normal;
     font-weight: 900;
-    src: url("../fonts/noto-sans-kr-v36-korean_latin-900.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url("../assets/fonts/noto-sans-kr-v36-korean_latin-900.woff2")
+        format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }

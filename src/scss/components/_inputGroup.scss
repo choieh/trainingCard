@@ -1,0 +1,106 @@
+@use "../abstracts/index" as *;
+
+.inputGroup {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    label {
+        flex-shrink: 0;
+        width: 185px;
+        @include font-style($font-size-16, $font-weight-regular, 24px);
+        color: $black;
+
+        &[for="input--address"] {
+            align-self: flex-start;
+        }
+
+        &[for="input--pwd"] {
+            align-self: flex-start;
+        }
+
+        &[for="input--period"] {
+            width: 43px;
+        }
+    }
+
+    input {
+        width: 100%;
+        padding: 0.438rem 1rem;
+        @include font-style($font-size-16, $font-weight-regular, 24px);
+        color: $black;
+        border: 1px solid $gray-02;
+        border-radius: 4px;
+
+        &::placeholder {
+            color: rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    .sub {
+        display: inline-block;
+        margin-left: 0.5rem;
+
+        &__text {
+            @include font-style($font-size-16, $font-weight-regular, 24px);
+            color: rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    #input {
+        &--birth {
+            max-width: 10.5rem;
+        }
+
+        &--phone {
+            display: flex;
+            align-items: center;
+            gap: 0.983rem;
+
+            input {
+                width: 100%;
+                padding: 0.438rem 1rem;
+                @include font-style($font-size-16, $font-weight-regular, 24px);
+                color: rgba(0, 0, 0, 0.5);
+            }
+
+            .dash {
+                color: rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        &--address {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            width: 100%;
+
+            .input {
+                width: 100%;
+
+                &:first-child {
+                    width: 10.5rem;
+                }
+            }
+        }
+
+        &--pwd {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            width: 100%;
+        }
+
+        &--period {
+            display: flex;
+            align-items: center;
+            gap: 0.813rem;
+            width: 100%;
+
+            .dash {
+                color: $gray-02;
+            }
+        }
+    }
+}

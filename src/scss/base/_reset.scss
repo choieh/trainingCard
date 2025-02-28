@@ -199,11 +199,24 @@ video {
     display: none;
 }
 
+.blind {
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+}
+
 .components {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    padding-bottom: 10rem;
+    margin-bottom: 10rem;
 
     &-title {
         margin: 1rem 0;

@@ -1,0 +1,72 @@
+@use "../abstracts/index" as *;
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 0.688rem;
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: $font-family-body;
+        @include font-style($font-size-16, $font-weight-regular, 30px);
+        color: $black;
+
+        &:first-child,
+        &:last-child {
+            color: $gray-02;
+        }
+
+        &.is-active:not(:first-child, :last-child) {
+            color: $red-01;
+        }
+    }
+}
+
+.depth {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+
+    &__item {
+        position: relative;
+        font-family: $font-family-body;
+        @include font-style($font-size-14, $font-weight-regular);
+        color: $gray-02;
+
+        & + & {
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: -14px;
+                transform: translate(0, -50%);
+                width: 6px;
+                height: 8px;
+                background-image: svgIcon(arrowRight, "c2c2c2");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+
+        &.is-active {
+            @include font-style($font-size-14, $font-weight-bold);
+            color: $black;
+
+            &::before {
+                background-image: svgIcon(arrowRight, "8f8f8f");
+            }
+        }
+
+        &:first-child {
+            width: 1.5rem;
+            height: 1.5rem;
+            background-image: svgIcon(home, "c2c2c2");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+}
