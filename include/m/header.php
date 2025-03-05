@@ -10,7 +10,7 @@
             <button class="fixed-menu__btn cart"><span class="blind">장바구니</span></button>
         </div>
     </div>
-    <div class="m-gnb is-active">
+    <div class="m-gnb ㄴ">
         <div class="btn-group">
             <button class="btn btn--close"><span class="blind">메뉴 닫기</span></button>
         </div>
@@ -23,11 +23,11 @@
                     <li class="m-gnb-menu__item">
                         <a href="/" class="m-gnb-menu__link">수강안내</a>
                     </li>
-                    <li class="m-gnb-menu__item is-active">
-                        <a href="/" class="m-gnb-menu__link">수강신청</a>
+                    <li class="m-gnb-menu__item">
+                        <button type="button" class="m-gnb-menu__link">수강신청</button>
                         <div class="m-gnb-sub">
                             <ul class="m-gnb-sub__list">
-                                <li class="m-gnb-sub__item is-active">
+                                <li class="m-gnb-sub__item">
                                     <a href="#" class="m-gnb-sub__link">국비지원</a>
                                 </li>
                                 <li class="m-gnb-sub__item">
@@ -37,7 +37,7 @@
                         </div>
                     </li>
                     <li class="m-gnb-menu__item">
-                        <a href="/" class="m-gnb-menu__link">상담</a>
+                        <button type="button" class="m-gnb-menu__link">상담</button>
                         <div class="m-gnb-sub">
                             <ul class="m-gnb-sub__list">
                                 <li class="m-gnb-sub__item">
@@ -53,7 +53,7 @@
                         <a href="/" class="m-gnb-menu__link">자료실</a>
                     </li>
                     <li class="m-gnb-menu__item">
-                        <a href="/" class="m-gnb-menu__link">나의강의실</a>
+                        <button type="button" class="m-gnb-menu__link">나의강의실</button>
                         <div class="m-gnb-sub">
                             <ul class="m-gnb-sub__list">
                                 <li class="m-gnb-sub__item">
@@ -74,7 +74,11 @@
                 </ul>
             </div>
             <div class="m-contact">
-                <a href="/" class="m-contact__link">문의하기</a>
+                <ul class="m-contact__list">
+                    <li class="m-contact__item">
+                        <a href="/" class="m-contact__link">문의하기</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -82,9 +86,52 @@
 
 <script>
 const menuBtn = document.querySelector('.fixed-menu__btn.menu');
+const closeBtn = document.querySelector('.btn--close');
 const gnb = document.querySelector('.m-gnb');
+const menuItems = document.querySelectorAll('.m-gnb-menu__item');
+const subItems = document.querySelectorAll('.m-gnb-sub__item');
 
+// 메뉴 열기/닫기
 menuBtn.addEventListener('click', () => {
-    gnb.classList.toggle('is-active');
+    gnb.classList.add('is-active');
+});
+
+closeBtn.addEventListener('click', () => {
+    gnb.classList.remove('is-active');
+});
+
+// 아코디언 메뉴
+menuItems.forEach(item => {
+    const link = item.querySelector('.m-gnb-menu__link');
+    const subMenu = item.querySelector('.m-gnb-sub');
+
+    if (subMenu) {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // 다른 열린 메뉴 닫기
+            menuItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('is-active');
+                }
+            });
+
+            item.classList.toggle('is-active');
+        });
+    }
+});
+
+// 서브메뉴 아이템 클릭 이벤트
+subItems.forEach(subItem => {
+    subItem.addEventListener('click', (e) => {
+        // 같은 depth의 다른 서브메뉴 아이템의 is-active 클래스 제거
+        const siblings = subItem.parentElement.querySelectorAll('.m-gnb-sub__item');
+        siblings.forEach(sibling => {
+            sibling.classList.remove('is-active');
+        });
+
+        // 클릭한 서브메뉴 아이템에 is-active 클래스 추가
+        subItem.classList.add('is-active');
+    });
 });
 </script>
