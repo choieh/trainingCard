@@ -1,0 +1,73 @@
+@use "../abstracts/index" as *;
+
+.cardReview {
+    display: grid;
+    grid-template-columns: 184px 1fr;
+    gap: 124px;
+
+    .review {
+        &__header {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            strong {
+                @include font-style($font-size-18, $font-weight-semibold, 24px);
+                color: $black;
+            }
+
+            p {
+                @include font-style(24, $font-weight-semibold, 29px);
+                color: $white;
+            }
+        }
+
+        &__body {
+            width: 221px;
+            height: 331px;
+            background-color: $white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+        }
+
+        &__item {
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            height: 100%;
+            padding: 25px 20px;
+
+            .item {
+                &__title {
+                    font-family: $font-family-body;
+                    @include font-style($font-size-16, $font-weight-bold, 22px);
+                    color: $black;
+                }
+
+                &__desc {
+                    overflow-y: auto;
+                    max-height: 190px;
+                    height: 100%;
+                    font-family: $font-family-body;
+                    @include font-style(
+                        $font-size-14,
+                        $font-weight-regular,
+                        19px
+                    );
+                    color: $black;
+                }
+
+                &__rating {
+                    width: 120px;
+                    height: 24px;
+                    background-image: url("/dist/assets/images/rating_before.svg");
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    outline: 1px solid red;
+                }
+            }
+        }
+    }
+}

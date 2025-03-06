@@ -19,9 +19,12 @@
 </head>
 
 <body>
-    <? include '../include/header.php' ?>
-    <? include '../include/footer.php' ?>
-    <? include '../include/script.php' ?>
+    <div id="layout">
+        <? include '../include/header.php' ?>
+        <? include './main.php' ?>
+        <? include '../include/footer.php' ?>
+        <? include '../include/script.php' ?>
+    </div>
 </body>
 
 </html>

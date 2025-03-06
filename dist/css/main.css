@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
 /* noto-sans-kr-regular - korean_latin */
 @font-face {
@@ -940,6 +941,243 @@ textarea {
   background-position: center;
 }
 
+.card {
+  overflow: hidden;
+  position: relative;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 298px;
+  height: 549px;
+  border-radius: 10px;
+  border: 1px solid #eae8e8;
+}
+.card__thumbnail {
+  width: 100%;
+  height: 169px;
+  background-color: #7a7a7a;
+}
+.card__content {
+  padding: 0 20px;
+}
+.card__tag {
+  overflow-x: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 4px;
+  margin: 14px 0 12px;
+}
+.card__tag .tag__item {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  padding: 7px 18px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 24px;
+  color: #fff;
+  background-color: #0d3050;
+  border-radius: 40px;
+}
+.card__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 24px;
+  color: #000;
+}
+.card__detail {
+  margin-top: 7px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 22px;
+  color: #7a7a7a;
+}
+.card__info {
+  margin-top: 35px;
+}
+.card__info .info__wrap:last-child {
+  margin-top: 20px;
+}
+.card__info .info__wrap:last-child .info__title {
+  margin-bottom: 14px;
+}
+.card__info .info__title {
+  display: inline-block;
+  margin-right: 20px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 22px;
+  color: #000;
+}
+.card__info .info__price {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 24px;
+  color: #0d3050;
+}
+.card__info .info__item {
+  display: grid;
+  grid-template-columns: 123px 1fr;
+  gap: 32px;
+}
+.card__info .info__item--title {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 22px;
+  color: #7a7a7a;
+}
+.card__info .info__item--price {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 22px;
+  color: #7879b9;
+}
+.card__option {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.card__option .btn__group {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#fff), to(transparent));
+  background-image: linear-gradient(to top, #fff, transparent);
+}
+.card__option .btn--up {
+  width: 100%;
+  height: 24px;
+  padding: 7px 0 5px;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath fill='%23E00' d='m19 17.95-7-5-7 5V15.5l7-5 7 5v2.45ZM19 12l-7-5-7 5V9.55l7-5 7 5V12Z'/%3E%3C/svg%3E");
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+.card__option--cart {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.card__option--cart .btn {
+  padding: 20px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 24px;
+}
+.card__option--cart .btn__group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.card__option--cart .btn--cart {
+  color: #ee0000;
+  background-color: #fff;
+}
+.card__option--cart .btn--register {
+  color: #fff;
+  background-color: #ee0000;
+}
+.card__option.is-active {
+  bottom: 0;
+}
+.card__option.is-active .btn--up {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.card__option.is-active .card__option--cart {
+  height: 64px;
+  opacity: 1;
+}
+
+.cardReview {
+  display: grid;
+  grid-template-columns: 184px 1fr;
+  gap: 124px;
+}
+.cardReview .review__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+.cardReview .review__header strong {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 24px;
+  color: #000;
+}
+.cardReview .review__header p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 29px;
+  color: #fff;
+}
+.cardReview .review__body {
+  width: 221px;
+  height: 331px;
+  background-color: #fff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+}
+.cardReview .review__item {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  height: 100%;
+  padding: 25px 20px;
+}
+.cardReview .review__item .item__title {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 22px;
+  color: #000;
+}
+.cardReview .review__item .item__desc {
+  overflow-y: auto;
+  max-height: 190px;
+  height: 100%;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 19px;
+  color: #000;
+}
+.cardReview .review__item .item__rating {
+  width: 120px;
+  height: 24px;
+  background-image: url("/dist/assets/images/rating_before.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  outline: 1px solid red;
+}
+
 .checkbox {
   position: relative;
   display: inline-block;
@@ -1205,12 +1443,21 @@ textarea {
           transform: translate(0, -50%) rotate(180deg);
 }
 
+#layout {
+  min-width: 1240px;
+}
+
 .logo {
   display: block;
   width: 100%;
   height: 100%;
 }
 
+@media (max-width: 1240px) {
+  #layout {
+    min-width: 100%;
+  }
+}
 .footer {
   background-color: #f7f6f6;
 }
@@ -1383,6 +1630,9 @@ textarea {
   gap: 5rem;
   width: 100%;
   height: 100%;
+}
+.gnb-menu {
+  margin-top: 7px;
 }
 .gnb-menu__list {
   display: -webkit-box;
@@ -1665,4 +1915,124 @@ textarea {
   opacity: 1;
   -webkit-transform: translateY(0);
           transform: translateY(0);
+}
+
+.main .section {
+  margin-top: 120px;
+  outline: 1px solid burlywood;
+}
+.main .section:first-child {
+  margin-top: 100px;
+}
+.main .section__container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.main .section__title {
+  display: inline-block;
+  position: relative;
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 36px;
+  color: #000;
+  margin-bottom: 18px;
+  padding-right: 36px;
+}
+.main .section--popular .section__title::before {
+  background-image: url(" /dist/assets/images/ico_star.png");
+}
+.main .section--popular .section__content {
+  overflow-x: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 16px;
+  /* 스크롤바의 폭 너비 */
+}
+.main .section--popular .section__content::-webkit-scrollbar {
+  height: 6px;
+}
+.main .section--popular .section__content::-webkit-scrollbar-thumb {
+  background: #cdcdcd; /* 스크롤바 색상 */
+  border-radius: 10px; /* 스크롤바 둥근 테두리 */
+}
+.main .section--popular .section__content::-webkit-scrollbar-track {
+  background: #eae8e8; /*스크롤바 뒷 배경 색상*/
+}
+.main .section--review {
+  position: relative;
+  background-color: #ec4741;
+}
+.main .section--review::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 48px;
+  padding-top: 22px;
+  background-color: #fff;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+.main .section--review .section__container {
+  position: relative;
+  background-color: #fff;
+}
+.main .section--review .section__container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 170px;
+  height: 48px;
+  padding-bottom: 22px;
+  background-image: none;
+  background-color: #ec4741;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+.main .section--review .section__container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(100% - 170px);
+  height: 48px;
+  padding-top: 22px;
+  background-color: #ec4741;
+  border-top-left-radius: 17px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+.main .section--review .section__title {
+  margin-bottom: 0;
+  padding: 22px 67px 12px 0;
+  background-color: #fff;
+  background-image: url(" /dist/assets/images/ico_review.png");
+  background-size: 32px 32px;
+  background-repeat: no-repeat;
+  background-position: right 35px top 22px;
+  border-bottom-right-radius: 17px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+.main .section--review .section__content {
+  padding: 27px 0 106px;
+  background-color: #ec4741;
+}
+.main .section--notice .section__title::before {
+  background-image: url(" /dist/assets/images/ico_notice.png");
+}
+
+@media (max-width: 768px) {
+  .main .section--popular .section__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }

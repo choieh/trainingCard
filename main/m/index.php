@@ -10,8 +10,10 @@
 </head>
 
 <body>
-    <? include '../../include/m/header.php' ?>
-    <? include '../../include/footer.php' ?>
+    <div id="layout">
+        <? include '../../include/m/header.php' ?>
+        <? include '../../include/m/footer.php' ?>
+    </div>
 </body>
 
 </html>

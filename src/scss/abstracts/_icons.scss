@@ -47,6 +47,12 @@
         // 000
         arrowDown:
             "%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='17' fill='none'%3E%3Cpath fill='%23#{$color}' fill-rule='evenodd' d='M2.646 6.285a.522.522 0 0 1 .708 0L8 10.658l4.646-4.373a.522.522 0 0 1 .708 0 .451.451 0 0 1 0 .665l-5 4.706a.523.523 0 0 1-.708 0l-5-4.706a.451.451 0 0 1 0-.665Z' clip-rule='evenodd'/%3E%3C/svg%3E",
+        // E00
+        arrowUp:
+            "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath fill='%23E00' d='m19 17.95-7-5-7 5V15.5l7-5 7 5v2.45ZM19 12l-7-5-7 5V9.55l7-5 7 5V12Z'/%3E%3C/svg%3E",
+        // AEAEAE
+        arrowRight:
+            "%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='8' fill='none'%3E%3Cpath stroke='%23#{$color}' d='M1 .5 5 4 1 7.5'/%3E%3C/svg%3E",
         // c2c2c2
         lock01:
             "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 10H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-2m-8 0V7a4 4 0 0 1 8 0v3m-8 0h8m-4 4v3'/%3E%3C/svg%3E",
@@ -56,9 +62,6 @@
         // AEAEAE
         home:
             "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath fill='%23fff' stroke='%23#{$color}' stroke-linejoin='bevel' stroke-width='1.5' d='m11.5 6-5.207 4.62V18h3.8v-3.867h2.813V18h3.8v-7.38L11.5 6Z'/%3E%3Cpath stroke='%23#{$color}' stroke-linejoin='bevel' stroke-width='1.5' d='M18 11.773 11.5 6 5 11.773'/%3E%3C/svg%3E",
-        // AEAEAE
-        arrowRight:
-            "%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='8' fill='none'%3E%3Cpath stroke='%23#{$color}' d='M1 .5 5 4 1 7.5'/%3E%3C/svg%3E",
         // E00
         check:
             "%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none'%3E%3Crect width='20' height='20' fill='%23#{$color}' rx='4'/%3E%3Cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' d='m16.333 5-9.166 9.167L3 10'/%3E%3C/svg%3E",
