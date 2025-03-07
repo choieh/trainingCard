@@ -1,0 +1,44 @@
+@use "../abstracts/index" as *;
+
+.csCenter {
+    .notice {
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 18px;
+            outline: 1px solid blue;
+
+            .btn {
+                &--more {
+                    @include font-style(
+                        $font-size-18,
+                        $font-weight-regular,
+                        25px
+                    );
+                    color: $black;
+                }
+            }
+        }
+
+        &__content {
+            overflow-y: auto;
+            height: 240px;
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        &__link {
+            display: block;
+            @include font-style($font-size-18, $font-weight-regular, 18px);
+            color: $black;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}

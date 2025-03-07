@@ -9,6 +9,10 @@
             margin-top: 100px;
         }
 
+        &:last-child {
+            margin-bottom: 120px;
+        }
+
         &__container {
             max-width: 1240px;
             margin: 0 auto;
@@ -21,6 +25,18 @@
             color: $black;
             margin-bottom: 18px;
             padding-right: 36px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 4px;
+                width: 32px;
+                height: 32px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
         }
 
         &--popular {
@@ -120,10 +136,24 @@
             }
         }
 
-        &--notice {
-            .section__title {
-                &::before {
-                    background-image: url(" /dist/assets/images/ico_notice.png");
+        &--csCenter {
+            .csCenter {
+                display: grid;
+                grid-template-columns: minmax(767px, 1fr) minmax(402px, 1fr);
+                gap: 71px;
+
+                &__content {
+                    outline: 1px solid red;
+                }
+            }
+
+            .section {
+                &__title {
+                    margin-bottom: 0;
+
+                    &::before {
+                        background-image: url(" /dist/assets/images/ico_csCenter.png");
+                    }
                 }
             }
         }
@@ -135,9 +165,37 @@
         .section {
             &--popular {
                 .section {
+                    &__container {
+                        padding: 0 17px;
+                    }
+
                     &__content {
                         flex-direction: column;
                         align-items: center;
+                        padding: 0 14px;
+                    }
+                }
+            }
+
+            &--review {
+                .section {
+                    &__container {
+                        &::before {
+                            padding-left: 17px;
+                        }
+
+                        &::after {
+                            width: calc(100% - 187px);
+                        }
+                    }
+
+                    &__content {
+                        padding-left: 31px;
+                        padding-right: 31px;
+                    }
+
+                    &__title {
+                        padding-left: 17px;
                     }
                 }
             }

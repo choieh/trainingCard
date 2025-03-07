@@ -19,9 +19,9 @@
     </div>
 
     <!-- 공지사항 -->
-    <div class="section section--notice">
+    <div class="section section--csCenter">
         <div class="section__container">
-            <? include './notice.php' ?>
+            <? include './csCenter.php' ?>
         </div>
     </div>
 </div>

@@ -1117,6 +1117,7 @@ textarea {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 10px;
+  padding-top: 31px;
 }
 .cardReview .review__header strong {
   font-size: 1.125rem;
@@ -1131,12 +1132,12 @@ textarea {
   color: #fff;
 }
 .cardReview .review__body {
-  width: 221px;
-  height: 331px;
-  background-color: #fff;
-  border-radius: 10px;
-  -webkit-box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
-          box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 16px;
 }
 .cardReview .review__item {
   overflow: hidden;
@@ -1148,8 +1149,13 @@ textarea {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 10px;
-  height: 100%;
+  width: 221px;
   padding: 25px 20px;
+  height: 331px;
+  background-color: #fff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
 }
 .cardReview .review__item .item__title {
   font-family: "Noto Sans KR", sans-serif;
@@ -1169,13 +1175,116 @@ textarea {
   color: #000;
 }
 .cardReview .review__item .item__rating {
+  position: relative;
   width: 120px;
   height: 24px;
-  background-image: url("/dist/assets/images/rating_before.svg");
-  background-position: center;
+}
+.cardReview .review__item .item__rating::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/dist/assets/images/rating_after.svg");
+  background-position: left center;
   background-repeat: no-repeat;
-  background-size: contain;
-  outline: 1px solid red;
+  background-size: cover;
+}
+.cardReview .review__item .item__rating.star-0::before {
+  width: 0;
+}
+.cardReview .review__item .item__rating.star-05::before {
+  width: 10%;
+}
+.cardReview .review__item .item__rating.star-10::before {
+  width: 20%;
+}
+.cardReview .review__item .item__rating.star-15::before {
+  width: 30%;
+}
+.cardReview .review__item .item__rating.star-20::before {
+  width: 40%;
+}
+.cardReview .review__item .item__rating.star-25::before {
+  width: 50%;
+}
+.cardReview .review__item .item__rating.star-30::before {
+  width: 60%;
+}
+.cardReview .review__item .item__rating.star-35::before {
+  width: 70%;
+}
+.cardReview .review__item .item__rating.star-40::before {
+  width: 80%;
+}
+.cardReview .review__item .item__rating.star-45::before {
+  width: 90%;
+}
+.cardReview .review__item .item__rating.star-50::before {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .cardReview {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .cardReview .review__header {
+    padding-top: 20px;
+  }
+  .cardReview .review__body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+.csCenter .notice__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-bottom: 18px;
+  outline: 1px solid blue;
+}
+.csCenter .notice__header .btn--more {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 25px;
+  color: #000;
+}
+.csCenter .notice__content {
+  overflow-y: auto;
+  height: 240px;
+}
+.csCenter .notice__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 18px;
+}
+.csCenter .notice__link {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 18px;
+  color: #000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .checkbox {
@@ -1924,6 +2033,9 @@ textarea {
 .main .section:first-child {
   margin-top: 100px;
 }
+.main .section:last-child {
+  margin-bottom: 120px;
+}
 .main .section__container {
   max-width: 1240px;
   margin: 0 auto;
@@ -1937,6 +2049,17 @@ textarea {
   color: #000;
   margin-bottom: 18px;
   padding-right: 36px;
+}
+.main .section__title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 4px;
+  width: 32px;
+  height: 32px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .main .section--popular .section__title::before {
   background-image: url(" /dist/assets/images/ico_star.png");
@@ -2021,11 +2144,25 @@ textarea {
   padding: 27px 0 106px;
   background-color: #ec4741;
 }
-.main .section--notice .section__title::before {
-  background-image: url(" /dist/assets/images/ico_notice.png");
+.main .section--csCenter .csCenter {
+  display: grid;
+  grid-template-columns: minmax(767px, 1fr) minmax(402px, 1fr);
+  gap: 71px;
+}
+.main .section--csCenter .csCenter__content {
+  outline: 1px solid red;
+}
+.main .section--csCenter .section__title {
+  margin-bottom: 0;
+}
+.main .section--csCenter .section__title::before {
+  background-image: url(" /dist/assets/images/ico_csCenter.png");
 }
 
 @media (max-width: 768px) {
+  .main .section--popular .section__container {
+    padding: 0 17px;
+  }
   .main .section--popular .section__content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -2034,5 +2171,19 @@ textarea {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    padding: 0 14px;
+  }
+  .main .section--review .section__container::before {
+    padding-left: 17px;
+  }
+  .main .section--review .section__container::after {
+    width: calc(100% - 187px);
+  }
+  .main .section--review .section__content {
+    padding-left: 31px;
+    padding-right: 31px;
+  }
+  .main .section--review .section__title {
+    padding-left: 17px;
   }
 }
