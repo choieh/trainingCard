@@ -127,6 +127,10 @@
                 background-position: center;
                 box-sizing: content-box;
                 transition: transform 0.3s ease;
+
+                &:active {
+                    -webkit-tap-highlight-color: transparent;
+                }
             }
         }
 

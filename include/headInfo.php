@@ -9,4 +9,6 @@
 <meta property="og:description"
     content="국민내일배움카드, 한국사이버진흥원, 모두의러닝, 법정의무교육, 산업안전보건교육, 직무교육, 사업주환급, 모두의교육그룹, AI 영상제작 스튜디오">
 
+<!-- Swiper CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <link rel="stylesheet" href="/dist/css/main.css">

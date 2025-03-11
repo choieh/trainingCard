@@ -7,7 +7,6 @@
             justify-content: space-between;
             align-items: flex-end;
             margin-bottom: 18px;
-            outline: 1px solid blue;
 
             .btn {
                 &--more {
@@ -34,11 +33,67 @@
 
         &__link {
             display: block;
-            @include font-style($font-size-18, $font-weight-regular, 18px);
+            @include font-style($font-size-18, $font-weight-regular, 32px);
             color: $black;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+        }
+    }
+
+    .support {
+        display: flex;
+        flex-direction: column;
+        background-image: url("/dist/assets/images/ico_csCenter.svg");
+        background-repeat: no-repeat;
+        background-position: top 0 right 0;
+        background-size: 130px 130px;
+
+        &__header {
+            margin-bottom: 14px;
+
+            &:not(:first-child) {
+                margin-top: 40px;
+                margin-bottom: 0;
+            }
+        }
+
+        &__title {
+            @include font-style($font-size-24, $font-weight-semibold, 29px);
+            color: $black;
+        }
+
+        &__content {
+            dl {
+                display: flex;
+                gap: 3px;
+
+                dt,
+                dd {
+                    @include font-style(
+                        $font-size-14,
+                        $font-weight-regular,
+                        19px
+                    );
+                    color: $black;
+                }
+            }
+
+            strong {
+                @include font-style($font-size-36, $font-weight-bold, 46px);
+                color: $black;
+            }
+
+            p {
+                @include font-style($font-size-18, $font-weight-semibold, 24px);
+                color: $black;
+            }
+
+            &:not(:first-child) {
+                p {
+                    margin-top: 7px;
+                }
+            }
         }
     }
 }

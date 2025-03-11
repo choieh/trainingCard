@@ -3,28 +3,56 @@
 
 <head>
     <title>국민내일배움카드 - 모두를 위한 교육, 모두의교육그룹</title>
-    <?
-    // 모바일 체크 함수
-    function isMobile() {
-        return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
-    }
-
-    // 모바일 기기 체크 및 리다이렉션
-    if(isMobile()) {
-        header('Location: /main/m/index.php');
-        exit;
-    }
-    ?>
     <? include '../include/headInfo.php' ?>
+
 </head>
 
 <body>
     <div id="layout">
-        <? include '../include/header.php' ?>
-        <? include './main.php' ?>
+        <div id="header-container"></div>
+
+        <? 
+        // include './main.php'
+        ?>
+        <? include '../form/signUp.php' ?>
         <? include '../include/footer.php' ?>
         <? include '../include/script.php' ?>
     </div>
+
+    <!-- script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+    function loadHeader() {
+        const isMobile = window.innerWidth <= 768;
+        const headerPath = isMobile ? '../include/m/header.php' : '../include/header.php';
+
+        fetch(headerPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('헤더 로딩 중 오류 발생:', error);
+                // 페이지 새로고침으로 기본 헤더 로드
+                location.reload();
+            });
+    }
+
+    // 초기 로드
+    loadHeader();
+
+    // 화면 크기 변경 시 헤더 다시 로드
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(loadHeader, 250); // 디바운싱 적용
+    });
+    </script>
 </body>
 
 </html>

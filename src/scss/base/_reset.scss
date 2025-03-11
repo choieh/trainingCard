@@ -199,6 +199,10 @@ video {
     display: none;
 }
 
+pre {
+    white-space: pre-wrap;
+}
+
 .blind {
     border: 0;
     clip: rect(0 0 0 0);

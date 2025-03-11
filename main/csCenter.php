@@ -24,12 +24,24 @@
         </div>
     </div>
     <div class="csCenter__content support">
-        <div class="support__content">
-            <h2 class="support__title">학습지원센터</h2>
-            <p>모두의교육그룹 학습지원센터는 모두의교육그룹 학습자분들의 학습에 도움을 주는 센터입니다.</p>
+        <div class="support__header">
+            <h3 class="support__title">학습지원센터</h3>
         </div>
         <div class="support__content">
-            <strong class="support__title">팩스</strong>
+            <dl>
+                <dt>월-금</dt>
+                <dd>09:00 ~ 18:00</dd>
+            </dl>
+            <dl>
+                <dt>점심시간</dt>
+                <dd>12:00 ~ 13:00</dd>
+            </dl>
+            <strong>1544-6873</strong>
+        </div>
+        <div class="support__header">
+            <h3 class="support__title">팩스</h3>
+        </div>
+        <div class="support__content">
             <p>02-6008-3516</p>
         </div>
     </div>

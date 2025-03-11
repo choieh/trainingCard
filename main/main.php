@@ -1,4 +1,11 @@
 <div class="main">
+    <div class="section section--slide">
+        <div class="section__container">
+            <div class="section__content">
+                <? include './mainSlide.php' ?>
+            </div>
+        </div>
+    </div>
     <div class="section section--popular">
         <!-- 인기강의 -->
         <div class="section__container">
@@ -25,7 +32,6 @@
         </div>
     </div>
 </div>
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     // 카드 옵션 버튼 클릭 이벤트 처리

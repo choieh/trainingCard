@@ -300,6 +300,10 @@ video {
   display: none;
 }
 
+pre {
+  white-space: pre-wrap;
+}
+
 .blind {
   border: 0;
   clip: rect(0 0 0 0);
@@ -1066,6 +1070,9 @@ textarea {
   transition: transform 0.3s ease;
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
+.card__option .btn--up:active {
+  -webkit-tap-highlight-color: transparent;
+}
 .card__option--cart {
   height: 0;
   opacity: 0;
@@ -1254,7 +1261,6 @@ textarea {
       -ms-flex-align: end;
           align-items: flex-end;
   margin-bottom: 18px;
-  outline: 1px solid blue;
 }
 .csCenter .notice__header .btn--more {
   font-size: 1.125rem;
@@ -1280,11 +1286,65 @@ textarea {
   display: block;
   font-size: 1.125rem;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 32px;
   color: #000;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.csCenter .support {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-image: url("/dist/assets/images/ico_csCenter.svg");
+  background-repeat: no-repeat;
+  background-position: top 0 right 0;
+  background-size: 130px 130px;
+}
+.csCenter .support__header {
+  margin-bottom: 14px;
+}
+.csCenter .support__header:not(:first-child) {
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+.csCenter .support__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 29px;
+  color: #000;
+}
+.csCenter .support__content dl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 3px;
+}
+.csCenter .support__content dl dt,
+.csCenter .support__content dl dd {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 19px;
+  color: #000;
+}
+.csCenter .support__content strong {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 46px;
+  color: #000;
+}
+.csCenter .support__content p {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 24px;
+  color: #000;
+}
+.csCenter .support__content:not(:first-child) p {
+  margin-top: 7px;
 }
 
 .checkbox {
@@ -1669,8 +1729,11 @@ textarea {
   }
 }
 .header {
+  position: relative;
   padding-top: 44px;
   height: 151px;
+  z-index: 99999;
+  display: none;
 }
 
 .gnb {
@@ -1810,6 +1873,7 @@ textarea {
   gap: 16px;
   height: 100%;
   padding: 22px 14px;
+  background-color: #fff;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   -webkit-box-shadow: 2px 8px 4px 0 rgba(0, 0, 0, 0.25);
@@ -1838,6 +1902,7 @@ textarea {
 @media (max-width: 768px) {
   .m-header {
     height: 51px;
+    margin-bottom: 17px;
     padding: 0 16px;
   }
   .m-nav {
@@ -2028,10 +2093,6 @@ textarea {
 
 .main .section {
   margin-top: 120px;
-  outline: 1px solid burlywood;
-}
-.main .section:first-child {
-  margin-top: 100px;
 }
 .main .section:last-child {
   margin-bottom: 120px;
@@ -2060,6 +2121,13 @@ textarea {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+.main .section--slide {
+  margin-top: 0;
+  padding: 0 17px;
+}
+.main .section--popular {
+  margin-top: 100px;
 }
 .main .section--popular .section__title::before {
   background-image: url(" /dist/assets/images/ico_star.png");
@@ -2146,11 +2214,8 @@ textarea {
 }
 .main .section--csCenter .csCenter {
   display: grid;
-  grid-template-columns: minmax(767px, 1fr) minmax(402px, 1fr);
+  grid-template-columns: 767px 402px;
   gap: 71px;
-}
-.main .section--csCenter .csCenter__content {
-  outline: 1px solid red;
 }
 .main .section--csCenter .section__title {
   margin-bottom: 0;
@@ -2159,6 +2224,12 @@ textarea {
   background-image: url(" /dist/assets/images/ico_csCenter.png");
 }
 
+@media (max-width: 1240px) {
+  .main .section--csCenter .csCenter {
+    grid-template-columns: repeat(2, 48%);
+    gap: 4%;
+  }
+}
 @media (max-width: 768px) {
   .main .section--popular .section__container {
     padding: 0 17px;
@@ -2186,4 +2257,120 @@ textarea {
   .main .section--review .section__title {
     padding-left: 17px;
   }
+  .main .section--csCenter {
+    padding: 0 17px;
+  }
+  .main .section--csCenter .csCenter {
+    grid-template-columns: 100%;
+    gap: 80px;
+  }
+}
+.signUp__title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 36px;
+  color: #000;
+}
+.signUp .ci__title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 36px;
+  color: #000;
+}
+.signUp .ci__content {
+  margin-top: 9px;
+}
+.signUp__container {
+  width: 100%;
+  height: 100%;
+}
+.signUp__header .process {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 10px;
+  width: 293px;
+  margin-left: auto;
+}
+.signUp__header .process::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 19px;
+  width: 243px;
+  height: 6px;
+  background-color: #c2c2c2;
+}
+.signUp__header .process__item {
+  position: relative;
+  padding-top: 24px;
+}
+.signUp__header .process__item:before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #c2c2c2;
+}
+.signUp__header .process__item strong {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 17px;
+  color: #c2c2c2;
+}
+.signUp__header .process__item.is-active strong {
+  color: #000;
+}
+.signUp__header .process__item.is-active:before {
+  content: "";
+  top: -3px;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  -webkit-transform: none;
+          transform: none;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Ccircle cx='12' cy='12' r='6' fill='%23E00'/%3E%3Ccircle cx='12' cy='12' r='9' stroke='%23E00' stroke-width='2'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.signUp__content-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 29px;
+  color: #000;
+}
+.signUp__content-item-title {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 24px;
+  color: #000;
+}
+.signUp__content-item-text {
+  margin-top: 9px;
+}
+.signUp__footer .btn-group {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 9px;
+}
+.signUp__footer .btn:first-child {
+  width: 112px;
+  height: 54px;
+}
+.signUp__footer .btn:last-child {
+  width: 209px;
+  height: 54px;
 }
