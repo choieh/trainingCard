@@ -1,7 +1,7 @@
 <h2 class="components-title">inputGroup</h2>
 <div class="components components-inputGroup">
     <div class="inputGroup">
-        <label for="input--birth">생년월일일</label>
+        <label for="input--birth">생년월일</label>
         <input type="text" id="input--birth" class="input" placeholder="YYMMDD" maxlength="6">
         <span class="sub sub__text">(ex:241002)</span>
     </div>

@@ -64,7 +64,13 @@
             "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath fill='%23fff' stroke='%23#{$color}' stroke-linejoin='bevel' stroke-width='1.5' d='m11.5 6-5.207 4.62V18h3.8v-3.867h2.813V18h3.8v-7.38L11.5 6Z'/%3E%3Cpath stroke='%23#{$color}' stroke-linejoin='bevel' stroke-width='1.5' d='M18 11.773 11.5 6 5 11.773'/%3E%3C/svg%3E",
         // E00
         check:
-            "%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none'%3E%3Crect width='20' height='20' fill='%23#{$color}' rx='4'/%3E%3Cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' d='m16.333 5-9.166 9.167L3 10'/%3E%3C/svg%3E",
+            "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Ccircle cx='12' cy='12' r='10' fill='%23E00'/%3E%3Cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' d='m18.333 8-9.166 9.167L5 13'/%3E%3C/svg%3E",
+        // E00
+        checkBox:
+            "%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none'%3E%3Crect width='20' height='20' fill='%23E00' rx='4'/%3E%3Cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' d='m16.333 5-9.166 9.167L3 10'/%3E%3C/svg%3E",
+        // 0D3050
+        completeCheck:
+            "%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' fill='none'%3E%3Cpath fill='%23#{$color}' fill-rule='evenodd' d='M70.5 122.5a52.507 52.507 0 0 0 37.123-15.377A52.511 52.511 0 0 0 123 70a52.507 52.507 0 0 0-15.377-37.123A52.499 52.499 0 0 0 18 70a52.5 52.5 0 0 0 52.5 52.5Zm-1.353-31.267 29.166-35-8.96-7.466L64.27 78.86 51.29 65.876l-8.248 8.248 17.5 17.5 4.516 4.515 4.089-4.906Z' clip-rule='evenodd'/%3E%3C/svg%3E",
         calendar:
             "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath fill='%23#{$color}' d='M22.5 2.245h-6.005V.75a.75.75 0 1 0-1.5 0v1.495h-6V.75a.75.75 0 1 0-1.5 0v1.495H1.5a1.5 1.5 0 0 0-1.5 1.5V22.5A1.5 1.5 0 0 0 1.5 24h21a1.5 1.5 0 0 0 1.5-1.5V3.745a1.5 1.5 0 0 0-1.5-1.5Zm0 20.255h-21V3.745h5.995v.756a.75.75 0 1 0 1.5 0v-.755h6V4.5a.75.75 0 1 0 1.5 0v-.755H22.5V22.5Zm-5.25-10.502h1.5a.75.75 0 0 0 .75-.75V9.746a.75.75 0 0 0-.75-.75h-1.5a.75.75 0 0 0-.75.75v1.5c0 .415.336.75.75.75Zm0 6h1.5a.75.75 0 0 0 .75-.75v-1.5a.75.75 0 0 0-.75-.75h-1.5a.75.75 0 0 0-.75.75v1.5c0 .415.336.75.75.75Zm-4.5-3h-1.5a.75.75 0 0 0-.75.75v1.5c0 .415.336.75.75.75h1.5a.75.75 0 0 0 .75-.75v-1.5a.75.75 0 0 0-.75-.75Zm0-6.001h-1.5a.75.75 0 0 0-.75.75v1.5c0 .415.336.75.75.75h1.5a.75.75 0 0 0 .75-.75v-1.5a.75.75 0 0 0-.75-.75Zm-6 0h-1.5a.75.75 0 0 0-.75.75v1.5c0 .415.336.75.75.75h1.5a.75.75 0 0 0 .75-.75v-1.5a.75.75 0 0 0-.75-.75Zm0 6h-1.5a.75.75 0 0 0-.75.751v1.5c0 .415.336.75.75.75h1.5a.75.75 0 0 0 .75-.75v-1.5a.75.75 0 0 0-.75-.75Z'/%3E%3C/svg%3E"
     );

@@ -10,18 +10,20 @@
 </head>
 
 <body>
-    <? include 'buttons.php' ?>
-    <? include 'textArea.php' ?>
-    <? include 'selectGroup.php' ?>
-    <? include 'pagination.php' ?>
-    <? include 'inputGroup.php' ?>
-    <? include 'table.php' ?>
-    <? include 'card.php' ?>
-    <? include 'formGroup.php' ?>
-    <? include 'modal.php' ?>
-    <? include 'navigation.php' ?>
-    <? include 'tabs.php' ?>
-    <? include 'chart.php' ?>
+    <?
+        include 'buttons.php';
+        include 'textArea.php';
+        include 'selectGroup.php';
+        include 'pagination.php';
+        include 'inputGroup.php';
+        include 'table.php';
+        include 'card.php';
+        include 'formGroup.php';
+        include 'modal.php';
+        include 'navigation.php';
+        include 'tabs.php';
+        include 'chart.php';
+    ?>
 
 </body>
 

@@ -10,7 +10,7 @@
             <button class="fixed-menu__btn cart"><span class="blind">장바구니</span></button>
         </div>
     </div>
-    <div class="m-gnb ㄴ">
+    <div class="m-gnb">
         <div class="btn-group">
             <button class="btn btn--close"><span class="blind">메뉴 닫기</span></button>
         </div>

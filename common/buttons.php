@@ -1,15 +1,15 @@
 <h2 class="components-title">buttons</h2>
 <div class="components components-buttons">
     <div class="btn-group">
-        <button class="btn bd-radius--square size--m cover__all ico ico--phone">휴대폰인증하기</button>
-        <button class="btn bd-radius--square size--m cover__all ico ico--lock">아이핀인증하기</button>
+        <button class="btn bd-radius--square size--m cover__all ico ico--phone"><span>휴대폰인증하기</span></button>
+        <button class="btn bd-radius--square size--m cover__all ico ico--lock"><span>아이핀인증하기</span></button>
         <button class="btn bd-radius--square size--s cover__bg">교육과정 신청하기</button>
         <button class="btn bd-radius--square size--s cover__line">교육과정 신청하기</button>
     </div>
 
     <div class="btn-group">
         <button class="btn bd-radius--circle size--m cover__bg--red">회원가입 계속하기</button>
-        <button class="btn bd-radius--circle size--m cover__line ico ico--cart">회원가입 계속하기</button>
+        <button class="btn bd-radius--circle size--m cover__line ico ico--cart"><span>회원가입 계속하기</span></button>
     </div>
     <div class="btn-group">
         <button class="btn bd-radius--circle size--s cover__bg--red">수료증 출력</button>

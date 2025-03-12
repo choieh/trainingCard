@@ -45,7 +45,9 @@
             }
 
             &.ico {
-                padding-right: 4.625rem;
+                span {
+                    padding-right: 2.125rem;
+                }
             }
         }
     }
@@ -125,46 +127,55 @@
     }
 
     &.ico {
-        &--phone {
+        span {
+            display: block;
             @include ico-style(24px);
+        }
 
-            &::before {
-                left: 5rem;
-                transform: translateY(-50%);
-                background-image: svgIcon(phone, "E00");
+        &--phone {
+            span {
+                &::before {
+                    left: -2rem;
+                    transform: translateY(-50%);
+                    background-image: svgIcon(phone, "E00");
+                }
             }
 
             &:hover {
-                &::before {
-                    background-image: svgIcon(phone, "fff");
+                span {
+                    &::before {
+                        background-image: svgIcon(phone, "fff");
+                    }
                 }
             }
         }
 
         &--lock {
-            @include ico-style(24px);
-
-            &::before {
-                left: 5rem;
-                transform: translateY(-50%);
-                background-image: svgIcon(lock02, E00);
+            span {
+                &::before {
+                    left: -2rem;
+                    transform: translateY(-50%);
+                    background-image: svgIcon(lock02, E00);
+                }
             }
 
             &:hover {
-                &::before {
-                    background-image: svgIcon(lock02, "fff");
+                span {
+                    &::before {
+                        background-image: svgIcon(lock02, "fff");
+                    }
                 }
             }
         }
 
         &--cart {
-            @include ico-style(24px);
-
-            &::before {
-                left: auto;
-                right: 2.5rem;
-                transform: translateY(-50%);
-                background-image: svgIcon(cart, "E00");
+            span {
+                &::before {
+                    left: auto;
+                    right: 0;
+                    transform: translateY(-50%);
+                    background-image: svgIcon(cart, "E00");
+                }
             }
         }
 

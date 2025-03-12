@@ -12,11 +12,13 @@
         <div id="header-container"></div>
 
         <? 
-        // include './main.php'
+            // include './main.php'
+            // include '../form/signUp_terms.php' 
+            // include '../form/signUp_userInfo.php';
+            include '../form/signUp_complete.php';
+            include '../include/footer.php';
+            include '../include/script.php';
         ?>
-        <? include '../form/signUp.php' ?>
-        <? include '../include/footer.php' ?>
-        <? include '../include/script.php' ?>
     </div>
 
     <!-- script -->
