@@ -8,6 +8,11 @@
     height: 549px;
     border-radius: 10px;
     border: 1px solid $gray-03;
+    @include common-boxShadow-style(
+        10px,
+        $white,
+        0px 4px 10px 0px rgba(0, 0, 0, 0.25)
+    );
 
     &__thumbnail {
         width: 100%;

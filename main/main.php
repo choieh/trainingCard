@@ -32,20 +32,3 @@
         </div>
     </div>
 </div>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // 카드 옵션 버튼 클릭 이벤트 처리
-    const cards = document.querySelectorAll('.card');
-
-    cards.forEach(card => {
-        const optionBtn = card.querySelector('.btn--up');
-        const optionArea = card.querySelector('.card__option');
-        const cartArea = card.querySelector('.card__option--cart');
-
-        optionBtn.addEventListener('click', () => {
-            optionArea.classList.toggle('is-active');
-            cartArea.classList.toggle('is-active');
-        });
-    });
-});
-</script>

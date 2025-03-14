@@ -17,7 +17,8 @@
                 // include '../form/signUp_terms.php'
                 // include '../form/signUp_userInfo.php';
                 // include '../form/signUp_complete.php';
-                include '../form/login.php';
+                // include '../form/login.php';
+                include '../lecture/index.php';
             ?>
         </div>
         <div class="footer-container">
