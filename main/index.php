@@ -11,14 +11,18 @@
     <div id="layout">
         <div id="header-container"></div>
 
-        <? 
-            // include './main.php'
-            // include '../form/signUp_terms.php' 
-            // include '../form/signUp_userInfo.php';
-            include '../form/signUp_complete.php';
-            include '../include/footer.php';
-            include '../include/script.php';
-        ?>
+        <div class="main-container">
+            <?
+                // include './main.php'
+                // include '../form/signUp_terms.php'
+                // include '../form/signUp_userInfo.php';
+                // include '../form/signUp_complete.php';
+                include '../form/login.php';
+            ?>
+        </div>
+        <div class="footer-container">
+            <? include '../include/footer.php' ?>
+        </div>
     </div>
 
     <!-- script -->

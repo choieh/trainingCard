@@ -1,0 +1,171 @@
+@use "../abstracts/index" as *;
+
+.login {
+    padding-top: 123px;
+
+    &__container {
+        width: 330px;
+        margin: 0 auto;
+    }
+
+    &__title {
+        @include font-style($font-size-30, $font-weight-semibold, 36px);
+        color: $black;
+        text-align: center;
+    }
+
+    &__desc {
+        margin-top: 8px;
+        @include font-style($font-size-16, $font-weight-thin, 19px);
+        color: $black;
+        text-align: center;
+    }
+
+    &__content {
+        margin-top: 33px;
+
+        &-item {
+            margin-top: 8px;
+
+            .btn {
+                width: 100%;
+            }
+
+            &:last-child {
+                margin-top: 49px;
+            }
+
+            .inputGroup {
+                position: relative;
+
+                & + .inputGroup {
+                    margin-top: 8px;
+                }
+
+                &:has(#input--id) {
+                    &::before {
+                        display: none;
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        right: 8px;
+                        transform: translateY(-50%);
+                        width: 24px;
+                        height: 24px;
+                        background-image: svgIcon("notice", "E00");
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: contain;
+                        z-index: 1;
+                    }
+                }
+
+                &.has-value {
+                    &:has(#input--id) {
+                        &::before {
+                            background-image: svgIcon("notice", "c2c2c2");
+                        }
+                    }
+
+                    &:has(#input--pwd) {
+                        .btn-pwd-view:not(.is-hide) {
+                            background-image: svgIcon("pwdView", "c2c2c2");
+                        }
+                    }
+
+                    .input {
+                        &[id="input--id"] {
+                            background-image: svgIcon("people", "c2c2c2");
+                        }
+
+                        &[id="input--pwd"] {
+                            background-image: svgIcon("lock01", "c2c2c2");
+                        }
+                    }
+                }
+
+                &:has(#input--pwd) {
+                    padding-bottom: 28px;
+
+                    .btn-pwd-view {
+                        position: absolute;
+                        top: 12px;
+                        right: 8px;
+                        width: 24px;
+                        height: 24px;
+                        background-image: svgIcon("pwdView", "eae8e8");
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: contain;
+                        border: 0;
+                        cursor: pointer;
+                        z-index: 1;
+
+                        &.is-hide {
+                            background-image: svgIcon("pwdView-hide", "c2c2c2");
+                        }
+                    }
+
+                    .error--text {
+                        display: none;
+                        position: absolute;
+                        bottom: 0;
+                        left: 8px;
+                        @include font-style(
+                            $font-size-16,
+                            $font-weight-regular,
+                            30px
+                        );
+                        color: $red-01;
+                    }
+                }
+
+                .input {
+                    height: 48px;
+                    padding: 12px 42px;
+                    border: 1px solid $gray-03;
+                    background-repeat: no-repeat;
+                    background-position: 8px 12px;
+                    background-size: 24px;
+                    outline-color: $gray-02;
+
+                    &[id="input--id"] {
+                        background-image: svgIcon("people", "eae8e8");
+
+                        &:focus {
+                            background-image: svgIcon("people", "c2c2c2");
+                        }
+                    }
+
+                    &[id="input--pwd"] {
+                        background-image: svgIcon("lock01", "eae8e8");
+
+                        &:focus {
+                            background-image: svgIcon("lock01", "c2c2c2");
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #form {
+        &--login {
+            &.is-error {
+                .inputGroup {
+                    &:has(#input--id) {
+                        &::before {
+                            display: block;
+                        }
+                    }
+
+                    &:has(#input--pwd) {
+                        .error--text {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
