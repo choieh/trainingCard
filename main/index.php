@@ -10,17 +10,15 @@
 <body>
     <div id="layout">
         <div id="header-container"></div>
-
-        <div class="main-container">
-            <?
-                // include './main.php'
-                // include '../form/signUp_terms.php'
-                // include '../form/signUp_userInfo.php';
-                // include '../form/signUp_complete.php';
-                // include '../form/login.php';
-                include '../lecture/index.php';
-            ?>
-        </div>
+        <?
+            // include './mainContainer.php'
+            // include '../form/join_terms.php'
+            // include '../form/join_userInfo.php';
+            // include '../form/join_complete.php';
+            // include '../form/login.php';
+            include '../lecture/index.php';
+            // include '../lecture/lectureDetail.php';
+        ?>
         <div class="footer-container">
             <? include '../include/footer.php' ?>
         </div>

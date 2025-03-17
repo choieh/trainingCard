@@ -2,8 +2,10 @@
     min-width: 1240px;
 }
 
-.main-container {
+.layout__container {
+    max-width: 1240px;
     min-height: 943px;
+    margin: 0 auto;
 }
 
 .logo {

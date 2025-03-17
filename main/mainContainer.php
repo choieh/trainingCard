@@ -1,4 +1,4 @@
-<div class="main">
+<div class="layout__container layout__container--main">
     <div class="section section--slide">
         <div class="section__container">
             <div class="section__content">

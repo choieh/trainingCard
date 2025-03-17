@@ -1,24 +1,24 @@
-<div class="signUp">
-    <div class="signUp__container signUp__container--terms">
-        <div class="signUp__header">
-            <h2 class="signUp__title">회원가입</h2>
-            <!-- [D] 프로세스 아이콘 : 진행중(is-active), 완료(is-done) 클래스 추가 -->
-            <div class="process">
-                <div class="process__item is-active">
-                    <strong>약관동의<br>본인인증</strong>
-                </div>
-                <div class="process__item">
-                    <strong>정보입력</strong>
-                </div>
-                <div class="process__item">
-                    <strong>가입완료</strong>
-                </div>
+<div class="layout__container layout__container--join">
+    <div class="join__header">
+        <h2 class="join__header--title">회원가입</h2>
+        <!-- [D] 프로세스 아이콘 : 진행중(is-active), 완료(is-done) 클래스 추가 -->
+        <div class="process">
+            <div class="process__item is-active">
+                <strong>약관동의<br>본인인증</strong>
+            </div>
+            <div class="process__item">
+                <strong>정보입력</strong>
+            </div>
+            <div class="process__item">
+                <strong>가입완료</strong>
             </div>
         </div>
-        <form id="form--signUp" class="form">
-            <div class="signUp__content">
+    </div>
+    <div class="join__body terms">
+        <form id="form--terms" class="form">
+            <div class="terms__header">
+                <h3 class="terms__header--title">약관동의</h3>
                 <div class="agree agree--all">
-                    <h3 class="signUp__content-title">약관동의</h3>
                     <div class="checkbox">
                         <input type="checkbox" id="checkbox-0">
                         <label for="checkbox-0">
@@ -27,9 +27,11 @@
                         </label>
                     </div>
                 </div>
-                <div class="signUp__content-item">
-                    <strong class="signUp__content-item-title">이용약관</strong>
-                    <div class="signUp__content-item-text">
+            </div>
+            <div class="terms__body">
+                <div class="terms__item">
+                    <strong class="terms__item--title">이용약관</strong>
+                    <div class="terms__item--desc">
                         <? include '../form/include/terms.php' ?>
                     </div>
                     <div class="agree">
@@ -42,9 +44,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="signUp__content-item">
-                    <strong class="signUp__content-item-title">개인정보보호정책</strong>
-                    <div class="signUp__content-item-text">
+                <div class="terms__item">
+                    <strong class="terms__item--title">개인정보보호정책</strong>
+                    <div class="terms__item--desc">
                         <? include '../form/include/policy.php' ?>
                     </div>
                     <div class="agree">
@@ -57,9 +59,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="signUp__content-item">
-                    <strong class="signUp__content-item-title">수강확인 문자 발송(ASC) [필수]</strong>
-                    <div class="signUp__content-item-text">
+                <div class="terms__item">
+                    <strong class="terms__item--title">수강확인 문자 발송(ASC) [필수]</strong>
+                    <div class="terms__item--desc">
                         <? include '../form/include/asc.php' ?>
                     </div>
                     <div class="agree">
@@ -84,7 +86,7 @@
                     </div>
                 </div>
             </div>
-            <div class="signUp__footer">
+            <div class="terms__footer">
                 <div class="btn-group">
                     <button class="btn bd-radius--circle size--s cover__bg--gray" type="reset">취소</button>
                     <button class="btn bd-radius--circle size--s cover__bg--red" type="submit" name="signUp">회원가입

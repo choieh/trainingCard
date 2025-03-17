@@ -1,24 +1,26 @@
-<div class="signUp">
-    <div class="signUp__container signUp__container--userInfo">
-        <div class="signUp__header">
-            <h2 class="signUp__title">회원가입</h2>
-            <!-- [D] 프로세스 아이콘 : 진행중(is-active), 완료(is-done) 클래스 추가 -->
-            <div class="process">
-                <div class="process__item is-done">
-                    <strong>약관동의<br>본인인증</strong>
-                </div>
-                <div class="process__item is-active">
-                    <strong>정보입력</strong>
-                </div>
-                <div class="process__item">
-                    <strong>가입완료</strong>
-                </div>
+<div class="layout__container layout__container--join">
+    <div class="join__header">
+        <h2 class="join__header--title">회원가입</h2>
+        <!-- [D] 프로세스 아이콘 : 진행중(is-active), 완료(is-done) 클래스 추가 -->
+        <div class="process">
+            <div class="process__item is-done">
+                <strong>약관동의<br>본인인증</strong>
+            </div>
+            <div class="process__item is-active">
+                <strong>정보입력</strong>
+            </div>
+            <div class="process__item">
+                <strong>가입완료</strong>
             </div>
         </div>
+    </div>
+    <div class="join__body userInfo">
         <form id="form--userInfo" class="form">
-            <h3 class="signUp__content-title">정보입력</h3>
-            <div class="userInfo__content">
-                <div class="userInfo__content-item">
+            <div class="userInfo__header">
+                <h3 class="userInfo__header--title">정보입력</h3>
+            </div>
+            <div class="userInfo__body">
+                <div class="userInfo__item">
                     <div class="inputGroup">
                         <label for="input--userId">아이디</label>
                         <div class="btn-group">
@@ -26,15 +28,14 @@
                             <button class="btn bd-radius--circle size--s cover__bg--navy" type="button">중복확인</button>
                         </div>
                     </div>
-
                 </div>
-                <div class="userInfo__content-item">
+                <div class="userInfo__item">
                     <div class="inputGroup">
                         <label for="input--userName">이름</label>
                         <span id="input--userName">이지수</span>
                     </div>
                 </div>
-                <div class="userInfo__content-item">
+                <div class="userInfo__item">
                     <div class="inputGroup">
                         <label for="input--birth">생년월일</label>
                         <div class="input-wrap">
@@ -43,7 +44,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="userInfo__content-item">
+                <div class="userInfo__item">
                     <div class="inputGroup">
                         <label for="input--phone">휴대전화</label>
                         <div id="input--phone">
@@ -55,13 +56,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="userInfo__content-item">
+                <div class="userInfo__item">
                     <div class="inputGroup">
                         <label for="input--email">이메일</label>
                         <input type="text" id="input--email" class="input" placeholder="이메일">
                     </div>
                 </div>
-                <div class="userInfo__content-item">
+                <div class="userInfo__item">
                     <div class="inputGroup">
                         <label for="input--address">주소</label>
                         <div id="input--address">
@@ -75,7 +76,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="userInfo__content-item">
+                <div class="userInfo__item">
                     <div class="inputGroup">
                         <label for="input--pwd">비밀번호변경</label>
                         <div id="input--pwd">
@@ -84,7 +85,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="userInfo__content-item">
+                <div class="userInfo__item">
                     <label for="marketing-info01" class="input--radio-toggle">정보수신</label>
                     <div id="marketing-info01" class="radio__toggle-wrap">
                         <div class="radio__toggle">
@@ -103,7 +104,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="userInfo__content-item">
+                <div class="userInfo__item">
                     <label for="marketing-info02" class="input--radio-toggle">마케팅수신동의</label>
                     <div id="marketing-info02" class="radio__toggle-wrap">
                         <div class="radio__toggle">
