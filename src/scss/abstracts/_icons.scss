@@ -54,7 +54,7 @@
             "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath fill='%23E00' d='m19 17.95-7-5-7 5V15.5l7-5 7 5v2.45ZM19 12l-7-5-7 5V9.55l7-5 7 5V12Z'/%3E%3C/svg%3E",
         // AEAEAE
         arrowRight:
-            "%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='8' fill='none'%3E%3Cpath stroke='%23#{$color}' d='M1 .5 5 4 1 7.5'/%3E%3C/svg%3E",
+            "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath fill='%23#{$color}' d='M8 7.06 9.06 6l5.78 5.777a.997.997 0 0 1 0 1.413l-5.78 5.78L8 17.91l5.425-5.425L8 7.06Z'/%3E%3C/svg%3E",
         // c2c2c2
         lock01:
             "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 10H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-2m-8 0V7a4 4 0 0 1 8 0v3m-8 0h8m-4 4v3'/%3E%3C/svg%3E",
@@ -69,14 +69,16 @@
             "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Ccircle cx='12' cy='12' r='10' fill='%23E00'/%3E%3Cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' d='m18.333 8-9.166 9.167L5 13'/%3E%3C/svg%3E",
         // E00
         checkBox:
-            "%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none'%3E%3Crect width='20' height='20' fill='%23E00' rx='4'/%3E%3Cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' d='m16.333 5-9.166 9.167L3 10'/%3E%3C/svg%3E",
+            "%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none'%3E%3Crect width='20' height='20' fill='%23#{$color}' rx='4'/%3E%3Cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' d='m16.333 5-9.166 9.167L3 10'/%3E%3C/svg%3E",
         // 0D3050
         completeCheck:
             "%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' fill='none'%3E%3Cpath fill='%23#{$color}' fill-rule='evenodd' d='M70.5 122.5a52.507 52.507 0 0 0 37.123-15.377A52.511 52.511 0 0 0 123 70a52.507 52.507 0 0 0-15.377-37.123A52.499 52.499 0 0 0 18 70a52.5 52.5 0 0 0 52.5 52.5Zm-1.353-31.267 29.166-35-8.96-7.466L64.27 78.86 51.29 65.876l-8.248 8.248 17.5 17.5 4.516 4.515 4.089-4.906Z' clip-rule='evenodd'/%3E%3C/svg%3E",
         calendar:
             "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath fill='%23#{$color}' d='M22.5 2.245h-6.005V.75a.75.75 0 1 0-1.5 0v1.495h-6V.75a.75.75 0 1 0-1.5 0v1.495H1.5a1.5 1.5 0 0 0-1.5 1.5V22.5A1.5 1.5 0 0 0 1.5 24h21a1.5 1.5 0 0 0 1.5-1.5V3.745a1.5 1.5 0 0 0-1.5-1.5Zm0 20.255h-21V3.745h5.995v.756a.75.75 0 1 0 1.5 0v-.755h6V4.5a.75.75 0 1 0 1.5 0v-.755H22.5V22.5Zm-5.25-10.502h1.5a.75.75 0 0 0 .75-.75V9.746a.75.75 0 0 0-.75-.75h-1.5a.75.75 0 0 0-.75.75v1.5c0 .415.336.75.75.75Zm0 6h1.5a.75.75 0 0 0 .75-.75v-1.5a.75.75 0 0 0-.75-.75h-1.5a.75.75 0 0 0-.75.75v1.5c0 .415.336.75.75.75Zm-4.5-3h-1.5a.75.75 0 0 0-.75.75v1.5c0 .415.336.75.75.75h1.5a.75.75 0 0 0 .75-.75v-1.5a.75.75 0 0 0-.75-.75Zm0-6.001h-1.5a.75.75 0 0 0-.75.75v1.5c0 .415.336.75.75.75h1.5a.75.75 0 0 0 .75-.75v-1.5a.75.75 0 0 0-.75-.75Zm-6 0h-1.5a.75.75 0 0 0-.75.75v1.5c0 .415.336.75.75.75h1.5a.75.75 0 0 0 .75-.75v-1.5a.75.75 0 0 0-.75-.75Zm0 6h-1.5a.75.75 0 0 0-.75.751v1.5c0 .415.336.75.75.75h1.5a.75.75 0 0 0 .75-.75v-1.5a.75.75 0 0 0-.75-.75Z'/%3E%3C/svg%3E",
         search:
-            "%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none'%3E%3Cpath fill='%23#{$color}' d='m17.704 16.29-3.953-3.955a7.667 7.667 0 1 0-1.415 1.415l3.956 3.957a.999.999 0 0 0 1.632-.325 1 1 0 0 0-.217-1.09l-.003-.003ZM2.014 7.674a5.66 5.66 0 1 1 11.32 0 5.66 5.66 0 0 1-11.32 0Z'/%3E%3C/svg%3E"
+            "%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none'%3E%3Cpath fill='%23#{$color}' d='m17.704 16.29-3.953-3.955a7.667 7.667 0 1 0-1.415 1.415l3.956 3.957a.999.999 0 0 0 1.632-.325 1 1 0 0 0-.217-1.09l-.003-.003ZM2.014 7.674a5.66 5.66 0 1 1 11.32 0 5.66 5.66 0 0 1-11.32 0Z'/%3E%3C/svg%3E",
+        trash:
+            "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m18.625 8.5-.91 9.098c-.138 1.379-.206 2.068-.52 2.589-.276.459-.68.825-1.165 1.054-.549.259-1.24.259-2.627.259h-2.556c-1.386 0-2.078 0-2.627-.26a2.708 2.708 0 0 1-1.166-1.054c-.312-.52-.381-1.21-.52-2.588L5.625 8.5m8.125 7.042v-5.417m-3.25 5.417v-5.417M4 5.792h5m0 0 .418-2.895C9.539 2.371 9.977 2 10.479 2h3.292c.502 0 .939.37 1.061.897l.418 2.895m-6.25 0h6.25m0 0h5'/%3E%3C/svg%3E"
     );
 
     $iconData: map-get($iconList, $iconName);

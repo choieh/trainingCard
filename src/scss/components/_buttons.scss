@@ -128,7 +128,7 @@
 
     &.ico {
         span {
-            display: block;
+            display: inline-block;
             @include ico-style(24px);
         }
 

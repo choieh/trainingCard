@@ -62,10 +62,18 @@ document.addEventListener('DOMContentLoaded', function() {
         const optionArea = card.querySelector('.card__option');
         const cartArea = card.querySelector('.card__option--cart');
 
-        optionBtn.addEventListener('click', () => {
-            optionArea.classList.toggle('is-active');
-            cartArea.classList.toggle('is-active');
-        });
+        // 이벤트 리스너 개선
+        if (optionBtn) {
+            optionBtn.addEventListener('click', function(e) {
+                e.preventDefault(); // 기본 동작 방지
+                e.stopPropagation(); // 이벤트 버블링 방지
+
+                if (optionArea) optionArea.classList.toggle('is-active');
+                if (cartArea) cartArea.classList.toggle('is-active');
+
+                return false; // 이벤트 전파 중지
+            });
+        }
     });
 });
 </script>

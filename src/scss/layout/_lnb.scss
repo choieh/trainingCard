@@ -1,0 +1,44 @@
+@use "../abstracts/index" as *;
+
+.lnb {
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &__item {
+        &.is-active {
+            .lnb__link {
+                color: $red-01;
+                font-weight: $font-weight-semibold;
+
+                &::before {
+                    background-image: svgIcon(arrowRight, "E00");
+                }
+            }
+        }
+    }
+
+    &__link {
+        position: relative;
+        display: block;
+        padding-left: 27px;
+        @include font-style($font-size-18, $font-weight-regular, 25px);
+        color: $black;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            background-image: svgIcon(arrowRight, "000");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+}

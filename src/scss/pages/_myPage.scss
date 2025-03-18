@@ -1,0 +1,39 @@
+@use "../abstracts/index" as *;
+
+.myPage {
+    .lnb {
+        flex-shrink: 0;
+        padding-top: 8px;
+    }
+
+    .userInfo {
+        width: 100%;
+        padding-top: 44px;
+        border-top: 1px solid $gray-02;
+
+        &__header {
+            + .userInfo__body {
+                margin-top: 0;
+            }
+        }
+
+        .btn {
+            &-group:has(.btn--drop) {
+                justify-content: flex-end;
+            }
+
+            &--drop {
+                @include font-style($font-size-16, $font-weight-regular, 24px);
+                color: $gray-01;
+            }
+        }
+    }
+
+    .layout {
+        &__body {
+            position: relative;
+            display: flex;
+            gap: 11%;
+        }
+    }
+}

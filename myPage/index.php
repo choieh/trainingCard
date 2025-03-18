@@ -1,34 +1,26 @@
 <div class="layout__container">
-    <div class="join">
+    <div class="myPage">
         <div class="layout__header">
-            <h2 class="layout__header--title">회원가입</h2>
-            <!-- [D] 프로세스 아이콘 : 진행중(is-active), 완료(is-done) 클래스 추가 -->
-            <div class="process">
-                <div class="process__item is-done">
-                    <strong>약관동의<br>본인인증</strong>
-                </div>
-                <div class="process__item is-active">
-                    <strong>정보입력</strong>
-                </div>
-                <div class="process__item">
-                    <strong>가입완료</strong>
-                </div>
+            <div class="header__top">
+                <? include '../common/containerDepth.php' ?>
+                <h2 class="layout__header--title">마이페이지</h2>
             </div>
         </div>
         <div class="layout__body">
+            <? include 'include/lnb.php' ?>
             <div class="userInfo">
+                <div class="btn-group">
+                    <button type="button" class="btn btn--drop">회원탈퇴</button>
+                </div>
                 <form id="form--userInfo" class="form">
-                    <div class="userInfo__header">
-                        <h3 class="userInfo__header--title">정보입력</h3>
+                    <div class="userInfo__header blind">
+                        <h3 class="userInfo__header--title blind">정보입력</h3>
                     </div>
                     <div class="userInfo__body">
                         <div class="userInfo__item">
-                            <!-- [D] inputGroup 입력 불가능 : is-disabled 클래스 추가 및 input에 disabled 속성 추가 -->
-                            <div class="inputGroup is-disabled">
+                            <div class="inputGroup">
                                 <label for="input--userId">아이디</label>
-                                <div class="input-box">
-                                    <input type="text" id="input--userId" class="input" placeholder="아이디" disabled>
-                                </div>
+                                <span id="input--userId">00004569</span>
                             </div>
                         </div>
                         <div class="userInfo__item">
@@ -126,7 +118,7 @@
                     <div class="userInfo__footer">
                         <div class="btn-group">
                             <button class="btn bd-radius--circle size--s cover__bg--red" type="submit"
-                                name="userInfo">가입하기</button>
+                                name="userInfo">저장</button>
                         </div>
                     </div>
                 </form>
