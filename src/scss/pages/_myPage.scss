@@ -27,6 +27,32 @@
                 color: $gray-01;
             }
         }
+
+        &__body {
+            .input {
+                color: rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        &__footer {
+            .btn {
+                width: 114px;
+                height: 54px;
+                @include font-style($font-size-18, $font-weight-bold, 30px);
+
+                &-group {
+                    justify-content: flex-end;
+                }
+            }
+        }
+    }
+
+    .order-detail {
+        .layout {
+            &__body {
+                flex-direction: column;
+            }
+        }
     }
 
     .layout {
@@ -34,6 +60,46 @@
             position: relative;
             display: flex;
             gap: 11%;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .myPage {
+        padding: 0 0 243px;
+
+        &:has(.purchase-history) {
+            .layout {
+                &__header {
+                    padding: 0 16px;
+                }
+
+                &__body {
+                    .lnb {
+                        padding: 0 16px;
+                    }
+                }
+            }
+
+            .purchase-history {
+                .purchase-history__list {
+                    padding: 0 16px;
+                }
+            }
+        }
+
+        .lnb {
+            margin-bottom: 40px;
+        }
+
+        .userInfo {
+            padding-top: 27px;
+        }
+
+        .layout {
+            &__body {
+                flex-direction: column;
+            }
         }
     }
 }

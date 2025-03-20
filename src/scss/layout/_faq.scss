@@ -1,0 +1,92 @@
+@use "../abstracts/index" as *;
+
+.faq {
+    &__title {
+        &-btn {
+            display: block;
+            width: 100%;
+            padding: 7px 6px 8px;
+            @include font-style($font-size-18, $font-weight-regular, 25px);
+            color: $black;
+            text-align: left;
+        }
+
+        strong {
+            color: $red-01;
+            font-weight: 400;
+        }
+    }
+
+    &__item {
+        position: relative;
+        border-bottom: 1px solid #f5f5f5;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 12px;
+            right: 10px;
+            width: 16px;
+            height: 16px;
+            background-image: svgIcon(arrowDown, "7a7a7a");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        &.is-active {
+            &:before {
+                transform: rotate(180deg);
+            }
+        }
+
+        &:last-child {
+            border-bottom: 1px solid $gray-02;
+        }
+    }
+
+    &__content {
+        padding: 12px 20px;
+        background-color: #f7f6f6;
+
+        pre {
+            @include font-style($font-size-16, $font-weight-regular, 24px);
+            font-family: $font-family-title;
+            color: #7c7c7c;
+        }
+    }
+
+    .category {
+        & + .faq__list {
+            margin-top: 28px;
+        }
+
+        &__title {
+            @include font-style($font-size-20, $font-weight-bold, 27px);
+            color: $black;
+        }
+
+        &__list {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        &__item {
+            &.is-active {
+                .category__link {
+                    color: $navy-01;
+                    border-color: $navy-01;
+                }
+            }
+        }
+
+        &__link {
+            display: block;
+            padding: 3px 18px;
+            border-radius: 50px;
+            border: 1px solid $gray-02;
+            @include font-style($font-size-16, $font-weight-bold, 30px);
+        }
+    }
+}

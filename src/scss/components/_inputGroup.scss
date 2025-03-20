@@ -21,6 +21,8 @@
 
         &[for="input--period"] {
             width: 43px;
+            font-size: #{$font-size-14}px;
+            font-weight: $font-weight-bold;
         }
     }
 

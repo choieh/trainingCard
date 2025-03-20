@@ -271,8 +271,10 @@
     }
 
     &-list {
+        overflow: hidden;
         display: flex;
         align-items: center;
+        background-color: $white;
         border: 1px solid $gray-02;
         border-radius: 4px;
 

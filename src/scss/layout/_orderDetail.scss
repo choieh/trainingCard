@@ -1,0 +1,337 @@
+@use "../abstracts/index" as *;
+
+.order-detail {
+    width: 100%;
+
+    .order {
+        &__title {
+            @include font-style($font-size-16, $font-weight-bold, 38px);
+            color: $black;
+        }
+
+        &__desc {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 16px;
+
+            p {
+                max-width: 796px;
+                @include font-style($font-size-14, $font-weight-regular, 17px);
+                color: $black;
+            }
+        }
+
+        &__state {
+            flex-shrink: 0;
+            @include font-style($font-size-14, $font-weight-bold, 17px);
+            color: $navy-01;
+        }
+
+        &__textbook {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 16px;
+
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .inner-box {
+                    display: flex;
+                    gap: 40px;
+                }
+
+                p {
+                    width: 444px;
+                    @include font-style(
+                        $font-size-14,
+                        $font-weight-regular,
+                        17px
+                    );
+                    color: $black;
+                }
+
+                .order {
+                    display: flex;
+                    gap: 40px;
+
+                    dt {
+                        @include font-style(
+                            $font-size-14,
+                            $font-weight-bold,
+                            17px
+                        );
+                        color: $black;
+                    }
+
+                    dd {
+                        @include font-style(
+                            $font-size-14,
+                            $font-weight-regular,
+                            17px
+                        );
+                    }
+
+                    &__shipping {
+                        strong {
+                            display: inline-block;
+                            margin-right: 4px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__price {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 16px;
+
+            dt {
+                @include font-style($font-size-14, $font-weight-bold, 17px);
+                color: $black;
+            }
+
+            dd {
+                @include font-style($font-size-14, $font-weight-regular, 17px);
+                color: $black;
+            }
+
+            .inner-box {
+                display: flex;
+                gap: 16px;
+            }
+        }
+
+        &__delivery {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            address {
+                margin-top: 4px;
+
+                .info {
+                    font-style: normal;
+                }
+            }
+
+            .inner-box {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+
+                h4 {
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+    &__item {
+        padding: 23px 0;
+        border-top: 1px solid $gray-05;
+
+        &:first-child {
+            display: flex;
+            gap: 26px;
+            padding: 14px 0;
+            border-top: 1px solid $gray-01;
+
+            .order {
+                display: flex;
+                gap: 9px;
+
+                dt {
+                    @include font-style($font-size-14, $font-weight-bold, 17px);
+                    color: $black;
+                }
+
+                dd {
+                    @include font-style(
+                        $font-size-14,
+                        $font-weight-regular,
+                        17px
+                    );
+                    color: $black;
+                }
+            }
+        }
+
+        &:has(.order__textbook) {
+            position: relative;
+
+            .btn {
+                &-group {
+                    position: absolute;
+                    top: 23px;
+                    right: 0;
+                    width: 102px;
+                    height: 38px;
+                }
+
+                &--shipping {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    @include font-style($font-size-14, $font-weight-bold, 38px);
+                    color: $gray-01;
+                    text-align: center;
+                }
+            }
+        }
+
+        &:has(.order__price) {
+            position: relative;
+
+            .btn {
+                &-group {
+                    position: absolute;
+                    top: 23px;
+                    right: 0;
+                }
+            }
+        }
+
+        &:has(.order__delivery) {
+            position: relative;
+
+            .btn {
+                &-group {
+                    position: absolute;
+                    top: 23px;
+                    right: 0;
+                    width: 102px;
+                    height: 38px;
+                }
+
+                &--modify {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    @include font-style($font-size-14, $font-weight-bold, 38px);
+                    color: $gray-01;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .layout {
+        &__header {
+            &--title {
+                position: relative;
+                margin-bottom: 13px;
+                padding-left: 24px;
+                @include font-style($font-size-24, $font-weight-bold, 29px);
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                    width: 24px;
+                    height: 24px;
+                    background-image: svgIcon("arrowLeft", "000");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .order-detail {
+        &__item {
+            &:has(.order__price) {
+                .btn {
+                    &-group {
+                        position: static;
+                        margin-top: 16px;
+                    }
+                }
+            }
+        }
+
+        .order {
+            &__desc {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            &__textbook {
+                li {
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                    .inner-box {
+                        flex-direction: column;
+                        gap: 8px;
+                        margin-top: 8px;
+                    }
+
+                    p {
+                        width: 100%;
+                    }
+                }
+            }
+
+            &__price {
+                margin-top: 5px;
+
+                .inner-box {
+                    gap: 8px;
+                }
+            }
+
+            // &__delivery {
+            //     display: flex;
+            //     flex-direction: column;
+            //     gap: 10px;
+
+            //     address {
+            //         display: flex;
+            //         margin-top: 4px;
+
+            //         p {
+            //             position: relative;
+            //             margin-right: 5px;
+            //             padding-left: 10px;
+            //             font-style: normal;
+
+            //             &::before {
+            //                 content: "/";
+            //                 position: absolute;
+            //                 top: 50%;
+            //                 left: 0;
+            //                 transform: translateY(-50%);
+            //             }
+
+            //             &:first-child {
+            //                 padding: 0;
+
+            //                 &::before {
+            //                     content: "";
+            //                 }
+            //             }
+            //         }
+            //     }
+
+            //     .inner-box {
+            //         display: flex;
+            //         align-items: center;
+            //         gap: 16px;
+
+            //         h4 {
+            //             line-height: 24px;
+            //         }
+            //     }
+            // }
+        }
+    }
+}
