@@ -101,27 +101,3 @@
         </div>
     </div>
 </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // 모든 체크박스 요소 선택
-    const allCheckbox = document.getElementById('checkbox-0');
-    const otherCheckboxes = document.querySelectorAll('#checkbox-1, #checkbox-2, #checkbox-3');
-
-    // '모두 동의' 체크박스 이벤트
-    allCheckbox.addEventListener('change', function() {
-        const isChecked = this.checked;
-        otherCheckboxes.forEach(checkbox => {
-            checkbox.checked = isChecked;
-        });
-    });
-
-    // 개별 체크박스들의 변경 감지
-    otherCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', function() {
-            const allChecked = Array.from(otherCheckboxes).every(cb => cb.checked);
-            allCheckbox.checked = allChecked;
-        });
-    });
-});
-</script>

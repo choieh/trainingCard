@@ -37,36 +37,3 @@
         </form>
     </div>
 </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const idInput = document.getElementById('input--id');
-    const pwdInput = document.getElementById('input--pwd');
-    const pwdViewBtn = document.querySelector('.btn-pwd-view');
-
-    // 비밀번호 보기/숨기기 기능
-    pwdViewBtn.addEventListener('click', () => {
-        const isPwdVisible = pwdInput.type === 'text';
-        pwdInput.type = isPwdVisible ? 'password' : 'text';
-        pwdViewBtn.classList.toggle('is-hide');
-    });
-
-    // 입력 필드에 값이 있는지 확인하는 함수
-    const checkInputValue = (input) => {
-        const inputGroup = input.closest('.inputGroup');
-        if (input.value.trim() !== '') {
-            inputGroup.classList.add('has-value');
-        } else {
-            inputGroup.classList.remove('has-value');
-        }
-    };
-
-    // 초기 로드 시 확인
-    checkInputValue(idInput);
-    checkInputValue(pwdInput);
-
-    // 입력 이벤트 리스너 추가
-    idInput.addEventListener('input', () => checkInputValue(idInput));
-    pwdInput.addEventListener('input', () => checkInputValue(pwdInput));
-});
-</script>

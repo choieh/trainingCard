@@ -291,8 +291,11 @@
                 height: 100%;
                 @include font-style($font-size-14, $font-weight-regular);
                 color: $black;
+            }
 
-                &:hover {
+            &:hover,
+            &.is-active {
+                .btn {
                     background-color: $gray-03;
                 }
             }

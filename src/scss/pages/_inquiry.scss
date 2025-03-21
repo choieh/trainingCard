@@ -1,0 +1,26 @@
+@use "../abstracts/index" as *;
+
+.inquiry {
+    .btn {
+        &-group {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+
+    .contactUsForm {
+        width: 589px;
+        margin: 87px auto 232px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .inquiry {
+        padding: 0 16px;
+
+        .contactUsForm {
+            width: 100%;
+            margin-bottom: 144px;
+        }
+    }
+}

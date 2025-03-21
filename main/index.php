@@ -23,7 +23,7 @@
             // include '../myPage/orderList.php';
             // include '../myPage/orderDetailList.php';
             // include '../myPage/refund.php';
-            include '../form/contactUs.php';
+            include '../form/inquiry.php';
         ?>
         <div class="footer-container">
             <? include '../include/footer.php' ?>
@@ -64,6 +64,8 @@
         resizeTimer = setTimeout(loadHeader, 250); // 디바운싱 적용
     });
     </script>
+
+    <script src="/dist/js/common.js"></script>
 </body>
 
 </html>

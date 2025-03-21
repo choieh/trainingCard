@@ -12,6 +12,7 @@
             </div>
             <div class="btn-group">
                 <ul class="btn-list">
+                    <!-- [D] btn-list__item : 클릭 시 is-active 클래스 추가 -->
                     <li class="btn-list__item">
                         <button class="btn">오늘</button>
                     </li>

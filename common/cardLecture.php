@@ -51,29 +51,3 @@
         </div>
     </div>
 </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // 카드 옵션 버튼 클릭 이벤트 처리
-    const cards = document.querySelectorAll('.card');
-
-    cards.forEach(card => {
-        const optionBtn = card.querySelector('.btn--up');
-        const optionArea = card.querySelector('.card__option');
-        const cartArea = card.querySelector('.card__option--cart');
-
-        // 이벤트 리스너 개선
-        if (optionBtn) {
-            optionBtn.addEventListener('click', function(e) {
-                e.preventDefault(); // 기본 동작 방지
-                e.stopPropagation(); // 이벤트 버블링 방지
-
-                if (optionArea) optionArea.classList.toggle('is-active');
-                if (cartArea) cartArea.classList.toggle('is-active');
-
-                return false; // 이벤트 전파 중지
-            });
-        }
-    });
-});
-</script>

@@ -1,5 +1,5 @@
 <div class="layout__container">
-    <div class="contactUs">
+    <div class="inquiry">
         <div class="layout__header">
             <div class="header__top">
                 <? include '../common/containerDepth.php' ?>
@@ -10,6 +10,7 @@
                     <button class="btn bd-radius--circle size--s cover__bg">1:1 문의하기</button>
                 </div>
                 <? include 'include/faq.php' ?>
+                <? include 'include/contactUsForm.php' ?>
             </div>
         </div>
     </div>

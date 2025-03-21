@@ -1,0 +1,115 @@
+@use "../abstracts/index" as *;
+
+.contactUsForm {
+    .form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .textarea {
+        overflow: hidden;
+        width: 100%;
+        height: 290px;
+        border-radius: 4px;
+        border: 1px solid $gray-02;
+
+        textarea {
+            padding: 0.438rem 1rem;
+            @include font-style($font-size-16, $font-weight-regular, 24px);
+            resize: none;
+        }
+    }
+
+    &__item {
+        label {
+            align-self: flex-start;
+        }
+
+        &:has(.select) {
+            padding-left: 76px;
+
+            .select {
+                &__value {
+                    text-align: left;
+                }
+            }
+        }
+
+        &:last-child {
+            margin-top: 20px;
+            padding-left: 76px;
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        .inputGroup {
+            gap: 16px;
+
+            label {
+                width: 60px;
+            }
+
+            &:has([id="input--userName"]) {
+                .input-box {
+                    width: 100%;
+                }
+            }
+
+            &:has([id="input--phone"]) {
+                #input--phone {
+                    gap: 8px;
+
+                    .input {
+                        width: 73px;
+
+                        &:first-child {
+                            width: 59px;
+                        }
+                    }
+                }
+
+                .sub {
+                    margin-left: 0;
+
+                    &__text {
+                        align-self: flex-start;
+
+                        @include font-style(
+                            $font-size-12,
+                            $font-weight-regular,
+                            16px
+                        );
+                        color: $red-01;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .contactUsForm {
+        .form {
+            gap: 16px;
+        }
+
+        .inputGroup {
+            flex-direction: column;
+            align-items: normal;
+            gap: 8px;
+        }
+
+        &__item {
+            &:has(.select) {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                padding-left: 0;
+            }
+        }
+    }
+}
