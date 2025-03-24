@@ -26,7 +26,8 @@
             // include '../form/inquiry.php';
             // include '../notice/index.php'
             // include '../notice/noticeDetail.php'
-            include '../myPage/requestList.php'
+            // include '../myPage/requestList.php'
+            include '../myPage/requestDetail.php'
         ?>
         <div class="footer-container">
             <? include '../include/footer.php' ?>

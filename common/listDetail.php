@@ -1,66 +1,39 @@
 <div class="list-detail">
     <div class="list-detail__header">
         <div class="inner-box">
-            <h3 class="title">문자메세지를 올바르게 잘 보내는 방법을 맞춰보자</h3>
+            <h3 class="title">[일반] 세상에나 마상에나 고민이 엄청 많은데 이 많은 고민을 누구한테 말해서 알려줘야 잘
+                소문냈다고 말이 나올까싶어 참말 고민이 이만저만이 아닙니다 우얌</h3>
             <div class="info-box">
-                <span class="info info--view"><span class="blind">조회수</span>125</span>
-                <span class="info info--reply"><span class="blind">댓글수</span>15</span>
+                <span class="info info--writer">작성자</span>
+                <span class="info info--date">2024-11-18</span>
             </div>
-        </div>
-        <div class="inner-box">
             <div class="info-box">
-                <span class="info info--writer"><span class="blind">작성자</span>관리자</span>
-                <span class="info info--date"><span class="blind">작성일</span>2024-02-07</span>
+                <span class="info info--call">010-0000-0000</span>
+                <span class="info info--mail">test@test.com</span>
             </div>
         </div>
     </div>
     <div class="list-detail__body">
         <div class="contents">
             <div class="text">
-                <p>문자메세지를 올바르게 잘 보내는 방법을 맞춰보자</p>
-            </div>
-            <div class="files">
-                <strong class="files__title">첨부파일</strong>
-                <ul class="files__list">
-                    <li>
-                        <a href="#" class="files__link">문자 올바르게 보내는 방법.ppt</a>
-                    </li>
-                </ul>
+                <p>동영상 재생이 되지않는 이런저런 문제를 겪었다.<br>
+                    어찌할것인가?해결책을 내놓으시오 지금당장</p>
             </div>
         </div>
         <div class="reply">
-            <div class="reply__item parent" id="reply-1">
+            <div class="reply__item" id="reply-1">
                 <div class="reply__header">
-                    <strong class="reply--name">박수정</strong>
-                    <span class="reply--date">2024-07-25 16:09</span>
-                    <div class="btn-group">
-                        <button type="button" class="btn">답글달기</button>
-                    </div>
+                    <p class="reply--text">동영상재생이 되지 않았다니 유감입니다.<br>
+                        다시해보세요.</p>
                 </div>
                 <div class="reply__body">
-                    <p class="reply--text">정말 좋은방법이네요 찬성합니다!</p>
-                </div>
-            </div>
-            <div class="reply__item child" id="reply-1-1">
-                <div class="reply__header">
                     <strong class="reply--name">박수정</strong>
                     <span class="reply--date">2024-07-25 16:09</span>
-                    <div class="btn-group">
-                        <button type="button" class="btn">답글달기</button>
-                    </div>
-                </div>
-                <div class="reply__body">
-                    <p class="reply--text">대댓글 정말 좋은방법이네요 찬성합니다!</p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="list-detail__footer">
-        <div class="textArea">
-            <textarea name="reply-content" id="reply-content" placeholder="입력해주세요"></textarea>
-        </div>
-        <div class="btn-group">
-            <button type="button" class="btn bd-radius--circle size--s cover__bg--red">등록</button>
-        </div>
-    </div>
+</div>
+<div class="btn-group">
+    <button type="button" class="btn bd-radius--circle size--s cover__bg--red">목록보기</button>
 </div>

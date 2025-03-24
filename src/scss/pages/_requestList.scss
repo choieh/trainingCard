@@ -15,9 +15,34 @@
     }
 }
 
+.request-detail {
+    .btn-group {
+        justify-content: flex-end;
+        margin-top: 41px;
+    }
+
+    .list-detail {
+        margin-top: 17px;
+        padding-top: 16px;
+        border-top: 2px solid $gray-07;
+    }
+}
+
 @media (max-width: 1024px) {
     .request-list {
         padding: 0 16px;
+    }
+
+    .request-detail {
+        padding: 0 16px;
+
+        .btn-group {
+            margin-top: 32px;
+        }
+
+        .list-detail {
+            margin-top: 8px;
+        }
     }
 }
 

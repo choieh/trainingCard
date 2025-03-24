@@ -1,6 +1,6 @@
 @use "../abstracts/index" as *;
 
-.list-detail {
+.table-list-detail {
     margin-bottom: 161px;
 
     .title {
@@ -188,8 +188,110 @@
     }
 }
 
+.list-detail {
+    .inner-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .title {
+            grid-column: 2 span;
+            margin-bottom: 11px;
+            @include font-style($font-size-18, $font-weight-semibold, 24px);
+            color: $black;
+        }
+
+        .info-box {
+            display: flex;
+            grid-column: 1;
+            gap: 19px;
+
+            &:last-child {
+                grid-column: 2;
+                gap: 10px;
+                justify-self: flex-end;
+
+                .info {
+                    padding-left: 28px;
+                }
+            }
+
+            .info {
+                position: relative;
+                @include font-style($font-size-14, $font-weight-regular, 24px);
+                color: $gray-02;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                    width: 24px;
+                    height: 24px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+
+                &--call {
+                    &::before {
+                        background-image: svgIcon(listCall, "c2c2c2");
+                    }
+                }
+
+                &--mail {
+                    &::before {
+                        background-image: svgIcon(listMail, "c2c2c2");
+                    }
+                }
+            }
+        }
+    }
+
+    &__body {
+        .text {
+            p {
+                @include font-style($font-size-16, $font-weight-regular, 22px);
+                color: $black;
+            }
+        }
+
+        .contents {
+            min-height: 218px;
+            max-height: 500px;
+            padding-top: 36px;
+        }
+
+        .reply {
+            border-top: 1px solid $gray-07;
+            border-bottom: 1px solid $gray-07;
+
+            &--text {
+                @include font-style($font-size-16, $font-weight-regular, 22px);
+                color: $black;
+            }
+
+            &--name,
+            &--date {
+                @include font-style($font-size-14, $font-weight-regular, 19px);
+                color: $gray-02;
+            }
+
+            &__item {
+                padding: 16px 0;
+            }
+
+            &__body {
+                display: flex;
+                gap: 8px;
+                margin-top: 16px;
+            }
+        }
+    }
+}
+
 @media (max-width: 1204px) {
-    .list-detail {
+    .table-list-detail {
         .inner-box {
             &:first-child {
                 flex-direction: column;
@@ -200,6 +302,21 @@
             &:last-child {
                 justify-content: flex-start;
                 margin-top: 6px;
+            }
+        }
+    }
+
+    .list-detail {
+        .inner-box {
+            grid-template-columns: 1fr;
+
+            .info-box {
+                grid-column: 2 span;
+
+                &:last-child {
+                    grid-column: 2 span;
+                    justify-self: flex-start;
+                }
             }
         }
     }

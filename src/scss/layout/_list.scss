@@ -1,5 +1,60 @@
 @use "../abstracts/index" as *;
 
+.list {
+    border-top: 2px solid $gray-07;
+    border-bottom: 2px solid $gray-07;
+
+    &__item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 24px 0 14px;
+
+        & + .list__item {
+            border-top: 1px solid $gray-07;
+        }
+
+        .item {
+            &--state {
+                position: absolute;
+                top: 24px;
+                right: 0;
+                @include font-style($font-size-18, $font-weight-semibold, 24px);
+                color: $yellow-02;
+            }
+
+            &--title {
+                @include font-style($font-size-18, $font-weight-semibold, 24px);
+                color: $black;
+                @include text-ellipsis(1);
+            }
+        }
+
+        .info-box {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+
+            .item {
+                @include font-style($font-size-14, $font-weight-regular, 19px);
+                color: $gray-02;
+            }
+        }
+
+        &.is-complete {
+            .item--state {
+                color: $green-01;
+            }
+        }
+
+        &.is-unanswered {
+            .item--state {
+                color: $yellow-02;
+            }
+        }
+    }
+}
+
 .table-list {
     &__item {
         display: flex;
@@ -59,61 +114,6 @@
                 &--date {
                     color: $black;
                 }
-            }
-        }
-    }
-}
-
-.list {
-    border-top: 2px solid $gray-07;
-    border-bottom: 2px solid $gray-07;
-
-    &__item {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        padding: 24px 133px 14px 0;
-
-        & + .list__item {
-            border-top: 1px solid $gray-07;
-        }
-
-        .item {
-            &--state {
-                position: absolute;
-                top: 24px;
-                right: 0;
-                @include font-style($font-size-18, $font-weight-semibold, 24px);
-                color: $yellow-02;
-            }
-
-            &--title {
-                @include font-style($font-size-18, $font-weight-semibold, 24px);
-                color: $black;
-                @include text-ellipsis(1);
-            }
-        }
-
-        .info-box {
-            display: flex;
-            gap: 8px;
-            margin-top: 10px;
-
-            .item {
-                @include font-style($font-size-14, $font-weight-regular, 19px);
-                color: $gray-02;
-            }
-        }
-
-        &.is-complete {
-            .item--state {
-                color: $green-01;
-            }
-        }
-
-        &.is-unanswered {
-            .item--state {
-                color: $yellow-02;
             }
         }
     }
