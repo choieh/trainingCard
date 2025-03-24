@@ -88,7 +88,17 @@
 
             &.mobile-only {
                 display: inline-block;
+
+                &.btn--search {
+                    right: 0;
+                }
             }
+        }
+    }
+
+    #search {
+        &__form {
+            gap: 0;
         }
     }
 }

@@ -1,0 +1,128 @@
+@use "../abstracts/index" as *;
+
+.list {
+    &__item {
+        &:last-child {
+            border-bottom-color: $gray-02;
+        }
+
+        .item {
+            @include font-style($font-size-18, $font-weight-regular, 25px);
+            color: $black;
+            flex-shrink: 0;
+
+            &--no {
+                width: 64px;
+                text-align: center;
+            }
+
+            &--title {
+                width: 800px;
+                padding: 0 10px;
+            }
+
+            &--writer {
+                width: 100px;
+                text-align: center;
+                color: $gray-02;
+            }
+
+            &--date {
+                width: 130px;
+                text-align: center;
+                color: $gray-02;
+            }
+        }
+
+        &--link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 15px 8px 20px;
+            border-bottom: 1px solid $gray-07;
+        }
+
+        &--header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 15px 8px 20px;
+            background-color: $gray-07;
+
+            .item {
+                &--title {
+                    text-align: center;
+                }
+
+                &--writer {
+                    color: $black;
+                }
+
+                &--date {
+                    color: $black;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .list {
+        border-top: 1px solid $gray-02;
+
+        &__item {
+            position: relative;
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 14px;
+                right: 0;
+                width: 24px;
+                height: 24px;
+                background-image: svgIcon(arrowRight, "000");
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            &:last-child {
+                border-bottom-color: $gray-07;
+            }
+
+            &--link {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                gap: 8px;
+                padding: 14px 24px 14px 20px;
+            }
+
+            &--header {
+                display: none;
+            }
+
+            .item {
+                width: 100%;
+                text-align: left;
+
+                &--no {
+                    display: none;
+                }
+
+                &--title {
+                    grid-column: 2 span;
+                    padding: 0;
+                }
+
+                &--writer {
+                    grid-column: 1;
+                    max-width: 200px;
+                }
+
+                &--date {
+                    grid-column: 2;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+@use "../abstracts/index" as *;
+
+.notice {
+    .search {
+        &__bar {
+            margin-bottom: 16px;
+        }
+    }
+
+    .pagination {
+        justify-content: center;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .notice {
+        padding: 0 16px;
+    }
+}

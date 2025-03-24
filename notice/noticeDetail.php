@@ -7,8 +7,7 @@
             </div>
         </div>
         <div class="layout__body">
-            <? include '../common/searchBar.php' ?>
-            <? include '../common/list.php' ?>
+            <? include '../common/listDetail.php' ?>
         </div>
     </div>
 </div>

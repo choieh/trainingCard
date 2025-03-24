@@ -1,6 +1,7 @@
 @use "../abstracts/index" as *;
 
 textarea {
+    display: block;
     width: 100%;
     height: 100%;
     border: none;
@@ -17,7 +18,7 @@ textarea {
         border: 1px solid $gray-02;
         border-radius: 4px;
 
-        @include font-style($font-size-14, $font-weight-regular, $black);
+        @include font-style($font-size-14, $font-weight-regular, 16px);
 
         &::placeholder {
             color: $gray-02;

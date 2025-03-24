@@ -24,7 +24,8 @@
             // include '../myPage/orderDetailList.php';
             // include '../myPage/refund.php';
             // include '../form/inquiry.php';
-            include '../notice/index.php'
+            // include '../notice/index.php'
+            include '../notice/noticeDetail.php'
         ?>
         <div class="footer-container">
             <? include '../include/footer.php' ?>

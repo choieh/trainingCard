@@ -1,0 +1,206 @@
+@use "../abstracts/index" as *;
+
+.list-detail {
+    margin-bottom: 161px;
+
+    .title {
+        @include font-style($font-size-20, $font-weight-semibold, 30px);
+        color: $black;
+    }
+
+    .inner-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &:first-child {
+            .info-box {
+                display: flex;
+                gap: 16px;
+
+                .info {
+                    position: relative;
+                    padding-left: 24px;
+                    @include font-style(13px, $font-weight-regular, 15px);
+                    color: #808080;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+                        width: 24px;
+                        height: 24px;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+
+                    &--view {
+                        &::before {
+                            background-image: svgIcon(listView);
+                        }
+                    }
+
+                    &--reply {
+                        &::before {
+                            background-image: svgIcon(replyMsg);
+                        }
+                    }
+                }
+            }
+        }
+
+        &:last-child {
+            justify-content: flex-end;
+
+            .info-box {
+                display: flex;
+                gap: 23px;
+
+                .info {
+                    @include font-style(
+                        $font-size-16,
+                        $font-weight-regular,
+                        30px
+                    );
+                    color: $gray-02;
+                }
+            }
+        }
+    }
+
+    .contents {
+        padding: 20px 0 13px;
+        border-top: 1px solid $gray-02;
+        border-bottom: 2px solid $gray-05;
+
+        .text {
+            overflow-y: auto;
+            height: 500px;
+
+            p {
+                @include font-style(16px, $font-weight-regular, 30px);
+                color: $black;
+            }
+        }
+    }
+
+    .reply {
+        border-bottom: 1px solid $gray-05;
+
+        &--name {
+            @include font-style($font-size-16, $font-weight-regular, 30px);
+            color: $black;
+        }
+
+        &--date {
+            @include font-style($font-size-16, $font-weight-regular, 30px);
+            color: $gray-05;
+        }
+
+        &__header {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+
+            .btn {
+                @include font-style($font-size-16, $font-weight-semibold, 30px);
+                color: $black;
+
+                &-group {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+            }
+        }
+
+        &__body {
+            margin-top: 16px;
+        }
+
+        &__item {
+            padding: 26px 0;
+
+            &:not(.parent) {
+                padding: 26px 25px;
+                background-color: $gray-07;
+            }
+        }
+    }
+
+    .files {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 8px;
+
+        &__title {
+            flex-shrink: 0;
+            position: relative;
+            display: block;
+            padding-left: 32px;
+            @include font-style($font-size-16, $font-weight-regular, 30px);
+            color: $black;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                width: 24px;
+                height: 24px;
+                background-image: svgIcon(listFile);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+
+        &__link {
+            @include font-style($font-size-16, $font-weight-regular, 30px);
+            color: $gray-05;
+            @include text-ellipsis(1);
+        }
+    }
+
+    &__body {
+        margin-top: 9px;
+    }
+
+    &__footer {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 41px;
+
+        .textArea {
+            height: 77px;
+        }
+        .btn {
+            &-group {
+                align-self: flex-end;
+            }
+        }
+    }
+}
+
+@media (max-width: 1204px) {
+    .list-detail {
+        .inner-box {
+            &:first-child {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            &:last-child {
+                justify-content: flex-start;
+                margin-top: 6px;
+            }
+        }
+    }
+}
