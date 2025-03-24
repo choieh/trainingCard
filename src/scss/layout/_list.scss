@@ -1,7 +1,13 @@
 @use "../abstracts/index" as *;
 
-.list {
+.table-list {
     &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 15px 8px 20px;
+        border-bottom: 1px solid $gray-07;
+
         &:last-child {
             border-bottom-color: $gray-02;
         }
@@ -34,14 +40,6 @@
             }
         }
 
-        &--link {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 8px 15px 8px 20px;
-            border-bottom: 1px solid $gray-07;
-        }
-
         &--header {
             display: flex;
             align-items: center;
@@ -66,12 +64,71 @@
     }
 }
 
+.list {
+    border-top: 2px solid $gray-07;
+    border-bottom: 2px solid $gray-07;
+
+    &__item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 24px 133px 14px 0;
+
+        & + .list__item {
+            border-top: 1px solid $gray-07;
+        }
+
+        .item {
+            &--state {
+                position: absolute;
+                top: 24px;
+                right: 0;
+                @include font-style($font-size-18, $font-weight-semibold, 24px);
+                color: $yellow-02;
+            }
+
+            &--title {
+                @include font-style($font-size-18, $font-weight-semibold, 24px);
+                color: $black;
+                @include text-ellipsis(1);
+            }
+        }
+
+        .info-box {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+
+            .item {
+                @include font-style($font-size-14, $font-weight-regular, 19px);
+                color: $gray-02;
+            }
+        }
+
+        &.is-complete {
+            .item--state {
+                color: $green-01;
+            }
+        }
+
+        &.is-unanswered {
+            .item--state {
+                color: $yellow-02;
+            }
+        }
+    }
+}
+
 @media (max-width: 1024px) {
-    .list {
+    .table-list {
         border-top: 1px solid $gray-02;
 
         &__item {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 8px;
             position: relative;
+            padding: 14px 24px 14px 20px;
 
             &:before {
                 content: "";
@@ -88,13 +145,6 @@
 
             &:last-child {
                 border-bottom-color: $gray-07;
-            }
-
-            &--link {
-                display: grid;
-                grid-template-columns: auto 1fr;
-                gap: 8px;
-                padding: 14px 24px 14px 20px;
             }
 
             &--header {
@@ -123,6 +173,14 @@
                     grid-column: 2;
                 }
             }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .list {
+        &__item {
+            padding-right: 30%;
         }
     }
 }

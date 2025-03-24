@@ -1,26 +1,25 @@
 <div class="list">
     <ul>
-        <li class="list__item list__item--header">
-            <h4 class="item item--no">no.</h4>
-            <h4 class="item item--title">제목</h4>
-            <h4 class="item item--writer">글쓴이</h4>
-            <h4 class="item item--date">작성시간</h4>
+        <!-- [D] 답변완료 일 경우 : is-complete, 미답변 일 경우 : is-unanswered -->
+        <li class="list__item is-complete">
+            <a href="#" target="_blank" class="item item--title">[일반] 세상에나 마상에나 고민이 엄청 많은데 이 많은 고민을 누구한테 말해서 알려줘야 잘
+                소문냈다고 말이 나올까싶어 참말 고민이
+                이만저만이 아닙니다 우얌</a>
+            <div class="info-box">
+                <span class="item item--writer">작성자</span>
+                <span class="item item--date">2024-11-18</span>
+            </div>
+            <span class="item item--state">답변완료</span>
         </li>
-        <li class="list__item">
-            <a href="#" class="list__item--link">
-                <span class="item item--no">2</span>
-                <span class="item item--title">환불방법</span>
-                <span class="item item--writer">관리자</span>
-                <span class="item item--date">2024-02-07</span>
-            </a>
-        </li>
-        <li class="list__item">
-            <a href="#" class="list__item--link">
-                <span class="item item--no">1</span>
-                <span class="item item--title">회원가입방법</span>
-                <span class="item item--writer">관리자</span>
-                <span class="item item--date">2024-02-06</span>
-            </a>
+        <li class="list__item is-unanswered">
+            <a href="#" target="_blank" class="item item--title">[일반] 세상에나 마상에나 고민이 엄청 많은데 이 많은 고민을 누구한테 말해서 알려줘야 잘
+                소문냈다고 말이 나올까싶어 참말 고민이
+                이만저만이 아닙니다 우얌</a>
+            <div class="info-box">
+                <span class="item item--writer">작성자</span>
+                <span class="item item--date">2024-11-18</span>
+            </div>
+            <span class="item item--state">미답변</span>
         </li>
     </ul>
 </div>

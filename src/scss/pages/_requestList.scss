@@ -1,0 +1,32 @@
+@use "../abstracts/index" as *;
+
+.request-list {
+    .btn-group {
+        justify-content: flex-end;
+
+        & + .list {
+            margin-top: 16px;
+        }
+    }
+
+    .pagination {
+        justify-content: center;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .request-list {
+        padding: 0 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .request-list {
+        .layout__header {
+            &--title {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
