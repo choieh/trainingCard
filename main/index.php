@@ -11,7 +11,7 @@
     <div id="layout">
         <div id="header-container"></div>
         <?
-            // include './mainContainer.php'
+            // include './include/mainContainer.php'
             // include '../form/join_terms.php'
             // include '../form/join_userInfo.php';
             // include '../form/join_complete.php';
@@ -23,7 +23,8 @@
             // include '../myPage/orderList.php';
             // include '../myPage/orderDetailList.php';
             // include '../myPage/refund.php';
-            include '../form/inquiry.php';
+            // include '../form/inquiry.php';
+            include '../notice/index.php'
         ?>
         <div class="footer-container">
             <? include '../include/footer.php' ?>

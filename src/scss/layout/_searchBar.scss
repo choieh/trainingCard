@@ -1,0 +1,94 @@
+@use "../abstracts/index" as *;
+
+.search {
+    &__bar {
+        margin: 0 auto 43px;
+
+        .btn {
+            &-group {
+                position: relative;
+            }
+
+            &.pc-only {
+                display: inline-block;
+                width: 112px;
+            }
+
+            &.mobile-only {
+                display: none;
+
+                &.btn--search {
+                    position: absolute;
+                    top: 50%;
+                    right: 6px;
+                    transform: translateY(-50%);
+                    width: 38px;
+                    height: 38px;
+                    border-radius: 50%;
+                    background-image: svgIcon("search", "000");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 20px;
+                }
+            }
+        }
+    }
+
+    &__input {
+        &--box {
+            overflow: hidden;
+            width: 428px;
+            height: 38px;
+            border-radius: 4px;
+            border: 1px solid $gray-02;
+            background: $white;
+
+            input {
+                display: block;
+                width: 100%;
+                height: 100%;
+                padding: 8px 13px;
+                font-size: 16px;
+                color: $black;
+
+                &::placeholder {
+                    color: $gray-02;
+                }
+            }
+        }
+    }
+}
+
+#search {
+    &__form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 9px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .search__bar {
+        margin-top: 8px;
+        margin-bottom: 32px;
+
+        .search__input--box {
+            width: 100%;
+
+            input {
+                padding-right: 37px;
+            }
+        }
+
+        .btn {
+            &.pc-only {
+                display: none;
+            }
+
+            &.mobile-only {
+                display: inline-block;
+            }
+        }
+    }
+}

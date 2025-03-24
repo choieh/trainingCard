@@ -1,84 +1,5 @@
 @use "../abstracts/index" as *;
 
-.search {
-    &__bar {
-        margin: 0 auto 43px;
-    }
-
-    &__input {
-        &--box {
-            overflow: hidden;
-            width: 428px;
-            height: 38px;
-            border-radius: 4px;
-            border: 1px solid $gray-02;
-            background: $white;
-
-            input {
-                display: block;
-                width: 100%;
-                height: 100%;
-                padding: 8px 13px;
-                font-size: 16px;
-                color: $black;
-
-                &::placeholder {
-                    color: $gray-02;
-                }
-            }
-        }
-    }
-}
-
-#search {
-    &__form {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 9px;
-    }
-}
-
-.sorting {
-    &__menu {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        margin: 0 auto;
-
-        .btn {
-            display: block;
-            margin: 0;
-            padding: 0 16px;
-            flex-shrink: 0;
-            font-size: 18px;
-            font-weight: 600;
-            line-height: 24px;
-            color: $gray-01;
-
-            + .btn {
-                position: relative;
-
-                &::before {
-                    content: "";
-                    position: absolute;
-                    top: 50%;
-                    left: -1px;
-                    transform: translateY(-50%);
-                    width: 2px;
-                    height: 16px;
-                    background-color: $gray-01;
-                }
-            }
-
-            &.is-active,
-            &:hover {
-                color: $red-01;
-            }
-        }
-    }
-}
-
 .thumbnail {
     &--lg {
         aspect-ratio: 16 / 9; /* 부모의 비율 지정 */
@@ -231,39 +152,6 @@
                 margin: 20px 0;
                 @include font-style($font-size-30, $font-weight-bold, 36px);
                 color: $black;
-            }
-        }
-
-        &__body {
-            .search__bar {
-                .btn {
-                    &-group {
-                        position: relative;
-                    }
-
-                    &.pc-only {
-                        display: inline-block;
-                        width: 112px;
-                    }
-
-                    &.mobile-only {
-                        display: none;
-
-                        &.btn--search {
-                            position: absolute;
-                            top: 50%;
-                            right: 6px;
-                            transform: translateY(-50%);
-                            width: 38px;
-                            height: 38px;
-                            border-radius: 50%;
-                            background-image: svgIcon("search", "000");
-                            background-repeat: no-repeat;
-                            background-position: center;
-                            background-size: 20px;
-                        }
-                    }
-                }
             }
         }
 
@@ -627,31 +515,6 @@
                 flex-direction: column;
                 align-items: center;
                 padding: 0 16px;
-            }
-
-            &__body {
-                .search__bar {
-                    margin-top: 8px;
-                    margin-bottom: 32px;
-
-                    .search__input--box {
-                        width: 100%;
-
-                        input {
-                            padding-right: 37px;
-                        }
-                    }
-
-                    .btn {
-                        &.pc-only {
-                            display: none;
-                        }
-
-                        &.mobile-only {
-                            display: inline-block;
-                        }
-                    }
-                }
             }
         }
 
