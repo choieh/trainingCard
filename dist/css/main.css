@@ -3717,10 +3717,28 @@ textarea {
   }
   .list-detail .inner-box .info-box {
     grid-column: 2 span;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 100%;
   }
   .list-detail .inner-box .info-box:last-child {
     grid-column: 2 span;
     justify-self: flex-start;
+  }
+  .list-detail .inner-box .info-box .info {
+    max-width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .list-detail .inner-box .info-box .info--mail {
+    display: block;
+  }
+  .list-detail .inner-box .info-box .info--call {
+    display: block;
   }
 }
 .main .section {

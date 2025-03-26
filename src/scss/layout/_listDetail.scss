@@ -312,10 +312,26 @@
 
             .info-box {
                 grid-column: 2 span;
+                flex-wrap: wrap;
+                width: 100%;
 
                 &:last-child {
                     grid-column: 2 span;
                     justify-self: flex-start;
+                }
+
+                .info {
+                    max-width: 100%;
+                    @include text-ellipsis(1);
+                    white-space: nowrap;
+
+                    &--mail {
+                        display: block;
+                    }
+
+                    &--call {
+                        display: block;
+                    }
                 }
             }
         }
