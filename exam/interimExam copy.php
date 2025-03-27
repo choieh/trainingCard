@@ -11,7 +11,23 @@
         </div>
         <div class="layout__body">
             <form id="form--interimExam" class="form">
-                <? include 'interimExam.php' ?>
+                <div class="answer">
+                    <h4 class="title">Answer</h4>
+                    <ul class="answer__list">
+                        <li>
+                            <span>문제1</span>
+                            <span>1</span>
+                        </li>
+                        <li>
+                            <span>문제2</span>
+                            <span>3</span>
+                        </li>
+                        <li>
+                            <span>문제3</span>
+                            <span>2</span>
+                        </li>
+                    </ul>
+                </div>
             </form>
         </div>
     </div>

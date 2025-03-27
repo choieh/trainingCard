@@ -1,5 +1,5 @@
 <div class="layout__container">
-    <div class="exam exam--interim">
+    <div class="exam exam--intro">
         <div class="layout__header">
             <div class="header__top">
                 <h2 class="layout__header--title">중간평가</h2>

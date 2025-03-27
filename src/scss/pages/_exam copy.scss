@@ -1,7 +1,7 @@
 @use "../abstracts/index" as *;
 
 #layout {
-    &:has(.exam--intro) {
+    &:has(.exam) {
         background-color: $gray-07;
     }
 }
@@ -110,134 +110,6 @@
             padding: 12px 20px;
         }
     }
-
-    .form {
-        display: flex;
-        gap: 43px;
-    }
-}
-
-.answer {
-    align-self: flex-start;
-    width: 254px;
-    margin-bottom: 30px;
-    padding: 20px 10px 16px;
-    border: 1px solid #ededed;
-    border-radius: 8px;
-
-    .title {
-        margin-bottom: 14px;
-        @include font-style($font-size-18, $font-weight-semibold, 24px);
-        color: $black;
-    }
-
-    &__list {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-
-        li {
-            display: flex;
-            justify-content: space-between;
-            padding: 8px 16px;
-            background-color: $gray-07;
-            border-radius: 4px;
-
-            span {
-                @include font-style($font-size-18, $font-weight-regular, 24px);
-                color: $black;
-            }
-
-            &.is-done {
-                background-color: $yellow-01;
-
-                span {
-                    @include font-style(
-                        $font-size-18,
-                        $font-weight-semibold,
-                        24px
-                    );
-                    color: $red-01;
-                }
-            }
-        }
-    }
-}
-
-.question {
-    &-container {
-        margin-bottom: 30px;
-
-        .btn {
-            &-group {
-                justify-content: flex-end;
-                margin-top: 0;
-                margin-bottom: 16px;
-            }
-        }
-    }
-
-    &-item {
-        margin-bottom: 30px;
-        border: 1px solid $gray-06;
-        border-radius: 5px;
-        overflow: hidden;
-    }
-
-    &-header {
-        background-color: $gray-07;
-        padding: 15px;
-
-        h3 {
-            margin: 0;
-            @include font-style($font-size-18, $font-weight-semibold, 24px);
-        }
-    }
-
-    &-content {
-        padding: 20px;
-
-        p {
-            @include font-style($font-size-16, $font-weight-regular, 24px);
-            margin-bottom: 20px;
-        }
-    }
-}
-
-.option {
-    &-item {
-        display: flex;
-        margin-bottom: 10px;
-        border: 1px solid $gray-06;
-        border-radius: 5px;
-        overflow: hidden;
-    }
-
-    &-selected {
-        border: 2px solid $red-01;
-    }
-
-    &-number {
-        background-color: $gray-07;
-        padding: 10px 15px;
-        font-weight: $font-weight-bold;
-        min-width: 50px;
-        text-align: center;
-
-        .option-selected & {
-            background-color: $red-01;
-            color: $white;
-        }
-    }
-
-    &-text {
-        padding: 10px 15px;
-        flex: 1;
-        @include font-style($font-size-16, $font-weight-regular, 24px);
-    }
 }
 
 @media (max-width: 1024px) {
@@ -263,7 +135,6 @@
         .header {
             &__top {
                 padding-top: 43px;
-
                 .btn {
                     &-group {
                         bottom: 65px;
@@ -271,27 +142,20 @@
                 }
             }
         }
-    }
 
-    .question {
-        &-content {
-            padding: 15px;
-        }
-    }
-
-    .option {
-        &-item {
-            margin-bottom: 8px;
+        .title {
+            margin-bottom: 20px;
         }
 
-        &-number {
-            padding: 8px 12px;
-            min-width: 40px;
-        }
+        .checkbox {
+            label {
+                width: 208px;
+                line-height: 18px;
+            }
 
-        &-text {
-            padding: 8px 12px;
-            @include font-style($font-size-14, $font-weight-regular, 20px);
+            .ico--check {
+                flex-shrink: 0;
+            }
         }
     }
 }

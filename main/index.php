@@ -33,7 +33,7 @@
             // include '../myLecture/lectureEnd.php'
             // include '../exam/interimExamIntro.php'
             // include '../exam/finalExamIntro.php'
-            include '../exam/inculde/interimExam.php'
+            include '../exam/interimExam.php'
             // include '../exam/include/finalExam.php'
         ?>
         <div class="footer-container">

@@ -12,7 +12,9 @@
         <div class="layout__body">
             <h4 class="title">주의사항</h4>
             <form id="form--finalExam" class="form">
-                <? include 'finalExam.php' ?>
+                <? 
+                // include 'finalExam.php' 
+                ?>
             </form>
         </div>
     </div>
