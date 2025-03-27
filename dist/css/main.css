@@ -484,11 +484,11 @@ input[type=number] {
   background-color: #fff;
   border: 1px solid #0d3050;
 }
-.btn.ico span {
+.btn.ico:not(.btn--task, .btn--testFinal, .btn--testFile, .btn--status) span {
   display: inline-block;
   position: relative;
 }
-.btn.ico span::before {
+.btn.ico:not(.btn--task, .btn--testFinal, .btn--testFile, .btn--status) span::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -526,10 +526,13 @@ input[type=number] {
           transform: translateY(-50%);
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath fill='%23E00' d='M21.822 7.431A1 1 0 0 0 21 7H7.333L6.179 4.23A1.99 1.99 0 0 0 4.333 3H2v2h2.333l4.744 11.385A1 1 0 0 0 10 17h8c.417 0 .79-.259.937-.648l3-8a1 1 0 0 0-.115-.921ZM17.307 15h-6.64l-2.5-6h11.39l-2.25 6ZM10.5 21a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM17.5 21a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z'/%3E%3C/svg%3E");
 }
-.btn.ico--testFile {
+.btn.ico--testFile:hover .inner-box::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath stroke='%23FDB515' stroke-linecap='round' stroke-linejoin='round' d='M7 7h3m-3 5.25h9m-9 3h9m-9 3h3M5.5 22h12a1.5 1.5 0 0 0 1.5-1.5V4a1.5 1.5 0 0 0-1.5-1.5h-12A1.5 1.5 0 0 0 4 4v16.5A1.5 1.5 0 0 0 5.5 22Z'/%3E%3Cpath stroke='%23FDB515' d='M16 7.375a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Z'/%3E%3C/svg%3E");
+}
+.btn.ico--testFile .inner-box {
   position: relative;
 }
-.btn.ico--testFile::before {
+.btn.ico--testFile .inner-box::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -542,19 +545,19 @@ input[type=number] {
   background-position: center;
   background-size: 100%;
 }
-.btn.ico--testFile::before {
+.btn.ico--testFile .inner-box::before {
   left: 1rem;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath stroke='%23000' stroke-linecap='round' stroke-linejoin='round' d='M7 7h3m-3 5.25h9m-9 3h9m-9 3h3M5.5 22h12a1.5 1.5 0 0 0 1.5-1.5V4a1.5 1.5 0 0 0-1.5-1.5h-12A1.5 1.5 0 0 0 4 4v16.5A1.5 1.5 0 0 0 5.5 22Z'/%3E%3Cpath stroke='%23000' d='M16 7.375a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Z'/%3E%3C/svg%3E");
 }
-.btn.ico--testFile:hover::before {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath stroke='%23FDB515' stroke-linecap='round' stroke-linejoin='round' d='M7 7h3m-3 5.25h9m-9 3h9m-9 3h3M5.5 22h12a1.5 1.5 0 0 0 1.5-1.5V4a1.5 1.5 0 0 0-1.5-1.5h-12A1.5 1.5 0 0 0 4 4v16.5A1.5 1.5 0 0 0 5.5 22Z'/%3E%3Cpath stroke='%23FDB515' d='M16 7.375a.375.375 0 1 0 0-.75.375.375 0 0 0 0 .75Z'/%3E%3C/svg%3E");
+.btn.ico--task:hover .inner-box::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath stroke='%23FDB515' stroke-linecap='round' stroke-linejoin='round' d='M16 3.538h2.4c.425 0 .832.163 1.132.451.3.289.468.68.468 1.088v15.385c0 .408-.168.799-.468 1.087-.3.289-.707.451-1.132.451H5.6c-.424 0-.831-.162-1.131-.45-.3-.29-.469-.68-.469-1.088V5.077c0-.408.169-.8.469-1.088.3-.288.707-.45 1.131-.45H8'/%3E%3Cpath stroke='%23FDB515' stroke-linecap='round' stroke-linejoin='round' d='m12.724 14.82 4 3.846m.003-3.846-4 3.846M14.401 2H9.6c-.425 0-.832.162-1.132.45-.3.29-.468.68-.468 1.088v.77c0 .408.168.799.468 1.088.3.288.707.45 1.132.45h4.8c.424 0 .83-.162 1.13-.45.301-.289.47-.68.47-1.088v-.77c0-.408-.169-.799-.47-1.087-.3-.289-.706-.451-1.13-.451Zm-7.127 8.774c0 .51.21.999.586 1.36.375.36.884.563 1.414.563.53 0 1.04-.203 1.414-.563.375-.361.586-.85.586-1.36 0-.51-.21-1-.586-1.36a2.041 2.041 0 0 0-1.414-.563c-.53 0-1.039.202-1.414.563-.375.36-.586.85-.586 1.36Z'/%3E%3C/svg%3E");
 }
-.btn.ico--task {
+.btn.ico--task .inner-box {
   position: relative;
 }
-.btn.ico--task::before {
+.btn.ico--task .inner-box::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -567,19 +570,19 @@ input[type=number] {
   background-position: center;
   background-size: 100%;
 }
-.btn.ico--task::before {
+.btn.ico--task .inner-box::before {
   left: 1rem;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath stroke='%23000' stroke-linecap='round' stroke-linejoin='round' d='M16 3.538h2.4c.425 0 .832.163 1.132.451.3.289.468.68.468 1.088v15.385c0 .408-.168.799-.468 1.087-.3.289-.707.451-1.132.451H5.6c-.424 0-.831-.162-1.131-.45-.3-.29-.469-.68-.469-1.088V5.077c0-.408.169-.8.469-1.088.3-.288.707-.45 1.131-.45H8'/%3E%3Cpath stroke='%23000' stroke-linecap='round' stroke-linejoin='round' d='m12.724 14.82 4 3.846m.003-3.846-4 3.846M14.401 2H9.6c-.425 0-.832.162-1.132.45-.3.29-.468.68-.468 1.088v.77c0 .408.168.799.468 1.088.3.288.707.45 1.132.45h4.8c.424 0 .83-.162 1.13-.45.301-.289.47-.68.47-1.088v-.77c0-.408-.169-.799-.47-1.087-.3-.289-.706-.451-1.13-.451Zm-7.127 8.774c0 .51.21.999.586 1.36.375.36.884.563 1.414.563.53 0 1.04-.203 1.414-.563.375-.361.586-.85.586-1.36 0-.51-.21-1-.586-1.36a2.041 2.041 0 0 0-1.414-.563c-.53 0-1.039.202-1.414.563-.375.36-.586.85-.586 1.36Z'/%3E%3C/svg%3E");
 }
-.btn.ico--task:hover::before {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath stroke='%23FDB515' stroke-linecap='round' stroke-linejoin='round' d='M16 3.538h2.4c.425 0 .832.163 1.132.451.3.289.468.68.468 1.088v15.385c0 .408-.168.799-.468 1.087-.3.289-.707.451-1.132.451H5.6c-.424 0-.831-.162-1.131-.45-.3-.29-.469-.68-.469-1.088V5.077c0-.408.169-.8.469-1.088.3-.288.707-.45 1.131-.45H8'/%3E%3Cpath stroke='%23FDB515' stroke-linecap='round' stroke-linejoin='round' d='m12.724 14.82 4 3.846m.003-3.846-4 3.846M14.401 2H9.6c-.425 0-.832.162-1.132.45-.3.29-.468.68-.468 1.088v.77c0 .408.168.799.468 1.088.3.288.707.45 1.132.45h4.8c.424 0 .83-.162 1.13-.45.301-.289.47-.68.47-1.088v-.77c0-.408-.169-.799-.47-1.087-.3-.289-.706-.451-1.13-.451Zm-7.127 8.774c0 .51.21.999.586 1.36.375.36.884.563 1.414.563.53 0 1.04-.203 1.414-.563.375-.361.586-.85.586-1.36 0-.51-.21-1-.586-1.36a2.041 2.041 0 0 0-1.414-.563c-.53 0-1.039.202-1.414.563-.375.36-.586.85-.586 1.36Z'/%3E%3C/svg%3E");
+.btn.ico--testFinal:hover .inner-box::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath fill='%23FDB515' d='m7.462 17.272 8.79-12.953a.695.695 0 0 1 .444-.306.664.664 0 0 1 .521.115.698.698 0 0 1 .284.466.729.729 0 0 1-.127.535l-9.196 13.55a.695.695 0 0 1-.453.294.664.664 0 0 1-.52-.133l-4.931-3.815a.7.7 0 0 1-.267-.465.723.723 0 0 1 .13-.524.67.67 0 0 1 .959-.141l4.366 3.377Zm9.744-6.75a.674.674 0 0 1-.485-.207.718.718 0 0 1 0-.999.674.674 0 0 1 .485-.207h4.11c.18 0 .355.075.483.207a.718.718 0 0 1 0 1 .675.675 0 0 1-.484.206h-4.11Zm-2.74 4.24a.675.675 0 0 1-.485-.208.718.718 0 0 1 0-.999.675.675 0 0 1 .485-.207h6.848c.181 0 .356.074.484.207.129.133.2.312.2.5a.718.718 0 0 1-.2.5.674.674 0 0 1-.484.206h-6.848ZM11.726 19a.675.675 0 0 1-.484-.207.718.718 0 0 1 0-1 .675.675 0 0 1 .484-.206h9.588c.181 0 .356.075.484.207.129.132.2.312.2.5a.718.718 0 0 1-.2.5.674.674 0 0 1-.484.206h-9.588Z'/%3E%3C/svg%3E");
 }
-.btn.ico--testFinal {
+.btn.ico--testFinal .inner-box {
   position: relative;
 }
-.btn.ico--testFinal::before {
+.btn.ico--testFinal .inner-box::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -592,16 +595,22 @@ input[type=number] {
   background-position: center;
   background-size: 100%;
 }
-.btn.ico--testFinal::before {
+.btn.ico--testFinal .inner-box::before {
   left: 1rem;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath fill='%23000' d='m7.462 17.272 8.79-12.953a.695.695 0 0 1 .444-.306.664.664 0 0 1 .521.115.698.698 0 0 1 .284.466.729.729 0 0 1-.127.535l-9.196 13.55a.695.695 0 0 1-.453.294.664.664 0 0 1-.52-.133l-4.931-3.815a.7.7 0 0 1-.267-.465.723.723 0 0 1 .13-.524.67.67 0 0 1 .959-.141l4.366 3.377Zm9.744-6.75a.674.674 0 0 1-.485-.207.718.718 0 0 1 0-.999.674.674 0 0 1 .485-.207h4.11c.18 0 .355.075.483.207a.718.718 0 0 1 0 1 .675.675 0 0 1-.484.206h-4.11Zm-2.74 4.24a.675.675 0 0 1-.485-.208.718.718 0 0 1 0-.999.675.675 0 0 1 .485-.207h6.848c.181 0 .356.074.484.207.129.133.2.312.2.5a.718.718 0 0 1-.2.5.674.674 0 0 1-.484.206h-6.848ZM11.726 19a.675.675 0 0 1-.484-.207.718.718 0 0 1 0-1 .675.675 0 0 1 .484-.206h9.588c.181 0 .356.075.484.207.129.132.2.312.2.5a.718.718 0 0 1-.2.5.674.674 0 0 1-.484.206h-9.588Z'/%3E%3C/svg%3E");
 }
-.btn.ico--testFinal:hover::before {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath fill='%23FDB515' d='m7.462 17.272 8.79-12.953a.695.695 0 0 1 .444-.306.664.664 0 0 1 .521.115.698.698 0 0 1 .284.466.729.729 0 0 1-.127.535l-9.196 13.55a.695.695 0 0 1-.453.294.664.664 0 0 1-.52-.133l-4.931-3.815a.7.7 0 0 1-.267-.465.723.723 0 0 1 .13-.524.67.67 0 0 1 .959-.141l4.366 3.377Zm9.744-6.75a.674.674 0 0 1-.485-.207.718.718 0 0 1 0-.999.674.674 0 0 1 .485-.207h4.11c.18 0 .355.075.483.207a.718.718 0 0 1 0 1 .675.675 0 0 1-.484.206h-4.11Zm-2.74 4.24a.675.675 0 0 1-.485-.208.718.718 0 0 1 0-.999.675.675 0 0 1 .485-.207h6.848c.181 0 .356.074.484.207.129.133.2.312.2.5a.718.718 0 0 1-.2.5.674.674 0 0 1-.484.206h-6.848ZM11.726 19a.675.675 0 0 1-.484-.207.718.718 0 0 1 0-1 .675.675 0 0 1 .484-.206h9.588c.181 0 .356.075.484.207.129.132.2.312.2.5a.718.718 0 0 1-.2.5.674.674 0 0 1-.484.206h-9.588Z'/%3E%3C/svg%3E");
-}
 .btn--status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #fff;
+}
+.btn--status .inner-box {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -614,7 +623,6 @@ input[type=number] {
       -ms-flex-align: start;
           align-items: flex-start;
   padding: 0.75rem 1rem 0.75rem 3rem;
-  background-color: #fff;
 }
 .btn--status [role=title] {
   font-size: 1.125rem;
@@ -623,15 +631,15 @@ input[type=number] {
 }
 .btn--status [role=status] {
   font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 1;
+  font-weight: 700;
+  line-height: 17px;
   color: #b4b4b4;
 }
-.btn--status [role=status]:not(:last-child) {
+.btn--status [role=record] {
   font-size: 0.875rem;
-  font-weight: 700;
-  line-height: 1;
-  color: #aeaeae;
+  font-weight: 400;
+  line-height: 19px;
+  color: #b4b4b4;
 }
 .btn--status:hover, .btn--status.is-active {
   background-color: #fffaf0;
@@ -3741,6 +3749,416 @@ textarea {
     display: block;
   }
 }
+.lectureProcessInfo {
+  display: grid;
+  grid-template-columns: 611px 611px;
+  gap: 18px;
+}
+.lectureProcessInfo .btn {
+  width: 50%;
+}
+.lectureProcessInfo .btn-group {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 8px;
+}
+.lectureProcessInfo__title {
+  grid-column: span 2;
+  position: relative;
+  padding-left: 24px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 24px;
+  color: #aeaeae;
+}
+.lectureProcessInfo__title::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath fill='%23B4B4B4' fill-rule='evenodd' d='m16.29 17.175-1.04-.832a6.615 6.615 0 0 0 0-8.94l1.04-.832a7.94 7.94 0 0 1 0 10.604ZM13.655 8.68l-1.042.833a3.451 3.451 0 0 1 0 4.72l1.042.833a4.777 4.777 0 0 0 0-6.386ZM10.991 6.5 7.528 9.226H5v5.333h2.532l3.46 2.67V6.5Z' clip-rule='evenodd'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.lectureProcessInfo__desc {
+  grid-column: span 2;
+  padding: 27px 16px;
+  background-color: #f5f5f5;
+}
+.lectureProcessInfo__desc .desc--title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 24px;
+  color: #000;
+}
+.lectureProcessInfo__desc .desc--text {
+  margin-top: 4px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 22px;
+  color: #000;
+}
+.lectureProcessInfo__desc .desc--point {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 22px;
+  color: #fdb515;
+}
+.lectureProcessInfo__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  -webkit-box-shadow: 1px 4px 10px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 1px 4px 10px 0px rgba(0, 0, 0, 0.25);
+}
+.lectureProcessInfo .progress dl {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.lectureProcessInfo .progress .inner-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 8px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.lectureProcessInfo .progress .inner-box dt {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 14px;
+  color: #000;
+}
+.lectureProcessInfo .progress .inner-box dd {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 24px;
+  color: #000;
+}
+.lectureProcessInfo .lecture-info {
+  padding: 16px 11px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.lectureProcessInfo .lecture-info .table {
+  border: 1px solid #fff;
+}
+.lectureProcessInfo .lecture-info .table + .table {
+  border-left: 1px solid #f5f5f5;
+}
+.lectureProcessInfo .lecture-info .table:first-child td span {
+  height: 60px;
+}
+.lectureProcessInfo .lecture-info .table th + th {
+  border-left: 1px solid #f5f5f5;
+}
+.lectureProcessInfo .lecture-info .table td {
+  border: 1px solid #f5f5f5;
+}
+.lectureProcessInfo .lecture-info .table td:first-child {
+  border-left: none;
+}
+.lectureProcessInfo .lecture-info .table td[rowspan="2"] {
+  border-bottom: none;
+}
+.lectureProcessInfo .lecture-info .table td:last-child {
+  border-right: none;
+  border-bottom: none;
+}
+.lectureProcessInfo .lecture-info .table span {
+  display: block;
+  padding: 6px 0;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 16px;
+  color: #000;
+}
+.lectureProcessInfo .lecture-info .table--title {
+  padding: 5px 0;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 16px;
+  background-color: #f5f5f5;
+}
+.lectureProcessInfo .lecture-info .table-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.lectureProcessInfo .lecture-info__link {
+  position: absolute;
+  top: 0;
+  right: 11px;
+  display: block;
+  grid-column: span 2;
+  text-align: right;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 24px;
+  color: #ee0000;
+}
+.lectureProcessInfo .lecture-info__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 24px;
+  color: #000;
+}
+.lectureProcessInfo .lecture-info .inner-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 4px;
+}
+.lectureProcessInfo .lecture-info .inner-box:last-child {
+  margin-top: 15px;
+}
+.lectureProcessInfo .lecture-info .inner-box:last-child dt,
+.lectureProcessInfo .lecture-info .inner-box:last-child dd {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 16px;
+  color: #8f8f8f;
+}
+.lectureProcessInfo .lecture-info__header {
+  position: relative;
+  display: grid;
+  grid-template-columns: 191px 1fr;
+  gap: 15px;
+}
+.lectureProcessInfo .lecture-info__header .thumbnail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 108px;
+  background-color: #f5f5f5;
+}
+.lectureProcessInfo .lecture-info__header .thumbnail img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.lectureProcessInfo .lecture-info__header:has(.lecture-info__link) {
+  padding-top: 40px;
+}
+.lectureProcessInfo .lecture-info__body {
+  margin-top: 16px;
+}
+.lectureProcessInfo .request .btn-group + .btn-group {
+  margin-top: 8px;
+}
+.lectureProcessInfo .status {
+  padding: 17px 16px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.lectureProcessInfo .status .inner-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 20px;
+}
+.lectureProcessInfo .status .btn {
+  width: auto;
+  padding: 8px 20px;
+}
+.lectureProcessInfo .status .btn-group {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 18px;
+}
+.lectureProcessInfo .status .title {
+  margin-right: auto;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 24px;
+  color: #000;
+}
+.lectureProcessInfo .status .desc {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 24px;
+  color: #000;
+}
+.lectureProcessInfo .status--completion {
+  padding: 8px;
+}
+.lectureProcessInfo .status--completion .inner-box {
+  gap: 0;
+}
+.lectureProcessInfo .status--completion .title {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 19px;
+  color: #000;
+}
+.lectureProcessInfo .status--completion .desc {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 24px;
+  color: #000;
+}
+.lectureProcessInfo .status--completion .btn {
+  padding: 0;
+}
+.lectureProcessInfo .status--completion .btn-group {
+  display: none;
+}
+.lectureProcessInfo .status--completion .btn .ico {
+  position: relative;
+}
+.lectureProcessInfo .status--completion .btn .ico:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.lectureProcessInfo .status--completion .btn .ico.ico--print {
+  padding-right: 29px;
+  color: #0091ea;
+}
+.lectureProcessInfo .status--completion .btn .ico.ico--print::before {
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' fill='none'%3E%3Cpath fill='%230091EA' d='M8.5 21.5c-.55 0-1.02-.196-1.412-.587A1.93 1.93 0 0 1 6.5 19.5v-2h-2c-.55 0-1.02-.196-1.412-.587A1.93 1.93 0 0 1 2.5 15.5v-4c0-.85.292-1.562.875-2.137S4.667 8.501 5.5 8.5h14c.85 0 1.563.288 2.138.863s.863 1.288.862 2.137v4c0 .55-.196 1.021-.587 1.413a1.92 1.92 0 0 1-1.413.587h-2v2c0 .55-.196 1.021-.587 1.413a1.92 1.92 0 0 1-1.413.587h-8Zm-4-6h2c0-.55.196-1.02.588-1.412A1.931 1.931 0 0 1 8.5 13.5h8c.55 0 1.021.196 1.413.588.392.392.588.863.587 1.412h2v-4a.965.965 0 0 0-.288-.712.973.973 0 0 0-.712-.288h-14a.965.965 0 0 0-.712.288.972.972 0 0 0-.288.712v4Zm12-7v-3h-8v3h-2v-3c0-.55.196-1.02.588-1.412A1.93 1.93 0 0 1 8.5 3.5h8c.55 0 1.021.196 1.413.588.392.392.588.863.587 1.412v3h-2Zm2 4.5a.968.968 0 0 0 .713-.288A.964.964 0 0 0 19.5 12a.973.973 0 0 0-.288-.712A.965.965 0 0 0 18.5 11a.965.965 0 0 0-.712.288.973.973 0 0 0-.288.712c0 .283.095.52.288.713A.96.96 0 0 0 18.5 13Zm-2 6.5v-4h-8v4h8Z'/%3E%3C/svg%3E");
+}
+.lectureProcessInfo .status--completion.is-print .btn-group {
+  display: block;
+}
+.lectureProcessInfo .status--score {
+  padding: 8px;
+}
+.lectureProcessInfo .status--score .title {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 19px;
+  color: #000;
+}
+.lectureProcessInfo .status--score .desc {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 24px;
+  color: #000;
+}
+
+@media (max-width: 1024px) {
+  .lectureProcessInfo {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .lectureProcessInfo__title {
+    grid-column: 1;
+  }
+  .lectureProcessInfo__desc {
+    grid-column: 1;
+  }
+}
+@media (max-width: 768px) {
+  .lectureProcessInfo .btn {
+    width: 100%;
+  }
+  .lectureProcessInfo .progress dl {
+    grid-template-columns: 1fr;
+  }
+  .lectureProcessInfo .lecture-info .table + .table {
+    border-left: none;
+  }
+  .lectureProcessInfo .lecture-info .table-group {
+    grid-template-columns: 1fr;
+  }
+  .lectureProcessInfo .lecture-info .table:first-child {
+    border-bottom: 1px solid #f5f5f5;
+  }
+  .lectureProcessInfo .lecture-info .table:first-child td span {
+    height: auto;
+  }
+  .lectureProcessInfo .lecture-info .inner-box:last-child {
+    margin-top: 9px;
+  }
+  .lectureProcessInfo .lecture-info__header {
+    grid-template-columns: 1fr;
+  }
+  .lectureProcessInfo .lecture-info__header .thumbnail {
+    width: 184px;
+    height: 106px;
+  }
+  .lectureProcessInfo .lecture-info .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 9px;
+  }
+  .lectureProcessInfo .request .btn-group {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .lectureProcessInfo .status {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .lectureProcessInfo .status .inner-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .lectureProcessInfo .status .btn {
+    width: 100%;
+  }
+  .lectureProcessInfo .status .btn-group {
+    grid-column: span 2;
+  }
+  .lectureProcessInfo .status .title {
+    text-align: right;
+  }
+  .lectureProcessInfo .status .desc {
+    text-align: right;
+  }
+}
 .main .section {
   margin-top: 120px;
 }
@@ -5089,5 +5507,24 @@ textarea {
 @media (max-width: 768px) {
   .request-list .layout__header--title {
     margin-bottom: 5px;
+  }
+}
+.myLecture table {
+  width: 100%;
+}
+.myLecture .layout__header--title {
+  margin-bottom: 0;
+}
+.myLecture .pagination {
+  margin-top: 40px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .myLecture {
+    margin-bottom: 94px;
+    padding: 0 16px;
   }
 }

@@ -27,7 +27,10 @@
             // include '../notice/index.php'
             // include '../notice/noticeDetail.php'
             // include '../myPage/requestList.php'
-            include '../myPage/requestDetail.php'
+            // include '../myPage/requestDetail.php'
+            // include '../myLecture/index.php'
+            // include '../myLecture/lectureRetake.php'
+            include '../myLecture/lectureEnd.php'
         ?>
         <div class="footer-container">
             <? include '../include/footer.php' ?>

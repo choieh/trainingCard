@@ -127,9 +127,11 @@
     }
 
     &.ico {
-        span {
-            display: inline-block;
-            @include ico-style(24px);
+        &:not(.btn--task, .btn--testFinal, .btn--testFile, .btn--status) {
+            span {
+                display: inline-block;
+                @include ico-style(24px);
+            }
         }
 
         &--phone {
@@ -180,74 +182,91 @@
         }
 
         &--testFile {
-            @include ico-style(24px);
-
-            &::before {
-                left: 1rem;
-                transform: translateY(-50%);
-                background-image: svgIcon(testFile, "000");
+            &:hover {
+                .inner-box {
+                    &::before {
+                        background-image: svgIcon(testFile, "FDB515");
+                    }
+                }
             }
 
-            &:hover {
+            .inner-box {
+                @include ico-style(24px);
+
                 &::before {
-                    background-image: svgIcon(testFile, "FDB515");
+                    left: 1rem;
+                    transform: translateY(-50%);
+                    background-image: svgIcon(testFile, "000");
                 }
             }
         }
 
         &--task {
-            @include ico-style(24px);
-
-            &::before {
-                left: 1rem;
-                transform: translateY(-50%);
-                background-image: svgIcon(task, "000");
+            &:hover {
+                .inner-box {
+                    &::before {
+                        background-image: svgIcon(task, "FDB515");
+                    }
+                }
             }
 
-            &:hover {
+            .inner-box {
+                @include ico-style(24px);
+
                 &::before {
-                    background-image: svgIcon(task, "FDB515");
+                    left: 1rem;
+                    transform: translateY(-50%);
+                    background-image: svgIcon(task, "000");
                 }
             }
         }
 
         &--testFinal {
-            @include ico-style(24px);
-
-            &::before {
-                left: 1rem;
-                transform: translateY(-50%);
-                background-image: svgIcon(testFinal, "000");
+            &:hover {
+                .inner-box {
+                    &::before {
+                        background-image: svgIcon(testFinal, "FDB515");
+                    }
+                }
             }
 
-            &:hover {
+            .inner-box {
+                @include ico-style(24px);
+
                 &::before {
-                    background-image: svgIcon(testFinal, "FDB515");
+                    left: 1rem;
+                    transform: translateY(-50%);
+                    background-image: svgIcon(testFinal, "000");
                 }
             }
         }
     }
 
     &--status {
-        position: relative;
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0.75rem 1rem 0.75rem 3rem;
+        justify-content: center;
         background-color: $white;
+
+        .inner-box {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0.75rem 1rem 0.75rem 3rem;
+        }
 
         [role="title"] {
             @include font-style($font-size-18, $font-weight-semibold, 24px);
         }
 
         [role="status"] {
-            @include font-style($font-size-14, $font-weight-regular);
+            @include font-style($font-size-14, $font-weight-bold, 17px);
             color: $gray-06;
+        }
 
-            &:not(:last-child) {
-                @include font-style($font-size-14, $font-weight-bold);
-                color: $gray-05;
-            }
+        [role="record"] {
+            @include font-style($font-size-14, $font-weight-regular, 19px);
+            color: $gray-06;
         }
 
         &:hover,

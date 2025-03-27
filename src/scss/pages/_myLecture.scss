@@ -1,0 +1,27 @@
+@use "../abstracts/index" as *;
+
+.myLecture {
+    table {
+        width: 100%;
+    }
+
+    .layout {
+        &__header {
+            &--title {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .pagination {
+        margin-top: 40px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1024px) {
+    .myLecture {
+        margin-bottom: 94px;
+        padding: 0 16px;
+    }
+}
