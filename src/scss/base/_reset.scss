@@ -246,3 +246,27 @@ input[type="number"] {
         padding: 1rem;
     }
 }
+
+.hidden {
+    &--pc {
+        display: none;
+    }
+}
+
+.color {
+    &--red {
+        color: $red-03;
+    }
+
+    &--yellow {
+        color: $yellow-02;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hidden {
+        &--pc {
+            display: block;
+        }
+    }
+}

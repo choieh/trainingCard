@@ -1,7 +1,7 @@
 <div class="lectureProcessInfo">
     <div class="lectureProcessInfo__desc">
         <strong class="desc--title">재응시 주의사항</strong>
-        <p class="desc--text">학습시간 내에 치종평가 응시 하신 분들 중 미수료 인원, 종료일 4일 후 4일간, <strong class="desc--point">1일 최대
+        <p class="desc--text">학습시간 내에 치종평가 응시 하신 분들 중 미수료 인원, 종료일 4일 후 4일간, <strong class="color--yellow">1일 최대
                 1회</strong> 재응시가 가능합니다.<br>1일
             최대 1회 09시~20시까지 재응시
             가능합니다.</p>

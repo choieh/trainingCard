@@ -31,7 +31,10 @@
             // include '../myLecture/index.php'
             // include '../myLecture/lectureRetake.php'
             // include '../myLecture/lectureEnd.php'
-            include '../exam/index.php'
+            // include '../exam/interimExamIntro.php'
+            // include '../exam/finalExamIntro.php'
+            include '../exam/inculde/interimExam.php'
+            // include '../exam/include/finalExam.php'
         ?>
         <div class="footer-container">
             <? include '../include/footer.php' ?>

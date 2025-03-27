@@ -349,6 +349,22 @@ input[type=number] {
   padding: 1rem;
 }
 
+.hidden--pc {
+  display: none;
+}
+
+.color--red {
+  color: #d32f2f;
+}
+.color--yellow {
+  color: #fdb515;
+}
+
+@media (max-width: 1024px) {
+  .hidden--pc {
+    display: block;
+  }
+}
 .btn {
   display: block;
   font-size: 1.125rem;
@@ -3804,12 +3820,6 @@ textarea {
   line-height: 22px;
   color: #000;
 }
-.lectureProcessInfo__desc .desc--point {
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 22px;
-  color: #fdb515;
-}
 .lectureProcessInfo__item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5523,5 +5533,137 @@ textarea {
   .myLecture {
     margin-bottom: 94px;
     padding: 0 16px;
+  }
+}
+#layout:has(.exam) {
+  background-color: #f5f5f5;
+}
+
+.layout__container:has(.exam) {
+  max-width: 100%;
+}
+
+.exam .layout__header {
+  border-radius: 0;
+  background-color: #fff;
+  -webkit-box-shadow: 1px 4px 10px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 1px 4px 10px 0px rgba(0, 0, 0, 0.25);
+}
+.exam .layout__body {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 43px 0 386px;
+}
+.exam .header__top {
+  position: relative;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 126px 0 16px;
+}
+.exam .header__top .layout__header--title {
+  margin-bottom: 7px;
+}
+.exam .header__top .btn-group {
+  position: absolute;
+  bottom: 48px;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M16.3955 7.75703C16.4884 7.84991 16.5622 7.96019 16.6125 8.08159C16.6628 8.20299 16.6887 8.33312 16.6887 8.46453C16.6887 8.59595 16.6628 8.72608 16.6125 8.84747C16.5622 8.96887 16.4884 9.07916 16.3955 9.17203L13.4135 12.153L16.0895 14.828C16.2771 15.0157 16.3825 15.2702 16.3825 15.5355C16.3825 15.8009 16.2771 16.0554 16.0895 16.243C15.9018 16.4307 15.6473 16.5361 15.382 16.5361C15.1166 16.5361 14.8621 16.4307 14.6745 16.243L11.9995 13.567L9.32446 16.243C9.13682 16.4307 8.88232 16.5361 8.61696 16.5361C8.35159 16.5361 8.0971 16.4307 7.90946 16.243C7.72182 16.0554 7.6164 15.8009 7.6164 15.5355C7.6164 15.2702 7.72182 15.0157 7.90946 14.828L10.5855 12.153L7.60346 9.17203C7.51055 9.07906 7.43686 8.96869 7.3866 8.84724C7.33634 8.72578 7.3105 8.59562 7.31055 8.46418C7.31059 8.33274 7.33653 8.20259 7.38687 8.08117C7.43722 7.95976 7.51098 7.84944 7.60396 7.75653C7.69693 7.66362 7.8073 7.58994 7.92875 7.53968C8.05021 7.48942 8.18037 7.46358 8.31181 7.46362C8.44325 7.46367 8.5734 7.48961 8.69481 7.53995C8.81623 7.59029 8.92655 7.66406 9.01946 7.75703L11.9995 10.74L14.9805 7.75803C15.0733 7.66506 15.1836 7.5913 15.305 7.54097C15.4264 7.49065 15.5565 7.46475 15.688 7.46475C15.8194 7.46475 15.9495 7.49065 16.0709 7.54097C16.1923 7.5913 16.3026 7.66406 16.3955 7.75703Z' fill='black'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4 1C3.20435 1 2.44129 1.31607 1.87868 1.87868C1.31607 2.44129 1 3.20435 1 4V20C1 20.7956 1.31607 21.5587 1.87868 22.1213C2.44129 22.6839 3.20435 23 4 23H20C20.7956 23 21.5587 22.6839 22.1213 22.1213C22.6839 21.5587 23 20.7956 23 20V4C23 3.20435 22.6839 2.44129 22.1213 1.87868C21.5587 1.31607 20.7956 1 20 1H4ZM20 3H4C3.73478 3 3.48043 3.10536 3.29289 3.29289C3.10536 3.48043 3 3.73478 3 4V20C3 20.2652 3.10536 20.5196 3.29289 20.7071C3.48043 20.8946 3.73478 21 4 21H20C20.2652 21 20.5196 20.8946 20.7071 20.7071C20.8946 20.5196 21 20.2652 21 20V4C21 3.73478 20.8946 3.48043 20.7071 3.29289C20.5196 3.10536 20.2652 3 20 3Z' fill='black'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.exam .title {
+  margin-bottom: 22px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 29px;
+  color: #000;
+}
+.exam .notice {
+  padding-left: 20px;
+}
+.exam .notice__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16px;
+  list-style: decimal;
+}
+.exam .notice__list li {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 24px;
+  color: #000;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.exam .notice__list li strong {
+  font-weight: 400;
+}
+.exam .notice + .checkbox {
+  margin-top: 100px;
+}
+.exam .checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.exam .btn-group {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 40px;
+}
+.exam .btn.btn.bd-radius--circle.size--s {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 30px;
+  padding: 12px 20px;
+}
+
+@media (max-width: 1024px) {
+  .exam .layout__header {
+    padding: 0 16px;
+  }
+  .exam .layout__header--title {
+    margin-top: 0;
+  }
+  .exam .layout__header--sub {
+    line-height: 18px;
+  }
+  .exam .layout__body {
+    padding: 30px 16px 0;
+  }
+  .exam .header__top {
+    padding-top: 43px;
+  }
+  .exam .header__top .btn-group {
+    bottom: 65px;
+  }
+  .exam .title {
+    margin-bottom: 20px;
+  }
+  .exam .checkbox label {
+    width: 208px;
+    line-height: 18px;
+  }
+  .exam .checkbox .ico--check {
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
   }
 }

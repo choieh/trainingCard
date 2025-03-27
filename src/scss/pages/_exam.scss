@@ -1,0 +1,161 @@
+@use "../abstracts/index" as *;
+
+#layout {
+    &:has(.exam) {
+        background-color: $gray-07;
+    }
+}
+
+.layout {
+    &__container {
+        &:has(.exam) {
+            max-width: 100%;
+        }
+    }
+}
+
+.exam {
+    .layout {
+        &__header {
+            @include common-boxShadow-style(
+                $border-radius: 0,
+                $box-shadow: 1px 4px 10px 0px rgba(0, 0, 0, 0.25)
+            );
+        }
+
+        &__body {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 43px 0 386px;
+        }
+    }
+
+    .header {
+        &__top {
+            position: relative;
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 126px 0 16px;
+
+            .layout {
+                &__header {
+                    &--title {
+                        margin-bottom: 7px;
+                    }
+                }
+            }
+
+            .btn {
+                &-group {
+                    position: absolute;
+                    bottom: 48px;
+                    right: 0;
+                    width: 24px;
+                    height: 24px;
+                    background-image: svgIcon(close-02, "000");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+            }
+        }
+    }
+
+    .title {
+        margin-bottom: 22px;
+        @include font-style($font-size-24, $font-weight-semibold, 29px);
+        color: $black;
+    }
+
+    .notice {
+        padding-left: 20px;
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            list-style: decimal;
+
+            li {
+                @include font-style($font-size-18, $font-weight-regular, 24px);
+                color: $black;
+                font-family: $font-family-body;
+
+                strong {
+                    font-weight: $font-weight-regular;
+                }
+            }
+        }
+
+        & + .checkbox {
+            margin-top: 100px;
+        }
+    }
+
+    .checkbox {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn {
+        &-group {
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        &.btn.bd-radius--circle.size--s {
+            @include font-style($font-size-20, $font-weight-bold, 30px);
+            padding: 12px 20px;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .exam {
+        .layout {
+            &__header {
+                padding: 0 16px;
+
+                &--title {
+                    margin-top: 0;
+                }
+
+                &--sub {
+                    line-height: 18px;
+                }
+            }
+
+            &__body {
+                padding: 30px 16px 0;
+            }
+        }
+
+        .header {
+            &__top {
+                padding-top: 43px;
+                .btn {
+                    &-group {
+                        bottom: 65px;
+                    }
+                }
+            }
+        }
+
+        .title {
+            margin-bottom: 20px;
+        }
+
+        .checkbox {
+            label {
+                width: 208px;
+                line-height: 18px;
+            }
+
+            .ico--check {
+                flex-shrink: 0;
+            }
+        }
+    }
+}
