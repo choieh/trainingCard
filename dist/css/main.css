@@ -1629,6 +1629,28 @@ textarea {
   line-height: 36px;
   color: #000;
 }
+.layout__header--sub {
+  position: relative;
+  padding-left: 24px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 24px;
+  color: #aeaeae;
+}
+.layout__header--sub::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath fill='%23B4B4B4' fill-rule='evenodd' d='m16.29 17.175-1.04-.832a6.615 6.615 0 0 0 0-8.94l1.04-.832a7.94 7.94 0 0 1 0 10.604ZM13.655 8.68l-1.042.833a3.451 3.451 0 0 1 0 4.72l1.042.833a4.777 4.777 0 0 0 0-6.386ZM10.991 6.5 7.528 9.226H5v5.333h2.532l3.46 2.67V6.5Z' clip-rule='evenodd'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 .layout__header .depth {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
@@ -3753,6 +3775,7 @@ textarea {
   display: grid;
   grid-template-columns: 611px 611px;
   gap: 18px;
+  margin-top: 14px;
 }
 .lectureProcessInfo .btn {
   width: 50%;
@@ -3762,29 +3785,6 @@ textarea {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 8px;
-}
-.lectureProcessInfo__title {
-  grid-column: span 2;
-  position: relative;
-  padding-left: 24px;
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 24px;
-  color: #aeaeae;
-}
-.lectureProcessInfo__title::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 24px;
-  height: 24px;
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath fill='%23B4B4B4' fill-rule='evenodd' d='m16.29 17.175-1.04-.832a6.615 6.615 0 0 0 0-8.94l1.04-.832a7.94 7.94 0 0 1 0 10.604ZM13.655 8.68l-1.042.833a3.451 3.451 0 0 1 0 4.72l1.042.833a4.777 4.777 0 0 0 0-6.386ZM10.991 6.5 7.528 9.226H5v5.333h2.532l3.46 2.67V6.5Z' clip-rule='evenodd'/%3E%3C/svg%3E");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 .lectureProcessInfo__desc {
   grid-column: span 2;
@@ -4085,9 +4085,6 @@ textarea {
   .lectureProcessInfo {
     grid-template-columns: 1fr;
     gap: 16px;
-  }
-  .lectureProcessInfo__title {
-    grid-column: 1;
   }
   .lectureProcessInfo__desc {
     grid-column: 1;

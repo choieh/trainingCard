@@ -1,5 +1,4 @@
 <div class="lectureProcessInfo">
-    <h2 class="lectureProcessInfo__title">현재 <span>홍길동</span>님은 총 <span>0</span>개의 강의를 보셨습니다.</h2>
     <div class="lectureProcessInfo__desc">
         <strong class="desc--title">안내 사항</strong>
         <p class="desc--text">과정별 복습기간까지 학습을 보실 수 있습니다. 다만, <strong class="desc--point">진도반영은 되지 않습니다.</strong></p>

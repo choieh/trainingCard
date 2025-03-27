@@ -30,7 +30,8 @@
             // include '../myPage/requestDetail.php'
             // include '../myLecture/index.php'
             // include '../myLecture/lectureRetake.php'
-            include '../myLecture/lectureEnd.php'
+            // include '../myLecture/lectureEnd.php'
+            include '../exam/index.php'
         ?>
         <div class="footer-container">
             <? include '../include/footer.php' ?>

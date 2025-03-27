@@ -4,6 +4,7 @@
     display: grid;
     grid-template-columns: 611px 611px;
     gap: 18px;
+    margin-top: 14px;
 
     .btn {
         width: 50%;
@@ -11,28 +12,6 @@
         &-group {
             justify-content: center;
             gap: 8px;
-        }
-    }
-
-    &__title {
-        grid-column: span 2;
-        position: relative;
-        padding-left: 24px;
-        @include font-style($font-size-14, $font-weight-regular, 24px);
-        color: $gray-05;
-
-        &::before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-            width: 24px;
-            height: 24px;
-            background-image: svgIcon(sound, "B4B4B4");
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
         }
     }
 
@@ -350,10 +329,6 @@
     .lectureProcessInfo {
         grid-template-columns: 1fr;
         gap: 16px;
-
-        &__title {
-            grid-column: 1;
-        }
 
         &__desc {
             grid-column: 1;

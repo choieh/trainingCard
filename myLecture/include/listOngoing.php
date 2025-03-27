@@ -1,5 +1,4 @@
 <div class="lectureProcessInfo">
-    <h2 class="lectureProcessInfo__title">현재 <span>홍길동</span>님은 총 <span>10</span>개의 강의가 진행중입니다.</h2>
 
     <div class="lectureProcessInfo__item">
         <article class="progress">

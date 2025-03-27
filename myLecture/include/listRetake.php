@@ -1,5 +1,4 @@
 <div class="lectureProcessInfo">
-    <h2 class="lectureProcessInfo__title">현재 <span>홍길동</span>님은 재응시 가능한 과정이 없습니다.</h2>
     <div class="lectureProcessInfo__desc">
         <strong class="desc--title">재응시 주의사항</strong>
         <p class="desc--text">학습시간 내에 치종평가 응시 하신 분들 중 미수료 인원, 종료일 4일 후 4일간, <strong class="desc--point">1일 최대
