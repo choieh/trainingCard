@@ -11,7 +11,7 @@
         </div>
         <div class="layout__body">
             <h4 class="title">주의사항</h4>
-            <form id="form--interimExam" class="form">
+            <form id="form--intro" class="form">
                 <div class="notice">
                     <ol class="notice__list">
                         <li>중간평가의 응시 제한시간은 없습니다.</li>

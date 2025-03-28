@@ -47,6 +47,29 @@
             justify-content: flex-end;
         }
     }
+
+    &__body {
+        .color {
+            &--red {
+                color: $red-03;
+            }
+
+            &--yellow {
+                color: $yellow-02;
+            }
+        }
+
+        .notice {
+            &--body {
+                .color {
+                    &--red {
+                        color: $red-01;
+                        font-weight: $font-weight-regular;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .logo {

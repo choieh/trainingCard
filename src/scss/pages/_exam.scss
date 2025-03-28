@@ -15,18 +15,19 @@
 }
 
 .exam {
+    &--interim {
+        padding-bottom: 807px;
+    }
+
     .layout {
         &__header {
+            position: relative;
             @include common-boxShadow-style(
                 $border-radius: 0,
                 $box-shadow: 1px 4px 10px 0px rgba(0, 0, 0, 0.25)
             );
-        }
 
-        &__body {
-            max-width: 1240px;
-            margin: 0 auto;
-            padding: 43px 0 386px;
+            z-index: 1;
         }
     }
 
@@ -56,9 +57,16 @@
                     background-size: contain;
                     background-repeat: no-repeat;
                     background-position: center;
+                    cursor: pointer;
                 }
             }
         }
+    }
+
+    .inner {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 43px 0 386px;
     }
 
     .title {
@@ -90,6 +98,29 @@
         & + .checkbox {
             margin-top: 100px;
         }
+
+        &__title--sub {
+            display: block;
+            margin-top: 32px;
+            margin-left: -20px;
+            @include font-style($font-size-18, $font-weight-regular, 24px);
+            color: $black;
+        }
+
+        &__text--sub {
+            margin-left: -20px;
+            margin-bottom: 16px;
+            @include font-style($font-size-18, $font-weight-regular, 24px);
+            color: $black;
+        }
+
+        &--body {
+            background-color: $gray-07;
+
+            .inner {
+                padding: 45px 0 35px;
+            }
+        }
     }
 
     .checkbox {
@@ -110,10 +141,22 @@
             padding: 12px 20px;
         }
     }
+}
 
-    .form {
-        display: flex;
-        gap: 43px;
+#form--interimExam {
+    display: grid;
+    grid-template-columns: 254px 1fr;
+    gap: 43px;
+
+    .btn {
+        &-group {
+            grid-column: span 2;
+            justify-content: flex-end;
+
+            &:last-child {
+                margin-top: 80px;
+            }
+        }
     }
 }
 
@@ -168,52 +211,39 @@
 }
 
 .question {
-    &-container {
-        margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
 
-        .btn {
-            &-group {
-                justify-content: flex-end;
-                margin-top: 0;
-                margin-bottom: 16px;
-            }
-        }
+    &--sub {
+        @include font-style($font-size-18, $font-weight-regular, 25px);
+        color: $black;
     }
 
-    &-item {
-        margin-bottom: 30px;
-        border: 1px solid $gray-06;
-        border-radius: 5px;
-        overflow: hidden;
+    &--title {
+        margin-bottom: 40px;
+        @include font-style($font-size-30, $font-weight-bold, 36px);
+        color: $black;
     }
 
     &-header {
-        background-color: $gray-07;
-        padding: 15px;
-
-        h3 {
-            margin: 0;
-            @include font-style($font-size-18, $font-weight-semibold, 24px);
-        }
-    }
-
-    &-content {
-        padding: 20px;
-
-        p {
-            @include font-style($font-size-16, $font-weight-regular, 24px);
-            margin-bottom: 20px;
-        }
+        margin-bottom: 11px;
     }
 }
 
 .option {
     &-item {
         display: flex;
-        margin-bottom: 10px;
-        border: 1px solid $gray-06;
-        border-radius: 5px;
-        overflow: hidden;
+        align-items: center;
+        gap: 16px;
+        padding: 5px 6px;
+        border: 1px solid #ededed;
+        border-radius: 4px;
+        cursor: pointer;
+
+        & + .option-item {
+            margin-top: 8px;
+        }
     }
 
     &-selected {
@@ -221,11 +251,14 @@
     }
 
     &-number {
-        background-color: $gray-07;
-        padding: 10px 15px;
-        font-weight: $font-weight-bold;
-        min-width: 50px;
+        flex-shrink: 0;
+        align-self: flex-start;
+        padding: 10px;
+        @include font-style($font-size-18, $font-weight-regular, 24px);
+        color: $black;
         text-align: center;
+        background-color: #ededed;
+        border-radius: 4px;
 
         .option-selected & {
             background-color: $red-01;
@@ -234,14 +267,17 @@
     }
 
     &-text {
-        padding: 10px 15px;
-        flex: 1;
-        @include font-style($font-size-16, $font-weight-regular, 24px);
+        padding: 10px 0;
+        @include font-style($font-size-18, $font-weight-regular, 24px);
     }
 }
 
 @media (max-width: 1024px) {
     .exam {
+        &--interim {
+            padding-bottom: 744px;
+        }
+
         .layout {
             &__header {
                 padding: 0 16px;
@@ -254,10 +290,10 @@
                     line-height: 18px;
                 }
             }
+        }
 
-            &__body {
-                padding: 30px 16px 0;
-            }
+        .inner {
+            padding: 30px 16px 0;
         }
 
         .header {
@@ -271,16 +307,47 @@
                 }
             }
         }
+
+        .notice {
+            &--body {
+                .inner {
+                    padding: 28px 16px 25px;
+                }
+            }
+        }
+    }
+
+    #form--interimExam {
+        grid-template-columns: 1fr;
+        gap: 16px;
+
+        .btn {
+            &-group {
+                margin-top: 24px;
+            }
+        }
+
+        .answer {
+            display: none;
+        }
+
+        .question {
+            &-container {
+                grid-column: 1;
+            }
+        }
     }
 
     .question {
-        &-content {
-            padding: 15px;
+        &--title {
+            font-size: #{$font-size-24}px;
+            line-height: 29px;
         }
     }
 
     .option {
         &-item {
+            padding: 5px 6px 8px;
             margin-bottom: 8px;
         }
 
@@ -290,7 +357,7 @@
         }
 
         &-text {
-            padding: 8px 12px;
+            padding: 0;
             @include font-style($font-size-14, $font-weight-regular, 20px);
         }
     }

@@ -15,6 +15,7 @@ function initAll() {
     initCardOptions();
     initPagination();
     initButton();
+    initExam();
 }
 
 // 장바구니 관련 기능 -----------------------------------------------
@@ -490,4 +491,139 @@ function initButton() {
             item.classList.add("is-active");
         });
     });
+}
+
+// 평가 초기화 -----------------------------------------------
+function initExam() {
+    // 기본 선택 상태 제거 (새로 추가된 부분)
+    clearDefaultSelections();
+
+    // 문제 수에 맞게 답안 리스트 동적 생성
+    initAnswerList();
+
+    // 옵션 아이템 클릭 이벤트 처리
+    const optionItems = document.querySelectorAll(".option-item");
+    if (!optionItems.length) return;
+
+    optionItems.forEach((item) => {
+        item.addEventListener("click", function () {
+            // 현재 문제 컨테이너 찾기
+            const questionItem = this.closest(".question-item");
+            if (!questionItem) return;
+
+            // 같은 문제 내 모든 옵션에서 선택 클래스 제거 및 aria-checked 업데이트
+            const options = questionItem.querySelectorAll(".option-item");
+            options.forEach((option) => {
+                option.classList.remove("option-selected");
+                option.setAttribute("aria-checked", "false");
+            });
+
+            // 클릭한 옵션에 선택 클래스 추가 및 aria-checked 업데이트
+            this.classList.add("option-selected");
+            this.setAttribute("aria-checked", "true");
+
+            // 문제 번호와 옵션 번호를 이용해 답안 목록 업데이트
+            const questionNumber = this.getAttribute("name").replace(
+                "question-",
+                ""
+            );
+            const optionNumber =
+                this.querySelector(".option-number")?.textContent.match(
+                    /(\d+)/
+                )[1];
+
+            if (questionNumber && optionNumber) {
+                updateAnswerList(parseInt(questionNumber), optionNumber);
+            }
+        });
+
+        // 키보드 접근성 추가
+        item.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                this.click();
+            }
+        });
+    });
+
+    // 기본 선택 상태 제거 함수 (새로 추가)
+    function clearDefaultSelections() {
+        // 모든 option-selected 클래스 제거
+        const selectedOptions = document.querySelectorAll(
+            ".option-item.option-selected"
+        );
+        selectedOptions.forEach((option) => {
+            option.classList.remove("option-selected");
+            option.setAttribute("aria-checked", "false");
+        });
+
+        // 답안 리스트의 is-done 클래스 제거
+        const doneAnswers = document.querySelectorAll(
+            ".answer__list li.is-done"
+        );
+        doneAnswers.forEach((answer) => {
+            answer.classList.remove("is-done");
+            const answerSpan = answer.querySelector("span:last-child");
+            if (answerSpan) {
+                answerSpan.textContent = "";
+            }
+        });
+    }
+
+    // 문제 수에 맞게 답안 리스트 초기화하는 함수
+    function initAnswerList() {
+        const questionItems = document.querySelectorAll(".question-item");
+        const answerList = document.querySelector(".answer__list");
+
+        if (!questionItems.length || !answerList) return;
+
+        // 기존 답안 항목 비우기
+        answerList.innerHTML = "";
+
+        // 문제 수만큼 답안 항목 생성
+        questionItems.forEach((item, index) => {
+            const questionNumber = index + 1;
+
+            // 기본적으로는 선택된 옵션이 없도록 수정
+            const selectedOption = null;
+            const selectedOptionNumber = "";
+
+            // 새 답안 항목 생성
+            const answerItem = document.createElement("li");
+            // is-done 클래스를 추가하지 않음 (기본 선택 없음)
+
+            // 문제 번호 요소
+            const questionSpan = document.createElement("span");
+            questionSpan.textContent = `문제 ${questionNumber}`;
+
+            // 답변 번호 요소 (빈 내용)
+            const answerSpan = document.createElement("span");
+            answerSpan.textContent = "";
+
+            // 요소 조립
+            answerItem.appendChild(questionSpan);
+            answerItem.appendChild(answerSpan);
+            answerList.appendChild(answerItem);
+        });
+    }
+
+    // 답안 목록 업데이트 함수
+    function updateAnswerList(questionNum, optionNum) {
+        const answerList = document.querySelector(".answer__list");
+        if (!answerList) return;
+
+        const answerItem = answerList.querySelector(
+            `li:nth-child(${questionNum})`
+        );
+        if (!answerItem) return;
+
+        // 답안 텍스트 업데이트
+        const answerSpan = answerItem.querySelector("span:last-child");
+        if (answerSpan) {
+            answerSpan.textContent = optionNum;
+        }
+
+        // 답안 작성 표시
+        answerItem.classList.add("is-done");
+    }
 }
