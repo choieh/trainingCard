@@ -16,6 +16,9 @@ function initAll() {
     initPagination();
     initButton();
     initExam();
+    initTimer();
+    initDragAndDrop();
+    initTaskExam();
 }
 
 // 장바구니 관련 기능 -----------------------------------------------
@@ -626,4 +629,353 @@ function initExam() {
         // 답안 작성 표시
         answerItem.classList.add("is-done");
     }
+}
+
+// 타이머 초기화 -----------------------------------------------
+class ExamTimer {
+    constructor(options = {}) {
+        this.options = {
+            selector: ".circle_progress_wrap",
+            duration: 3600,
+            formSelector: "form",
+            onComplete: () => this.handleTimeComplete(),
+            ...options,
+        };
+
+        // DOM 요소
+        this.container = document.querySelector(this.options.selector);
+
+        // container가 없으면 초기화하지 않음
+        if (!this.container) {
+            console.warn(
+                "타이머 컨테이너를 찾을 수 없습니다:",
+                this.options.selector
+            );
+            return;
+        }
+
+        this.bar = this.container.querySelector(".bar");
+        this.value = this.container.querySelector(".value");
+        this.form = document.querySelector(this.options.formSelector);
+
+        // 필수 요소가 없으면 초기화하지 않음
+        if (!this.bar || !this.value) {
+            console.warn("타이머 필수 요소를 찾을 수 없습니다");
+            return;
+        }
+
+        // 상수
+        this.RADIUS = 70;
+        this.CIRCUMFERENCE = 2 * Math.PI * this.RADIUS;
+
+        // 상태
+        this.timeLeft = this.options.duration;
+        this.isRunning = false;
+        this.timer = null;
+
+        // 초기화
+        this.init();
+        // 자동 시작
+        this.start();
+    }
+
+    init() {
+        this.bar.style.strokeDasharray = this.CIRCUMFERENCE;
+        this.updateProgress(this.timeLeft);
+    }
+
+    updateProgress(timeLeft) {
+        // 남은 시간을 퍼센트로 변환
+        const percent = (timeLeft / this.options.duration) * 100;
+        const progress = percent / 100;
+        const dashoffset = this.CIRCUMFERENCE * (1 - progress);
+
+        // 프로그레스 바 업데이트
+        this.bar.style.strokeDashoffset = dashoffset;
+
+        // 시간 표시 업데이트 (분:초)
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        this.value.textContent = `${String(minutes).padStart(2, "0")}:${String(
+            seconds
+        ).padStart(2, "0")}`;
+    }
+
+    start() {
+        if (this.isRunning) return;
+
+        this.isRunning = true;
+        this.timer = setInterval(() => {
+            // 먼저 시간이 0인지 체크
+            if (this.timeLeft <= 0) {
+                this.stop();
+                this.options.onComplete();
+                return;
+            }
+
+            // 시간 감소 및 업데이트
+            this.timeLeft--;
+            this.updateProgress(this.timeLeft);
+        }, 1000);
+    }
+
+    stop() {
+        if (!this.timer) return;
+        clearInterval(this.timer);
+        this.isRunning = false;
+    }
+
+    handleTimeComplete() {
+        if (!this.form) {
+            console.error("시험 폼을 찾을 수 없어 자동 제출할 수 없습니다.");
+            alert("시험 시간이 종료되었습니다. 관리자에게 문의하세요.");
+            return;
+        }
+
+        alert("시험 시간이 종료되었습니다. 자동으로 제출됩니다.");
+        this.form.submit();
+    }
+}
+
+function initTimer() {
+    const timerContainer = document.querySelector(".circle_progress_wrap");
+
+    // 타이머 요소가 존재할 때만 초기화
+    if (timerContainer) {
+        const examTimer = new ExamTimer({
+            selector: ".circle_progress_wrap",
+            duration: 10, // 10초 (테스트용)
+            formSelector: "#form--finalExam",
+            onComplete: () => {
+                console.log("시험 시간 종료");
+            },
+        });
+    }
+}
+
+// 드래그 앤 드롭 초기화 함수
+function initDragAndDrop() {
+    const dropArea = document.querySelector(".question__item");
+    const fileInput = document.querySelector(".file-input");
+    const fileButton = document.querySelector(".btn--file");
+
+    if (!dropArea || !fileInput) return;
+
+    // 파일 찾기 버튼 클릭 이벤트
+    fileButton.addEventListener("click", () => {
+        fileInput.click();
+    });
+
+    // 드래그 이벤트 방지
+    const preventDefaults = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+    };
+
+    // 드래그 이벤트 리스너 추가
+    ["dragenter", "dragover", "dragleave", "drop"].forEach((eventName) => {
+        dropArea.addEventListener(eventName, preventDefaults);
+    });
+
+    // 드래그 오버 시 시각적 피드백
+    ["dragenter", "dragover"].forEach((eventName) => {
+        dropArea.addEventListener(eventName, () => {
+            dropArea.classList.add("highlight");
+        });
+    });
+
+    ["dragleave", "drop"].forEach((eventName) => {
+        dropArea.addEventListener(eventName, () => {
+            dropArea.classList.remove("highlight");
+        });
+    });
+
+    // 파일 드롭 처리
+    dropArea.addEventListener("drop", (e) => {
+        const files = e.dataTransfer.files;
+        handleFiles(files);
+    });
+
+    // 파일 인풋 변경 처리
+    fileInput.addEventListener("change", (e) => {
+        const files = e.target.files;
+        handleFiles(files);
+    });
+
+    // 파일 처리 함수
+    const handleFiles = (files) => {
+        const allowedTypes = [
+            "txt",
+            "xls",
+            "xlsx",
+            "pdf",
+            "docx",
+            "hwp",
+            "zip",
+            "pptx",
+            "jpg",
+            "jpeg",
+            "png",
+        ];
+
+        [...files].forEach((file) => {
+            const extension = file.name.split(".").pop().toLowerCase();
+            const fileNameElement = dropArea.querySelector(".file-name");
+
+            if (allowedTypes.includes(extension)) {
+                // 원래 안내 텍스트 복원
+                dropArea.querySelector("p").innerHTML =
+                    "첨부하려는 파일을<br>끌어다 놓으세요";
+
+                // 파일명 표시
+                fileNameElement.textContent = file.name;
+            } else {
+                alert("지원하지 않는 파일 형식입니다.");
+                fileNameElement.textContent = "";
+            }
+        });
+    };
+}
+
+// 과제 첨부 초기화 -----------------------------------------------
+function initTaskExam() {
+    const taskExam = document.querySelectorAll(".question__item");
+
+    // 텍스트 영역 포커스 여부와 해당 아이템 확인
+    const getFocusedTextareaItem = () => {
+        const focusedTextarea = document.querySelector(".exam-textarea:focus");
+        return focusedTextarea
+            ? focusedTextarea.closest(".question__item")
+            : null;
+    };
+
+    // 호버 효과 적용 함수
+    const applyHoverEffect = (item) => {
+        item.classList.add("is-hover");
+        // inner 요소에 호버 효과용 클래스 추가
+        const innerBox = item.querySelector(".inner-box");
+        if (innerBox) {
+            innerBox.classList.add("is-hover");
+        }
+
+        let prevSibling = item.previousElementSibling;
+        while (prevSibling) {
+            prevSibling.classList.add("is-sibling");
+            const prevInnerBox = prevSibling.querySelector(".inner-box");
+            if (prevInnerBox) {
+                prevInnerBox.classList.add("is-sibling");
+            }
+            prevSibling = prevSibling.previousElementSibling;
+        }
+
+        let nextSibling = item.nextElementSibling;
+        while (nextSibling) {
+            nextSibling.classList.add("is-sibling");
+            const nextInnerBox = nextSibling.querySelector(".inner-box");
+            if (nextInnerBox) {
+                nextInnerBox.classList.add("is-sibling");
+            }
+            nextSibling = nextSibling.nextElementSibling;
+        }
+    };
+
+    // 호버 효과 제거 함수
+    const removeHoverEffect = (item) => {
+        item.classList.remove("is-hover");
+        const innerBox = item.querySelector(".inner-box");
+        if (innerBox) {
+            innerBox.classList.remove("is-hover");
+        }
+
+        document.querySelectorAll(".question__item").forEach((sibling) => {
+            sibling.classList.remove("is-sibling");
+            const siblingInnerBox = sibling.querySelector(".inner-box");
+            if (siblingInnerBox) {
+                siblingInnerBox.classList.remove("is-sibling");
+            }
+        });
+    };
+
+    // 초기 상태로 되돌리는 함수
+    const resetToInitialState = (item) => {
+        const innerBox = item.querySelector(".inner-box");
+        innerBox.innerHTML = `
+            <strong>직접 작성하기</strong>
+            <p>답안을 작성하시려면<br>클릭해주세요</p>
+        `;
+        item.classList.remove("is-active");
+        removeHoverEffect(item);
+    };
+
+    taskExam.forEach((item) => {
+        // 호버 이벤트
+        item.addEventListener("mouseenter", () => {
+            const focusedItem = getFocusedTextareaItem();
+
+            // textarea가 포커스된 상태에서는 호버 효과 비활성화
+            if (!focusedItem) {
+                applyHoverEffect(item);
+            }
+        });
+
+        item.addEventListener("mouseleave", () => {
+            const focusedItem = getFocusedTextareaItem();
+
+            // textarea가 포커스된 상태가 아닐 때만 호버 효과 제거
+            if (!focusedItem) {
+                removeHoverEffect(item);
+            }
+        });
+
+        // 직접 작성하기 클릭 이벤트
+        if (item.classList.contains("self-write")) {
+            item.addEventListener("click", () => {
+                if (!item.classList.contains("is-active")) {
+                    const innerBox = item.querySelector(".inner-box");
+                    const textareaHTML = `
+                        <div class="textarea-box">
+                            <textarea 
+                                placeholder="답안을 작성해주세요." 
+                                rows="10"
+                                class="exam-textarea"
+                            ></textarea>
+                        </div>
+                    `;
+                    innerBox.innerHTML = textareaHTML;
+
+                    item.classList.add("is-active");
+                    applyHoverEffect(item);
+
+                    const textarea = item.querySelector(".exam-textarea");
+                    if (textarea) {
+                        textarea.focus();
+
+                        // blur 이벤트
+                        textarea.addEventListener("blur", () => {
+                            if (!textarea.value.trim()) {
+                                resetToInitialState(item);
+                            } else {
+                                removeHoverEffect(item);
+                            }
+                        });
+
+                        // focus 이벤트
+                        textarea.addEventListener("focus", () => {
+                            // 다른 모든 항목의 호버 효과 제거
+                            document
+                                .querySelectorAll(".question__item")
+                                .forEach((el) => {
+                                    if (el !== item) {
+                                        removeHoverEffect(el);
+                                    }
+                                });
+
+                            // 현재 항목에만 호버 효과 적용
+                            applyHoverEffect(item);
+                        });
+                    }
+                }
+            });
+        }
+    });
 }

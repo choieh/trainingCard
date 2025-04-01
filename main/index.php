@@ -34,9 +34,10 @@
             // include '../exam/interimExamIntro.php'
             // include '../exam/finalExamIntro.php'
             // include '../exam/taskExamIntro.php'
-            include '../exam/interimExam.php'
+            // include '../exam/interimExam.php'
             // include '../exam/finalExam.php'
-            // include '../exam/taskExam.php'
+            include '../exam/taskExam.php'
+            // include '../exam/completeExam.php'
         ?>
         <div class="footer-container">
             <? include '../include/footer.php' ?>

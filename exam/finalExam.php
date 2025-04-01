@@ -26,7 +26,10 @@
                 </div>
             </div>
             <div class="inner">
-                <form id="form--interimExam" class="form">
+                <form id="form--finalExam" class="form">
+                    <!-- [D] 타이머 -->
+                    <? include '../common/progressBar.php' ?>
+
                     <div class="btn-group">
                         <button type="button" class="btn bd-radius--circle size--s cover__bg">최종제출하기</button>
                     </div>

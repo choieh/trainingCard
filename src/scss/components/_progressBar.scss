@@ -1,0 +1,49 @@
+@use "../abstracts/index" as *;
+
+.circle_progress_wrap {
+    position: relative;
+    width: 254px;
+    height: 218px;
+    padding: 30px 48px;
+    border: 1px solid #ededed;
+    border-radius: 8px;
+}
+
+.circle_progress {
+    transform: rotate(90deg) scale(-1, 1);
+}
+
+.frame,
+.bar {
+    fill: none;
+}
+
+.frame {
+    stroke: $gray-07;
+}
+
+.bar {
+    stroke: $red-01;
+    stroke-linecap: round;
+}
+
+.value {
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: $black;
+    @include font-style($font-size-36, $font-weight-bold, 46px);
+}
+
+.timer {
+    &--label {
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translateX(-50%);
+        @include font-style($font-size-18, $font-weight-semibold, 24px);
+        color: $black;
+    }
+}

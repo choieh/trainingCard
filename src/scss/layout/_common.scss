@@ -51,19 +51,28 @@
     &__body {
         .color {
             &--red {
-                color: $red-03;
+                color: $red-01;
             }
 
             &--yellow {
                 color: $yellow-02;
             }
+
+            &--blue {
+                color: $blue-06;
+            }
         }
 
         .notice {
             &--body {
-                .color {
-                    &--red {
-                        color: $red-01;
+                ul {
+                    & + ul {
+                        margin-top: 28px;
+                    }
+                }
+
+                li {
+                    strong {
                         font-weight: $font-weight-regular;
                     }
                 }
