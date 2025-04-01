@@ -1,0 +1,73 @@
+@use "../abstracts/index" as *;
+
+.modal {
+    &--print {
+        width: 325px;
+        height: 482px;
+        padding: 17px 10px 0;
+        border-radius: 8px;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    &__title {
+        margin-top: 26px;
+        padding-top: 129px;
+        @include font-style($font-size-30, $font-weight-bold, 36px);
+        color: $black;
+        text-align: center;
+        background-image: svgIcon(print, "0091EA");
+        background-size: 120px 120px;
+        background-repeat: no-repeat;
+        background-position: top center;
+    }
+
+    .form {
+        margin-top: 51px;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 34px;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            .text {
+                @include font-style($font-size-14, $font-weight-bold, 17px);
+                color: $black;
+            }
+        }
+
+        .btn {
+            padding: 19px 0;
+            color: $red-01;
+
+            &-group {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                margin-top: 34px;
+                border-top: 1px solid $gray-06;
+            }
+        }
+    }
+
+    &__header {
+        position: relative;
+
+        .btn {
+            width: 24px;
+            height: 24px;
+            background-image: svgIcon(close, "000");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            &-group {
+                justify-content: flex-end;
+            }
+        }
+    }
+}

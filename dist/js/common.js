@@ -19,6 +19,7 @@ function initAll() {
     initTimer();
     initDragAndDrop();
     initTaskExam();
+    initModal();
 }
 
 // 장바구니 관련 기능 -----------------------------------------------
@@ -978,4 +979,31 @@ function initTaskExam() {
             });
         }
     });
+}
+
+// 모달 초기화 함수
+function initModal() {
+    const closeButtons = document.querySelectorAll(".modal .ico--close");
+    const cancelButtons = document.querySelectorAll(".modal-btn--cancel");
+    const backModal = document.querySelector(".modal.is-active");
+
+    // 닫기 버튼 이벤트 처리
+    closeButtons.forEach((button) => {
+        button.addEventListener("click", closeModal);
+    });
+
+    // 취소 버튼 이벤트 처리
+    cancelButtons.forEach((button) => {
+        button.addEventListener("click", closeModal);
+    });
+}
+
+// 모달 닫기 함수
+function closeModal(e) {
+    e.preventDefault();
+    const modal = this.closest(".modal");
+    if (modal) {
+        modal.classList.remove("is-active");
+        backModal.style.display = "none";
+    }
 }

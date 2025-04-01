@@ -30,13 +30,13 @@
             // include '../myPage/requestDetail.php'
             // include '../myLecture/index.php'
             // include '../myLecture/lectureRetake.php'
-            // include '../myLecture/lectureEnd.php'
+            include '../myLecture/lectureEnd.php'
             // include '../exam/interimExamIntro.php'
             // include '../exam/finalExamIntro.php'
             // include '../exam/taskExamIntro.php'
             // include '../exam/interimExam.php'
             // include '../exam/finalExam.php'
-            include '../exam/taskExam.php'
+            // include '../exam/taskExam.php'
             // include '../exam/completeExam.php'
         ?>
         <div class="footer-container">

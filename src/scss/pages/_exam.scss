@@ -627,6 +627,7 @@
 
             &:has(#form--taskExam) {
                 padding-top: 56px;
+                padding-bottom: 213px;
             }
         }
 
@@ -736,15 +737,39 @@
             .question {
                 gap: 52px;
 
-                &__body {
-                    grid-template-columns: 1fr;
-                }
-
                 & + .btn {
                     &-group {
                         justify-content: center;
                         margin-top: 80px;
                     }
+                }
+
+                &:hover {
+                    width: 100%;
+                }
+
+                &__item {
+                    width: 100%;
+
+                    &.is-hover {
+                        width: 100%;
+
+                        &.self-write {
+                            width: 100%;
+                        }
+
+                        &.is-active {
+                            width: 100%;
+                        }
+                    }
+
+                    &.is-sibling {
+                        width: 100%;
+                    }
+                }
+
+                &__body {
+                    grid-template-columns: 1fr;
                 }
             }
 
