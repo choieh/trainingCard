@@ -13,7 +13,8 @@
             <div class="inner">
                 <form id="form--interimExam" class="form">
                     <div class="btn-group">
-                        <button type="button" class="btn bd-radius--circle size--s cover__bg">최종제출하기</button>
+                        <button type="submit"
+                            class="btn bd-radius--circle size--s cover__bg btn-exam--submit">최종제출하기</button>
                     </div>
                     <div class="answer">
                         <h4 class="title">Answer</h4>
@@ -150,10 +151,25 @@
                         </div>
                     </div>
                     <div class="btn-group">
-                        <button type="button" class="btn bd-radius--circle size--s cover__bg">최종제출하기</button>
+                        <button type="submit"
+                            class="btn bd-radius--circle size--s cover__bg btn-exam--submit">최종제출하기</button>
                     </div>
                 </form>
             </div>
+        </div>
+    </div>
+</div>
+
+<!-- [D] 최종제출 확인 모달 -->
+<div class="modal modal--title-sub">
+    <div class="modal__body">
+        <h3 class="modal__title">최종 제출 후에는<br>수정 및 재응시를<br>할 수 없습니다.</h3>
+        <p class="modal__sub">최종제출하시겠습니까?</p>
+    </div>
+    <div class="modal__footer">
+        <div class="btn-group">
+            <button type="reset" class="btn modal-btn modal-btn--cancel">취소</button>
+            <button type="submit" class="btn modal-btn modal-btn--submit">제출하기</button>
         </div>
     </div>
 </div>

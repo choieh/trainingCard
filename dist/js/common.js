@@ -20,6 +20,7 @@ function initAll() {
     initDragAndDrop();
     initTaskExam();
     initModal();
+    initRadioButtons();
 }
 
 // 장바구니 관련 기능 -----------------------------------------------
@@ -509,6 +510,38 @@ function initExam() {
     const optionItems = document.querySelectorAll(".option-item");
     if (!optionItems.length) return;
 
+    // 제출 버튼 클릭 시 모달 노출 처리
+    const submitButtons = document.querySelectorAll(".btn-exam--submit");
+    const modal = document.querySelector(".modal--title-sub");
+    const modalCancelBtn = modal?.querySelector(".modal-btn--cancel");
+    const modalSubmitBtn = modal?.querySelector(".modal-btn--submit");
+    const form = document.querySelector(
+        "#form--interimExam, #form--finalExam, #form--taskExam"
+    );
+
+    if (submitButtons.length && modal && form) {
+        submitButtons.forEach((button) => {
+            button.addEventListener("click", (e) => {
+                e.preventDefault();
+                modal.classList.add("is-active");
+            });
+        });
+
+        // 모달 취소 버튼 클릭 시
+        if (modalCancelBtn) {
+            modalCancelBtn.addEventListener("click", () => {
+                modal.classList.remove("is-active");
+            });
+        }
+
+        // 모달 제출 버튼 클릭 시
+        if (modalSubmitBtn) {
+            modalSubmitBtn.addEventListener("click", () => {
+                form.submit();
+            });
+        }
+    }
+
     optionItems.forEach((item) => {
         item.addEventListener("click", function () {
             // 현재 문제 컨테이너 찾기
@@ -987,6 +1020,21 @@ function initModal() {
     const cancelButtons = document.querySelectorAll(".modal-btn--cancel");
     const backModal = document.querySelector(".modal.is-active");
 
+    // 수강증 출력 버튼 이벤트 처리
+    const printButtons = document.querySelectorAll(
+        ".status--completion .ico--print"
+    );
+    printButtons.forEach((button) => {
+        button.addEventListener("click", (e) => {
+            e.preventDefault();
+            const modal = document.querySelector(".modal--print");
+            if (modal) {
+                modal.classList.add("is-active");
+                if (backModal) backModal.style.display = "block";
+            }
+        });
+    });
+
     // 닫기 버튼 이벤트 처리
     closeButtons.forEach((button) => {
         button.addEventListener("click", closeModal);
@@ -1006,4 +1054,29 @@ function closeModal(e) {
         modal.classList.remove("is-active");
         backModal.style.display = "none";
     }
+}
+
+// 라디오 버튼 초기화 -----------------------------------------------
+function initRadioButtons() {
+    const radioLabels = document.querySelectorAll(".radio__label");
+
+    radioLabels.forEach((label) => {
+        const radio = label.previousElementSibling; // input[type="radio"] 요소
+        let clickCount = 0;
+        let lastClickTime = 0;
+
+        label.addEventListener("click", function (e) {
+            const currentTime = new Date().getTime();
+            clickCount++;
+
+            // 2초(2000ms) 이내에 짝수 클릭인 경우
+            if (currentTime - lastClickTime < 2000 && clickCount % 2 === 0) {
+                e.preventDefault();
+                radio.checked = false;
+                clickCount = 0; // 클릭 카운트 초기화
+            }
+
+            lastClickTime = currentTime;
+        });
+    });
 }

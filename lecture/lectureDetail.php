@@ -135,3 +135,15 @@
         </div>
     </div>
 </div>
+
+<!-- [D] modal -->
+<div class="modal modal--text">
+    <div class="modal__body">
+        <h3 class="modal__title">내일배움카드 유형은 장바구니 담기를 이용할 수 없습니다</h3>
+    </div>
+    <div class="modal__footer">
+        <div class="btn-group">
+            <button class="btn modal-btn modal-btn--confirm">확인</button>
+        </div>
+    </div>
+</div>

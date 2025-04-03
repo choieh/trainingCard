@@ -10,6 +10,13 @@
         align-items: center;
     }
 
+    &:not(.btn--task, .btn--testFinal, .btn--testFile, .btn--status) {
+        span {
+            display: inline-block;
+            @include ico-style(24px);
+        }
+    }
+
     &.bd-radius {
         &--square {
             border-radius: 4px;
@@ -127,13 +134,6 @@
     }
 
     &.ico {
-        &:not(.btn--task, .btn--testFinal, .btn--testFile, .btn--status) {
-            span {
-                display: inline-block;
-                @include ico-style(24px);
-            }
-        }
-
         &--phone {
             span {
                 &::before {

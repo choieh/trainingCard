@@ -8,7 +8,6 @@
     </div>
 
     <div class="lectureProcessInfo__item">
-        <article class="status"></article>
         <article class="progress">
             <dl>
                 <div class="inner-box">
