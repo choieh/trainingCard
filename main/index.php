@@ -9,9 +9,14 @@
 
 <body>
     <div id="layout">
-        <div id="header-container"></div>
+        <div id="header-container">
+            <? 
+                // include '../include/header.php';
+                include '../include/m/header.php';
+            ?>
+        </div>
         <?
-            // include './include/mainContainer.php'
+            include './include/mainContainer.php'
             // include '../form/join_terms.php'
             // include '../form/join_userInfo.php';
             // include '../form/join_complete.php';
@@ -38,7 +43,7 @@
             // include '../exam/finalExam.php'
             // include '../exam/taskExam.php'
             // include '../exam/completeExam.php'
-            include '../landing/index.php'
+            // include '../landing/index.php'
         ?>
         <div class="footer-container">
             <? include '../include/footer.php' ?>
@@ -47,7 +52,7 @@
 
     <!-- script -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
+    <!-- <script>
     function loadHeader() {
         const isMobile = window.innerWidth <= 768;
         const headerPath = isMobile ? '../include/m/header.php' : '../include/header.php';
@@ -78,7 +83,7 @@
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(loadHeader, 250); // 디바운싱 적용
     });
-    </script>
+    </script> -->
 
     <script src="/dist/js/common.js"></script>
 </body>
