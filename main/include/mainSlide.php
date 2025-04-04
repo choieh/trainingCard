@@ -35,11 +35,13 @@
             </div>
         </div>
         <div class="slide-progress">
+            <span class="corner corner-left"></span>
             <span class="current">1</span>
             <div class="progress-bar">
                 <div class="progress-fill"></div>
             </div>
             <span class="total">3</span>
+            <span class="corner corner-right"></span>
         </div>
     </div>
 </div>

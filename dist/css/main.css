@@ -1738,6 +1738,46 @@ textarea {
   background-color: #fff;
   border-top-left-radius: 16px;
 }
+.main-slide .slide-progress .corner {
+  overflow: hidden;
+  position: absolute;
+  width: 17px;
+  height: 17px;
+}
+.main-slide .slide-progress .corner.corner-left {
+  bottom: -1px;
+  left: -17px;
+}
+.main-slide .slide-progress .corner.corner-left::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+  background-color: #fff;
+  -webkit-clip-path: path("M17 17 L0 17 L0 0 C0 0, 0 22, 24 17");
+          clip-path: path("M17 17 L0 17 L0 0 C0 0, 0 22, 24 17");
+}
+.main-slide .slide-progress .corner.corner-right {
+  top: -16px;
+  right: 0;
+}
+.main-slide .slide-progress .corner.corner-right::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+  background-color: #fff;
+  -webkit-clip-path: path("M17 17 L0 17 L0 0 C0 0, 0 22, 24 17");
+          clip-path: path("M17 17 L0 17 L0 0 C0 0, 0 22, 24 17");
+}
 .main-slide .slide-progress .current,
 .main-slide .slide-progress .total {
   min-width: 10px;
@@ -1750,7 +1790,7 @@ textarea {
 .main-slide .slide-progress .progress-bar {
   width: 100px;
   height: 3px;
-  background: transparent;
+  background: #eae8e8;
   position: relative;
 }
 .main-slide .slide-progress .progress-bar .progress-segment {
