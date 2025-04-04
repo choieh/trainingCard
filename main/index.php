@@ -16,12 +16,12 @@
             ?>
         </div>
         <?
-            include './include/mainContainer.php'
+            // include './include/mainContainer.php'
             // include '../form/join_terms.php'
             // include '../form/join_userInfo.php';
             // include '../form/join_complete.php';
             // include '../form/login.php';
-            // include '../lecture/index.php';
+            include '../lecture/index.php';
             // include '../lecture/lectureDetail.php';
             // include '../cart/index.php';
             // include '../myPage/index.php';

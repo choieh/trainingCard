@@ -65,12 +65,12 @@
         .corner {
             overflow: hidden;
             position: absolute;
-            width: 17px;
-            height: 17px;
+            width: 34px;
+            height: 34px;
 
             &.corner-left {
-                bottom: -1px;
-                left: -17px;
+                bottom: -2px;
+                left: -34px;
 
                 &::before {
                     content: "";
@@ -81,12 +81,12 @@
                     height: 100%;
                     transform: rotate(270deg);
                     background-color: $white;
-                    clip-path: path("M17 17 L0 17 L0 0 C0 0, 0 22, 24 17");
+                    clip-path: path("M34 34 L0 34 L0 0 C5 5, -7 40, 34 34");
                 }
             }
 
             &.corner-right {
-                top: -16px;
+                top: -33px;
                 right: 0;
 
                 &::before {
@@ -98,7 +98,7 @@
                     height: 100%;
                     transform: rotate(270deg);
                     background-color: $white;
-                    clip-path: path("M17 17 L0 17 L0 0 C0 0, 0 22, 24 17");
+                    clip-path: path("M34 34 L0 34 L0 0 C5 5, -7 40, 34 34");
                 }
             }
         }
