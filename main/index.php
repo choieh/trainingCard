@@ -26,14 +26,14 @@
             // include '../form/inquiry.php'; // 문의하기
             // include '../notice/index.php' // 공지사항
             // include '../notice/noticeDetail.php' // 공지사항 상세
-            //include '../myPage/requestList.php' // 상담신청이력
-             include '../myPage/requestDetail.php' // 상담신청이력 상세내역
+            include '../myPage/requestList.php' // 상담신청이력
+            // include '../myPage/requestDetail.php' // 상담신청이력 상세내역
             // include '../myLecture/index.php' // 진행중인과정
             // include '../myLecture/lectureRetake.php' // 재응시과정
             // include '../myLecture/lectureEnd.php' // 학습종료과정
-            // include '../exam/interimExamIntro.php' // 중간평가 소개
-            // include '../exam/finalExamIntro.php' // 최종평가 소개
-            // include '../exam/taskExamIntro.php' // 과제평가 소개
+            // include '../exam/interimExamIntro.php' // 중간평가 동의
+            // include '../exam/finalExamIntro.php' // 최종평가 동의
+            // include '../exam/taskExamIntro.php' // 과제평가 동의
             // include '../exam/interimExam.php' // 중간평가
             // include '../exam/finalExam.php' // 최종평가
             // include '../exam/taskExam.php' // 과제평가
