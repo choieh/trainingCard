@@ -21,6 +21,7 @@ function initAll() {
     initTaskExam();
     initModal();
     initRadioButtons();
+    initHeader();
 }
 
 // 장바구니 관련 기능 -----------------------------------------------
@@ -1079,4 +1080,108 @@ function initRadioButtons() {
             lastClickTime = currentTime;
         });
     });
+}
+
+// 헤더 초기화 -----------------------------------------------
+function initHeader() {
+    function loadHeader() {
+        const isMobile = window.innerWidth <= 768;
+        const headerPath = isMobile
+            ? "../include/m/header.php"
+            : "../include/header.php";
+
+        fetch(headerPath)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then((data) => {
+                document.getElementById("header-container").innerHTML = data;
+                // 헤더 로드 후 모바일 헤더 초기화 실행
+                if (isMobile) {
+                    initMobileHeader();
+                }
+            })
+            .catch((error) => {
+                console.error("헤더 로딩 중 오류 발생:", error);
+                // 페이지 새로고침으로 기본 헤더 로드
+                location.reload();
+            });
+    }
+
+    // 초기 로드
+    loadHeader();
+
+    // 화면 크기 변경 시 헤더 다시 로드
+    let resizeTimer;
+    window.addEventListener("resize", () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(loadHeader, 250); // 디바운싱 적용
+    });
+}
+
+// 모바일 헤더 초기화 -----------------------------------------------
+function initMobileHeader() {
+    // DOM이 완전히 로드될 때까지 대기
+    setTimeout(() => {
+        const menuBtn = document.querySelector(".fixed-menu__btn.menu");
+        const closeBtn = document.querySelector(".btn--close");
+        const gnb = document.querySelector(".m-gnb");
+        const menuItems = document.querySelectorAll(".m-gnb-menu__item");
+        const subItems = document.querySelectorAll(".m-gnb-sub__item");
+
+        if (!menuBtn || !closeBtn || !gnb) {
+            console.warn("모바일 헤더 요소를 찾을 수 없습니다.");
+            return;
+        }
+
+        // 메뉴 열기/닫기
+        menuBtn.addEventListener("click", () => {
+            gnb.classList.add("is-active");
+        });
+
+        closeBtn.addEventListener("click", () => {
+            gnb.classList.remove("is-active");
+        });
+
+        // 아코디언 메뉴
+        menuItems.forEach((item) => {
+            const link = item.querySelector(".m-gnb-menu__link");
+            const subMenu = item.querySelector(".m-gnb-sub");
+
+            if (subMenu) {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault();
+
+                    // 다른 열린 메뉴 닫기
+                    menuItems.forEach((otherItem) => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove("is-active");
+                        }
+                    });
+
+                    item.classList.toggle("is-active");
+                });
+            }
+        });
+
+        // 서브메뉴 아이템 클릭 이벤트
+        subItems.forEach((subItem) => {
+            subItem.addEventListener("click", (e) => {
+                // 같은 depth의 다른 서브메뉴 아이템의 is-active 클래스 제거
+                const siblings =
+                    subItem.parentElement.querySelectorAll(".m-gnb-sub__item");
+                siblings.forEach((sibling) => {
+                    sibling.classList.remove("is-active");
+                });
+
+                // 클릭한 서브메뉴 아이템에 is-active 클래스 추가
+                subItem.classList.add("is-active");
+            });
+        });
+
+        console.log("모바일 헤더 초기화 완료");
+    }, 100);
 }

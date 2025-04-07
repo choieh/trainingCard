@@ -9,41 +9,36 @@
 
 <body>
     <div id="layout">
-        <div id="header-container">
-            <? 
-                // include '../include/header.php';
-                include '../include/m/header.php';
-            ?>
-        </div>
+        <div id="header-container"> </div>
         <?
-            // include './include/mainContainer.php'
-            // include '../form/join_terms.php'
-            // include '../form/join_userInfo.php';
-            // include '../form/join_complete.php';
-            // include '../form/login.php';
-            include '../lecture/index.php';
-            // include '../lecture/lectureDetail.php';
-            // include '../cart/index.php';
-            // include '../myPage/index.php';
-            // include '../myPage/orderList.php';
-            // include '../myPage/orderDetailList.php';
-            // include '../myPage/refund.php';
-            // include '../form/inquiry.php';
-            // include '../notice/index.php'
-            // include '../notice/noticeDetail.php'
-            // include '../myPage/requestList.php'
-            // include '../myPage/requestDetail.php'
-            // include '../myLecture/index.php'
-            // include '../myLecture/lectureRetake.php'
-            // include '../myLecture/lectureEnd.php'
-            // include '../exam/interimExamIntro.php'
-            // include '../exam/finalExamIntro.php'
-            // include '../exam/taskExamIntro.php'
-            // include '../exam/interimExam.php'
-            // include '../exam/finalExam.php'
-            // include '../exam/taskExam.php'
-            // include '../exam/completeExam.php'
-            // include '../landing/index.php'
+            // include './include/mainContainer.php' // 메인 페이지
+            // include '../form/join_terms.php' // 회원가입 약관동의
+            // include '../form/join_userInfo.php'; // 회원가입 정보입력
+            // include '../form/join_complete.php'; // 회원가입 완료
+            // include '../form/login.php'; // 로그인
+            // include '../lecture/index.php'; // 강의 목록
+            // include '../lecture/lectureDetail.php'; // 강의 상세
+            // include '../cart/index.php'; // 장바구니
+            // include '../myPage/index.php'; // 마이페이지
+            // include '../myPage/orderList.php'; // 주문내역/배송조회
+            // include '../myPage/orderDetailList.php'; // 주문상세내역
+            //include '../myPage/refund.php'; // 취소/환불
+            // include '../form/inquiry.php'; // 문의하기
+            // include '../notice/index.php' // 공지사항
+            // include '../notice/noticeDetail.php' // 공지사항 상세
+            include '../myPage/requestList.php' // 상담신청이력
+            // include '../myPage/requestDetail.php' // 상담신청이력 상세내역
+            // include '../myLecture/index.php' // 진행중인과정
+            // include '../myLecture/lectureRetake.php' // 재응시과정
+            // include '../myLecture/lectureEnd.php' // 학습종료과정
+            // include '../exam/interimExamIntro.php' // 중간평가 동의
+            // include '../exam/finalExamIntro.php' // 최종평가 동의
+            // include '../exam/taskExamIntro.php' // 과제평가 동의
+            // include '../exam/interimExam.php' // 중간평가
+            // include '../exam/finalExam.php' // 최종평가
+            // include '../exam/taskExam.php' // 과제평가
+            // include '../exam/completeExam.php' // 완료 페이지
+            // include '../landing/index.php' // 랜딩페이지
         ?>
         <div class="footer-container">
             <? include '../include/footer.php' ?>
@@ -52,39 +47,6 @@
 
     <!-- script -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- <script>
-    function loadHeader() {
-        const isMobile = window.innerWidth <= 768;
-        const headerPath = isMobile ? '../include/m/header.php' : '../include/header.php';
-
-        fetch(headerPath)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('header-container').innerHTML = data;
-            })
-            .catch(error => {
-                console.error('헤더 로딩 중 오류 발생:', error);
-                // 페이지 새로고침으로 기본 헤더 로드
-                location.reload();
-            });
-    }
-
-    // 초기 로드
-    loadHeader();
-
-    // 화면 크기 변경 시 헤더 다시 로드
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(loadHeader, 250); // 디바운싱 적용
-    });
-    </script> -->
-
     <script src="/dist/js/common.js"></script>
 </body>
 

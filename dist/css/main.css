@@ -5460,7 +5460,7 @@ textarea {
     width: 50%;
   }
   .lecture {
-    padding: 0 16px;
+    padding: 0 16px 249px;
   }
   .lecture-detail {
     padding: 0 16px;
@@ -5801,7 +5801,7 @@ textarea {
 
 @media (max-width: 1024px) {
   .myPage {
-    padding: 0 0 243px;
+    padding: 0 16px 243px;
   }
   .myPage:has(.purchase-history) .layout__header {
     padding: 0 16px;
